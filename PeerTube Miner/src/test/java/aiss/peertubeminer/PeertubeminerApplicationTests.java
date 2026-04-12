@@ -1,10 +1,10 @@
-package aiss.videominer;
+package aiss.peertubeminer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VideominerApplicationTests {
+class PeertubeminerApplicationTests {
 
 	@Test
 	void contextLoads() {

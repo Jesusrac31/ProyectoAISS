@@ -1,48 +1,30 @@
-package aiss.videominer.model;
+package aiss.peertubeminer.model.videominer;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Juan C. Alonso
  */
-@Entity
-@Table(name = "Video")
 public class Video {
 
-    @Id
-    @JsonProperty("id")
     private String id;
-
-    @JsonProperty("name")
-    @NotEmpty(message = "Video name cannot be empty")
     private String name;
-
-    @JsonProperty("description")
-    @Column(columnDefinition="TEXT")
     private String description;
-
-    @JsonProperty("releaseTime")
-    @NotEmpty(message = "Video release time cannot be empty")
     private String releaseTime;
-
-    @JsonProperty("user")
-    @OneToOne(cascade = CascadeType.ALL)
     private User author;
-
-    @JsonProperty("comments")
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "videoId")
     private List<Comment> comments;
-
-    @JsonProperty("captions")
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "videoId")
     private List<Caption> captions;
+
+    public Video(String id, String name, String description, String releaseTime) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.releaseTime = releaseTime;
+        this.author = null;
+        this.comments = new ArrayList<>();
+        this.captions = new ArrayList<>();
+    }
 
     public String getId() {
         return id;
