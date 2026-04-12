@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class UserRepository {
@@ -43,11 +44,36 @@ public class UserRepository {
     // For now, this operation returns the info in list users
     public List<User> findAll() { return users; }
 
-    // find one user with some specific id
+    // Find one user with some specific id
     public User findOneById(Long id) {
         return users.stream() // Use streams for obtaining one user
                 .filter(user -> user.getId().equals(id)) // Filter to all users with some specific id
                 .findFirst() // Find the first user with such id
                 .orElse(null); // If this value is not found, return null, otherwise, return the user
+    }
+
+    // Create some user which is passed as a parameter
+    public User create(User user){
+        User newUser = new User(
+                Math.abs(UUID.randomUUID().getMostSignificantBits()), // The UUID is a Long type
+                user.getName(),
+                user.getUser_link(),
+                user.getPicture_link()
+            );
+        users.add(newUser);
+        return newUser; // Returns the created user
+    }
+
+    // Updates some user with some id
+    public void update(User updatedUser, Long id) {
+        User existingUser = findOneById(id);
+        int i = users.indexOf(existingUser);
+        updatedUser.setId(existingUser.getId());
+        users.set(i, updatedUser);
+    }
+
+    // Remove some user with some id
+    public void delete(Long id){
+        users.removeIf(user -> user.getId().equals(id));
     }
 }

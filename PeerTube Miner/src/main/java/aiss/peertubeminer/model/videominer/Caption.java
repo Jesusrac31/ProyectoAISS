@@ -7,18 +7,23 @@ import jakarta.persistence.Table;
 /**
  * @author Juan C. Alonso
  */
+// This is the Caption class, it is used for obtaining information of captions that will be shared to video miner
+// Once you obtain the information from the API, a service will transform those models into these
 public class Caption {
 
+    // The three properties in the data model
     private String id;
     private String name;
     private String language;
 
+    // Constructor
     public Caption(String id, String name, String language) {
         this.id = id;
         this.name = name;
         this.language = language;
     }
 
+    // Setters and getters
     public String getId() {
         return id;
     }
@@ -43,6 +48,7 @@ public class Caption {
         this.language = language;
     }
 
+    // Way of representing the class as a string
     @Override
     public String toString() {
         return "Caption{" +

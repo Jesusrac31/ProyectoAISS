@@ -10,14 +10,18 @@ import java.util.List;
 /**
  * @author Juan C. Alonso
  */
+// This is the Channel class, it is used for obtaining information of channels that will be shared to video miner
+// Once you obtain the information from the API, a service will transform those models into these
 public class Channel {
 
+    // The five properties in the data model
     private String id;
     private String name;
     private String description;
     private String createdTime;
     private List<Video> videos;
 
+    // Constructor
     public Channel(String id, String name, String description, String createdTime) {
         this.id = id;
         this.name = name;
@@ -26,6 +30,7 @@ public class Channel {
         this.videos = new ArrayList<>();
     }
 
+    // Setters and getters
     public String getId() {
         return id;
     }
@@ -66,6 +71,7 @@ public class Channel {
         this.videos = videos;
     }
 
+    // Way of representing the class as a string
     @Override
     public String toString() {
         return "Channel{" +
