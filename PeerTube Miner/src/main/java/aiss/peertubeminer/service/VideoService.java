@@ -63,9 +63,9 @@ public class VideoService {
     }
 
     // Retrieves a video including its comments and captions
-    public Video getCompleteVideoInfo(String id, int maxComments) {
-        // Get basic video information
-        Video video = getById(id);
+    public Video getCompleteVideoInfo(Video video, int maxComments) {
+        // Extract video id from video object
+        String id = video.getId();
 
         // Retrieve video's comments and add them to its 'comments' property
         List<Comment> videoComments = commentService.getVideoComments(id,maxComments);

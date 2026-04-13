@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Added @Bean in PeertubeminerApplication.java">
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Add comments to services and change id property type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CaptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CaptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CaptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CaptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/VideoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CaptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CaptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/VideoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/VideoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/ChannelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CommentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" afterDir="false" />
@@ -48,16 +52,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CaptionServiceTest.getCaptions.executor": "Run",
     "JUnit.ChannelServiceTest.findChannel.executor": "Run",
     "JUnit.ChannelServiceTest.getCompleteChannelInfo.executor": "Run",
+    "JUnit.CommentServiceTest.getComments.executor": "Run",
+    "JUnit.VideoServiceTest.getChannelVideos.executor": "Run",
+    "JUnit.VideoServiceTest.getCompleteVideoInfo.executor": "Run",
+    "JUnit.VideoServiceTest.getVideo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ChannelServiceTest.findChannel">
-    <configuration name="ChannelServiceTest.findChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CaptionServiceTest.getCaptions">
+    <configuration name="CaptionServiceTest.getCaptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
@@ -66,14 +75,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.ChannelServiceTest" />
-      <option name="METHOD_NAME" value="findChannel" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.CaptionServiceTest" />
+      <option name="METHOD_NAME" value="getCaptions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChannelServiceTest.getCompleteChannelInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommentServiceTest.getComments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
@@ -82,8 +91,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.ChannelServiceTest" />
-      <option name="METHOD_NAME" value="getCompleteChannelInfo" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="getComments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoServiceTest.getChannelVideos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="peertubeminer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="METHOD_NAME" value="getChannelVideos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoServiceTest.getCompleteVideoInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="peertubeminer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="METHOD_NAME" value="getCompleteVideoInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoServiceTest.getVideo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="peertubeminer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="METHOD_NAME" value="getVideo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,8 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChannelServiceTest.findChannel" />
-        <item itemvalue="JUnit.ChannelServiceTest.getCompleteChannelInfo" />
+        <item itemvalue="JUnit.CaptionServiceTest.getCaptions" />
+        <item itemvalue="JUnit.CommentServiceTest.getComments" />
+        <item itemvalue="JUnit.VideoServiceTest.getCompleteVideoInfo" />
+        <item itemvalue="JUnit.VideoServiceTest.getVideo" />
+        <item itemvalue="JUnit.VideoServiceTest.getChannelVideos" />
       </list>
     </recent_temporary>
   </component>
@@ -127,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776076337108</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add comments to services and change id property type">
+      <option name="closed" value="true" />
+      <created>1776107412626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776107412626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +212,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added PeerTube models and services" />
     <MESSAGE value="Added @Bean in PeertubeminerApplication.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added @Bean in PeertubeminerApplication.java" />
+    <MESSAGE value="Add comments to services and change id property type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments to services and change id property type" />
   </component>
 </project>

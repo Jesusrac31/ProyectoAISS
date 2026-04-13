@@ -1,6 +1,6 @@
 package aiss.peertubeminer.repository;
 
-import aiss.peertubeminer.model.videominer.Caption;
+import aiss.peertubeminer.model.videominer.CaptionVM;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,33 +9,33 @@ import java.util.UUID;
 
 @Repository
 public class CaptionRepository {
-    List<Caption> captions = new ArrayList<>();
+    List<CaptionVM> captions = new ArrayList<>();
 
     public CaptionRepository() {
         // Mock data for testing
         captions.add(
-                new Caption(
+                new CaptionVM(
                         "ForTests",
                         "English",
                         "en"
                 )
         );
         captions.add(
-                new Caption(
+                new CaptionVM(
                         UUID.randomUUID().toString(),
                         "English",
                         "en"
                 )
         );
         captions.add(
-                new Caption(
+                new CaptionVM(
                         UUID.randomUUID().toString(),
                         "Spanish",
                         "es"
                 )
         );
         captions.add(
-                new Caption(
+                new CaptionVM(
                         UUID.randomUUID().toString(),
                         "French",
                         "fr"
@@ -45,12 +45,12 @@ public class CaptionRepository {
 
     // Find all operation, you will be able to obtain all captions stored
     // For now, this operation returns the info in list captions
-    public List<Caption> findAll() {
+    public List<CaptionVM> findAll() {
         return captions;
     }
 
     // Find one caption with some specific id
-    public Caption findOneById(String id) {
+    public CaptionVM findOneById(String id) {
         return captions.stream()
                 .filter(caption -> caption.getId().equals(id))
                 .findFirst()
@@ -58,8 +58,8 @@ public class CaptionRepository {
     }
 
     // Create some caption which is passed as a parameter
-    public Caption create(Caption caption) {
-        Caption newCaption = new Caption(
+    public CaptionVM create(CaptionVM caption) {
+        CaptionVM newCaption = new CaptionVM(
                 UUID.randomUUID().toString(),
                 caption.getName(),
                 caption.getLanguage()
@@ -69,8 +69,8 @@ public class CaptionRepository {
     }
 
     // Updates some caption with some id
-    public void update(Caption updatedCaption, String id) {
-        Caption existingCaption = findOneById(id);
+    public void update(CaptionVM updatedCaption, String id) {
+        CaptionVM existingCaption = findOneById(id);
         int i = captions.indexOf(existingCaption);
         updatedCaption.setId(existingCaption.getId());
         captions.set(i, updatedCaption);

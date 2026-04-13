@@ -26,7 +26,7 @@ class ChannelServiceTest {
     void getCompleteChannelInfo() {
         Channel channel = service.getCompleteChannelInfo("bloodaxegamingnor@peertube.linuxrocks.online",2,10 );
         assertNotNull(channel);
-        System.out.println(channel.getVideos().size());
+        System.out.println("Total number of videos retrieved: " + channel.getVideos().size());
         System.out.println(channel);
     }
 }

@@ -31,7 +31,8 @@ class VideoServiceTest {
     @Test
     @DisplayName("Get video with complete information")
     void getCompleteVideoInfo() {
-        Video video = service.getCompleteVideoInfo("110571", 10);
-        System.out.println(video);
+        Video video = service.getById("110571");
+        Video videoWithInfo = service.getCompleteVideoInfo(video, 10);
+        System.out.println(videoWithInfo);
     }
 }

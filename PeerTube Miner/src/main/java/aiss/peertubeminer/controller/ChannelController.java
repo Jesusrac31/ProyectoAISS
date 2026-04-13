@@ -1,6 +1,6 @@
 package aiss.peertubeminer.controller;
 
-import aiss.peertubeminer.model.videominer.Channel;
+import aiss.peertubeminer.model.videominer.ChannelVM;
 import aiss.peertubeminer.repository.ChannelRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class ChannelController {
     // For some GET operation
     // If success, return 200 by default
     @GetMapping
-    public List<Channel> findAll() {
+    public List<ChannelVM> findAll() {
         return channelRepository.findAll();
     }
 
     // For some GET operation with some ID as a path variable
     // If success, return 200 by default
     @GetMapping("/{id}")
-    public Channel findById(@PathVariable String id) {
+    public ChannelVM findById(@PathVariable String id) {
         return channelRepository.findOneById(id);
     }
 
@@ -38,7 +38,7 @@ public class ChannelController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public Channel create(@Valid @RequestBody Channel channel) {
+    public ChannelVM create(@Valid @RequestBody ChannelVM channel) {
         return channelRepository.create(channel);
     }
 
@@ -46,7 +46,7 @@ public class ChannelController {
     // If success, return 204 status
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@Valid @RequestBody Channel channel, @PathVariable String id) {
+    public void update(@Valid @RequestBody ChannelVM channel, @PathVariable String id) {
         channelRepository.update(channel, id);
     }
 

@@ -1,6 +1,6 @@
 package aiss.peertubeminer.controller;
 
-import aiss.peertubeminer.model.videominer.Comment;
+import aiss.peertubeminer.model.videominer.CommentVM;
 import aiss.peertubeminer.repository.CommentRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class CommentController {
     // For some GET operation
     // If success, return 200 by default
     @GetMapping
-    public List<Comment> findAll() {
+    public List<CommentVM> findAll() {
         return commentRepository.findAll();
     }
 
     // For some GET operation with some ID as a path variable
     // If success, return 200 by default
     @GetMapping("/{id}")
-    public Comment findById(@PathVariable String id) {
+    public CommentVM findById(@PathVariable String id) {
         return commentRepository.findOneById(id);
     }
 
@@ -38,7 +38,7 @@ public class CommentController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public Comment create(@Valid @RequestBody Comment comment) {
+    public CommentVM create(@Valid @RequestBody CommentVM comment) {
         return commentRepository.create(comment);
     }
 
@@ -46,7 +46,7 @@ public class CommentController {
     // If success, return 204 status
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@Valid @RequestBody Comment comment, @PathVariable String id) {
+    public void update(@Valid @RequestBody CommentVM comment, @PathVariable String id) {
         commentRepository.update(comment, id);
     }
 

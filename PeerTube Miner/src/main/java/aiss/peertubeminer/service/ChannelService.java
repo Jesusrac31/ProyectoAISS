@@ -26,10 +26,10 @@ public class ChannelService {
         List<Video> allVideos = new ArrayList<>();
 
         // Iterate through channel's videos
-        for (Video v : videoService.getChannelVideos(channelHandler, maxVideos)) {
+        for (Video video : videoService.getChannelVideos(channelHandler, maxVideos)) {
             // For each video, retrieve its complete information
             // including comments and captions
-            allVideos.add(videoService.getCompleteVideoInfo(v.getId(), maxComments));
+            allVideos.add(videoService.getCompleteVideoInfo(video, maxComments));
         }
 
         // Set the 'videos' property of the channel object
