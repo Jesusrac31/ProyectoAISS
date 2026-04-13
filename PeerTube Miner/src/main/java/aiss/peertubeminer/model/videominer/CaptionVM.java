@@ -9,13 +9,13 @@ public class CaptionVM {
 
     // The three properties in the data model
     private String id;
-    private String name;
+    private String link;    // This was name previously, Yahur changed it to link because in the document it's link, not name 
     private String language;
 
     // Constructor
-    public CaptionVM(String id, String name, String language) {
+    public CaptionVM(String id, String link, String language) {
         this.id = id;
-        this.name = name;
+        this.link = link;
         this.language = language;
     }
 
@@ -28,12 +28,12 @@ public class CaptionVM {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLink() {
+        return link;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getLanguage() {
@@ -49,7 +49,7 @@ public class CaptionVM {
     public String toString() {
         return "Caption{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", link='" + link + '\'' +
                 ", language='" + language + '\'' +
                 '}';
     }
