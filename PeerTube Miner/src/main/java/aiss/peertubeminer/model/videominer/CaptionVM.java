@@ -1,15 +1,11 @@
 package aiss.peertubeminer.model.videominer;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 /**
  * @author Juan C. Alonso
  */
 // This is the Caption class, it is used for obtaining information of captions that will be shared to video miner
 // Once you obtain the information from the API, a service will transform those models into these
-public class Caption {
+public class CaptionVM {
 
     // The three properties in the data model
     private String id;
@@ -17,7 +13,7 @@ public class Caption {
     private String language;
 
     // Constructor
-    public Caption(String id, String name, String language) {
+    public CaptionVM(String id, String name, String language) {
         this.id = id;
         this.name = name;
         this.language = language;

@@ -1,13 +1,11 @@
 package aiss.peertubeminer.model.videominer;
 
-import jakarta.persistence.*;
-
 /**
  * @author Juan C. Alonso
  */
 // This is the Comment class, it is used for obtaining information of comments that will be shared to video miner
 // Once you obtain the information from the API, a service will transform those models into these
-public class Comment {
+public class CommentVM {
 
     // The three properties in the data model
     private String id;
@@ -15,7 +13,7 @@ public class Comment {
     private String createdOn;
 
     // Constructor
-    public Comment(String id, String text, String createdOn) {
+    public CommentVM(String id, String text, String createdOn) {
         this.id = id;
         this.text = text;
         this.createdOn = createdOn;
