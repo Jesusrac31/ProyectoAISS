@@ -15,6 +15,14 @@ public class VideoRepository {
         // Mock data for testing
         videos.add(
                 new Video(
+                        "ForTests",
+                        "ForTesting",
+                        "Basics of Spring Boot",
+                        "2026-01-10T10:00:00Z"
+                )
+        );
+        videos.add(
+                new Video(
                         UUID.randomUUID().toString(),
                         "Spring Boot Intro",
                         "Basics of Spring Boot",

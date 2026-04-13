@@ -24,7 +24,7 @@ public class UserRepository {
         // Repeat for each user
         users.add(
                 new User(
-                        2L,
+                        Math.abs(UUID.randomUUID().getMostSignificantBits()),
                         "Test2",
                         "http://UserLink2.com",
                         "http://PictureLink2.com"
@@ -32,7 +32,7 @@ public class UserRepository {
         );
         users.add(
                 new User(
-                        3L,
+                        Math.abs(UUID.randomUUID().getMostSignificantBits()),
                         "Test3",
                         "http://UserLink3.com",
                         "http://PictureLink3.com"

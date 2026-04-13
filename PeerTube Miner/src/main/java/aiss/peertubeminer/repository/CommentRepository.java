@@ -15,6 +15,13 @@ public class CommentRepository {
         // Mock data for testing
         comments.add(
                 new Comment(
+                        "ForTests",
+                        "Great video",
+                        "2026-01-10T10:00:00Z"
+                )
+        );
+        comments.add(
+                new Comment(
                         UUID.randomUUID().toString(),
                         "Great video",
                         "2026-01-10T10:00:00Z"

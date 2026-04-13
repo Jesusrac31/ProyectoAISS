@@ -15,6 +15,13 @@ public class CaptionRepository {
         // Mock data for testing
         captions.add(
                 new Caption(
+                        "ForTests",
+                        "English",
+                        "en"
+                )
+        );
+        captions.add(
+                new Caption(
                         UUID.randomUUID().toString(),
                         "English",
                         "en"

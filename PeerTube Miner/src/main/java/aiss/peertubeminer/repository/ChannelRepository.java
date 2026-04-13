@@ -15,6 +15,14 @@ public class ChannelRepository {
         // Mock data for testing
         channels.add(
                 new Channel(
+                        "ForTests",
+                        "Tech Reviews",
+                        "Technology channel",
+                        "2026-01-01T10:00:00Z"
+                )
+        );
+        channels.add(
+                new Channel(
                         UUID.randomUUID().toString(),
                         "Tech Reviews",
                         "Technology channel",
