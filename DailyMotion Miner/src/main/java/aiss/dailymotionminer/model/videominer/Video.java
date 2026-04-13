@@ -1,4 +1,4 @@
-package aiss.peertubeminer.model.videominer;
+package aiss.dailymotionminer.model.videominer;
 
 import java.util.ArrayList;
 import java.util.List;

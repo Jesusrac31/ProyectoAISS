@@ -1,6 +1,6 @@
-package aiss.peertubeminer.repository;
+package aiss.dailymotionminer.repository;
 
-import aiss.peertubeminer.model.videominer.Channel;
+import aiss.dailymotionminer.model.videominer.Channel;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,8 +1,4 @@
-package aiss.peertubeminer.model.videominer;
-
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+package aiss.dailymotionminer.model.videominer;
 
 import java.util.ArrayList;
 import java.util.List;

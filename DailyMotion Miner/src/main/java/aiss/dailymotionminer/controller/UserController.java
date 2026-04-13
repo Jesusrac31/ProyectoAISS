@@ -1,7 +1,7 @@
-package aiss.peertubeminer.controller;
+package aiss.dailymotionminer.controller;
 
-import aiss.peertubeminer.model.videominer.User;
-import aiss.peertubeminer.repository.UserRepository;
+import aiss.dailymotionminer.model.videominer.User;
+import aiss.dailymotionminer.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

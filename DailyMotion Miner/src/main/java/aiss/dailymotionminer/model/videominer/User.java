@@ -1,6 +1,4 @@
-package aiss.peertubeminer.model.videominer;
-
-import jakarta.persistence.*;
+package aiss.dailymotionminer.model.videominer;
 
 /**
  * @author Juan C. Alonso
