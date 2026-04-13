@@ -18,31 +18,38 @@ import aiss.peertubeminer.model.videominer.VideoVM;
 
 public class TranslationPTtoVMService{
 
+    // Clarifications:
+    //VM: VideoMiner
+    //PT: PeerTube
+
     public static ChannelVM channelTranslation(Channel channelPT){
-        //First: Creation of Channel for VM
+        // Creation of Channel for VM
         ChannelVM resChannelVM = new ChannelVM(channelPT.getId(), channelPT.getName(), channelPT.getDescription(), channelPT.getCreatedAt());
-        //Second: I have to translate videos from PT to videos of VM
+        // Iterating over videos of PT, translating them to videos of VM and saving them into an auxiliary list of videos. 
         List<VideoVM> auxVideoList = new ArrayList<VideoVM>();
         for (Video vd: channelPT.getVideos()){
             auxVideoList.add(videoTransaltion(vd));
         }
+        // Setting the list of videos of the channel
         resChannelVM.setVideos(auxVideoList);
         return resChannelVM;
     }
 
-    public static VideoVM videoTransaltion(Video videoPT){
+    public static VideoVM videoTransaltion(Video videoPT){  // Translation from PT to VM model of Video
+    // Creation of Video model for VideoMiner
     VideoVM resVideoVM = new VideoVM(videoPT.getId(), videoPT.getName(), videoPT.getDescription(), videoPT.getPublishedAt());
-    // Third: I have to translate Accoutn (PT) to User (VM)
+    // Translating Accoutn (PT) to User (VM)
+    //Setting the author of resVideoVM
     resVideoVM.setAuthor(userTranslation(videoPT.getAccount()));
-    // Fourth: we need a comment translation
-    //After we will iterate over the comments of videoPT and add the comments to resVideoVM one by one
+    //Iteratig over the comments of videoPT and adding the comments to resVideoVM one by one
     List<CommentVM> auxCommentList = new ArrayList<CommentVM>();
     for (Comment cm: videoPT.getComments()){
         auxCommentList.add(commentTranslation(cm));
     }
+    // Setting the resulting list of comments as comments of the resVideoVM
     resVideoVM.setComments(auxCommentList);
-    //Fifth: we need captions translation
-    //The same, iterate over subtitles of videoPT, translate one by one and add to resVideoVM one by one
+    // Iterating over subtitles of videoPT, translating from PT to VM model one by one, adding to an 
+    // auxiliary list and setting the result as captions list of resVideoVM
     List<CaptionVM> auxCaptionsList = new ArrayList<CaptionVM>();
     for (Caption cp: videoPT.getCaptions()){
         auxCaptionsList.add(captionTranslation(cp));
@@ -52,13 +59,15 @@ public class TranslationPTtoVMService{
     return resVideoVM;
     }
 
-    public static UserVM userTranslation(Account accountPT){ // Translation from Account (PT) to User (VM)
-    //ATTENTION: in PT the model Account contains a LIST of avatars, however the model of VM only needs a link to the avatar. I took the link of the first avatar.
+    public static UserVM userTranslation(Account accountPT){ // Translation from Account (PT) to User (VM) model
+    //ATTENTION: in PT the model Account contains a LIST of avatars, however the model of VM only needs a link to the avatar. We took the link of the first avatar.
     UserVM resUserVM = new UserVM(Long.valueOf(accountPT.getId()), accountPT.getName(), accountPT.getUrl(), accountPT.getAvatars().getFirst().getFileUrl());
     return resUserVM;
     }
 
     public static CaptionVM captionTranslation(Caption captionPT){  //Caption translation
+    // ATTENTION: captions returned by the PeerTube API do not contain an ID, so for the VideoMiner model of captions
+    // a random ID is set 
     CaptionVM resCaptionVM = new CaptionVM(UUID.randomUUID().toString(), captionPT.getFileUrl(), captionPT.getLanguage().getLabel());
     return resCaptionVM;
     }
