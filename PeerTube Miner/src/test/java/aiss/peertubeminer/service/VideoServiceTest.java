@@ -14,7 +14,7 @@ class VideoServiceTest {
     VideoService service;
 
     @Test
-    @DisplayName("Get all channel videos") // Devuelve avatar en el owner como una lista, Cambiar para coger primer enlace
+    @DisplayName("Get all channel videos")
     void getChannelVideos() {
         List<Video> videos = service.getChannelVideos("bloodaxegamingnor@peertube.linuxrocks.online", 1);
         System.out.println("Number of videos: " + videos.size());
@@ -29,7 +29,7 @@ class VideoServiceTest {
     }
 
     @Test
-    @DisplayName("Get video with complete info")
+    @DisplayName("Get video with complete information")
     void getCompleteVideoInfo() {
         Video video = service.getCompleteVideoInfo("110571", 10);
         System.out.println(video);

@@ -17,24 +17,28 @@ public class ChannelService {
     private static final String BASE_URL = "https://peertube.tv/api/v1/";
     @Autowired
     VideoService videoService;
-    // Get the complete information of a channel (including its videos and the comments and
-    // captions of the videos)
+    // Retrieves complete information of a channel,
+    // including its videos and each videos' comments and captions
     public Channel getCompleteChannelInfo(String channelHandler, int maxVideos, int maxComments) {
-        // Get general channel info (without videos)
-        Channel channel = getOneChannel(channelHandler);
-        // List for storing the channel videos with complete info
+        // Get basic channel information (without videos)
+        Channel channel = getById(channelHandler);
+        // List to store channel's videos with complete information
         List<Video> allVideos = new ArrayList<>();
 
+        // Iterate through channel's videos
         for (Video v : videoService.getChannelVideos(channelHandler, maxVideos)) {
-            allVideos.add(videoService.getCompleteVideoInfo(v.getId().toString(), maxComments));
+            // For each video, retrieve its complete information
+            // including comments and captions
+            allVideos.add(videoService.getCompleteVideoInfo(v.getId(), maxComments));
         }
 
-        // Set the 'videos' property
+        // Set the 'videos' property of the channel object
         channel.setVideos(allVideos);
         return channel;
     }
 
-    public Channel getOneChannel(String channelHandler) {
+    // Retrieves a channel by its identifier (basic info only)
+    public Channel getById(String channelHandler) {
         String uri = BASE_URL + "video-channels/" + channelHandler;
         return restTemplate.getForObject(uri, Channel.class);
     }

@@ -15,7 +15,7 @@ public class CaptionService {
 
     private static final String BASE_URL = "https://peertube.tv/api/v1/";
 
-    // Get the captions of a video   TODOSS?? no añadir restriccion?? o limitar???
+    // Get the captions of a video
     public List<Caption> getVideoCaptions(String id) {
         String uri = BASE_URL + "videos/" + id + "/captions";
         Caption_Data data = restTemplate.getForObject(uri, Caption_Data.class);

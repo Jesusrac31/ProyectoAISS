@@ -20,12 +20,19 @@ public class CommentService {
 
     // Get the comments of a video
     public List<Comment> getVideoComments(String id, int maxComments) {
-        // Initial uri
-        String uri = BASE_URL + "videos/" + id + "/comment-threads";
-        // List that will store all the comments read
+        // Determine how many comments to request per call
+        // If maxComments >= 100 -> use 100 (API maximum limit)
+        // If maxComments < 1 -> use 1 (minimum valid value)
+        // Otherwise -> use maxComments
+        int count = maxComments >= 100 ? 100 : Math.max(maxComments, 1);
+
+        // Build initial request URI
+        String uri = BASE_URL + "videos/" + id + "/comment-threads?count=" + count;
+        // List that will store all retrieved comments
         List<Comment> allComments = new ArrayList<>();
 
-        // Check if there exist next pages and if we have not already read the max required
+        // Continue requesting pages when there is a next page (uri != null)
+        // and we have not reached the desired number of comments
         while (uri != null && allComments.size()<maxComments) {
             ResponseEntity<Comment_Data> response = restTemplate.getForEntity(uri, Comment_Data.class);
             if (response.getBody() != null && response.getBody().getData() != null) {
@@ -34,14 +41,14 @@ public class CommentService {
             uri = getNextPageUrl(response.getHeaders());
         }
 
-        // If we have read more comments than required because of page size, truncate the list
+        // If we have fetched more comments than requested, trim the list to required size
         if (allComments.size() > maxComments) {
             allComments = allComments.subList(0, maxComments);
         }
         return allComments;
     }
 
-    // Auxiliary function to obtain next page of contents if no all in the same page
+    // Auxiliary function to obtain URL of next page of contents
     public static String getNextPageUrl(HttpHeaders headers) {
         String result = null;
 

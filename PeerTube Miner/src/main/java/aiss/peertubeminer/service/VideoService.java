@@ -26,12 +26,19 @@ public class VideoService {
 
     // Get the videos of a channel given the channelHandler
     public List<Video> getChannelVideos(String channelHandler, int maxVideos) {
-        // Initial uri
-        String uri = BASE_URL + "video-channels/" + channelHandler + "/videos";
-        // List that will store all the videos read
+        // Determine how many videos to request per call
+        // If maxVideosComments >= 100 -> use 100 (API maximum limit)
+        // If maxVideos < 1 -> use 1 (minimum valid value)
+        // Otherwise -> use maxVideos
+        int count = maxVideos >= 100 ? 100 : Math.max(maxVideos, 1);
+
+        // Build initial request URI
+        String uri = BASE_URL + "video-channels/" + channelHandler + "/videos?count=" + count;
+        // List that will store all retrieved videos
         List<Video> allVideos = new ArrayList<>();
 
-        // Check if there exist next pages and if we have not already read the max required
+        // Continue requesting pages when there is a next page (uri != null)
+        // and we have not reached the desired number of videos
         while (uri != null && allVideos.size() < maxVideos) {
             ResponseEntity<Video_Data> response = restTemplate.getForEntity(uri, Video_Data.class);
 
@@ -42,35 +49,36 @@ public class VideoService {
             uri = getNextPageUrl(response.getHeaders());
         }
 
+        // If we have fetched more videos than requested, trim the list to required size
         if (allVideos.size() > maxVideos) {
             allVideos = allVideos.subList(0,maxVideos);
         }
         return allVideos;
     }
 
-    // Get a specific video given its id
+    // Retrieves a video by its identifier (basic info only)
     public Video getById(String id) {
         String uri = BASE_URL + "videos/" + id;
         return restTemplate.getForObject(uri, Video.class);
     }
 
-    // Get complete information of a video (including its comments and captions)
+    // Retrieves a video including its comments and captions
     public Video getCompleteVideoInfo(String id, int maxComments) {
-        // Get initial video info
+        // Get basic video information
         Video video = getById(id);
 
-        // Get the comments of the video and add them to its 'comments' property
+        // Retrieve video's comments and add them to its 'comments' property
         List<Comment> videoComments = commentService.getVideoComments(id,maxComments);
         video.setComments(videoComments);
 
-        // Get the captions of the video and add them to its 'captions' property
+        // Retrieve video's captions and add them to its 'captions' property
         List<Caption> videoCaptions = captionService.getVideoCaptions(id);
         video.setCaptions(videoCaptions);
 
         return video;
     }
 
-    // Auxiliary function to obtain next page of contents if no all in the same page
+    // Auxiliary function to obtain URL of next page of contents
     public static String getNextPageUrl(HttpHeaders headers) {
         String result = null;
 

@@ -14,15 +14,15 @@ class ChannelServiceTest {
     ChannelService service;
 
     @Test
-    @DisplayName("Get channel with channelHandler")
+    @DisplayName("Get a channel by channelHandler")
     void findChannel() {
-        Channel channel = service.getOneChannel("bloodaxegamingnor@peertube.linuxrocks.online");
+        Channel channel = service.getById("bloodaxegamingnor@peertube.linuxrocks.online");
         assertNotNull(channel);
         System.out.println(channel);
     }
 
     @Test
-    @DisplayName("Get channel with complete info")
+    @DisplayName("Get channel with complete information")
     void getCompleteChannelInfo() {
         Channel channel = service.getCompleteChannelInfo("bloodaxegamingnor@peertube.linuxrocks.online",2,10 );
         assertNotNull(channel);
