@@ -28,20 +28,20 @@ public class TranslationPTtoVMService{
         // Iterating over videos of PT, translating them to videos of VM and saving them into an auxiliary list of videos. 
         List<VideoVM> auxVideoList = new ArrayList<VideoVM>();
         for (Video vd: channelPT.getVideos()){
-            auxVideoList.add(videoTransaltion(vd));
+            auxVideoList.add(videoTranslation(vd));
         }
         // Setting the list of videos of the channel
         resChannelVM.setVideos(auxVideoList);
         return resChannelVM;
     }
 
-    public static VideoVM videoTransaltion(Video videoPT){  // Translation from PT to VM model of Video
+    public static VideoVM videoTranslation(Video videoPT){  // Translation from PT to VM model of Video
     // Creation of Video model for VideoMiner
     VideoVM resVideoVM = new VideoVM(videoPT.getId(), videoPT.getName(), videoPT.getDescription(), videoPT.getPublishedAt());
-    // Translating Accoutn (PT) to User (VM)
+    // Translating Account (PT) to User (VM)
     //Setting the author of resVideoVM
     resVideoVM.setAuthor(userTranslation(videoPT.getAccount()));
-    //Iteratig over the comments of videoPT and adding the comments to resVideoVM one by one
+    //Iterating over the comments of videoPT and adding the comments to resVideoVM one by one
     List<CommentVM> auxCommentList = new ArrayList<CommentVM>();
     for (Comment cm: videoPT.getComments()){
         auxCommentList.add(commentTranslation(cm));
