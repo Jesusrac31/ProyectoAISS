@@ -1,4 +1,4 @@
-package aiss.peertubeminer.service;
+package aiss.peertubeminer.etl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +61,7 @@ public class TranslationPTtoVMService{
 
     public static UserVM userTranslation(Account accountPT){ // Translation from Account (PT) to User (VM) model
     //ATTENTION: in PT the model Account contains a LIST of avatars, however the model of VM only needs a link to the avatar. We took the link of the first avatar.
-    UserVM resUserVM = new UserVM(Long.valueOf(accountPT.getId()), accountPT.getName(), accountPT.getUrl(), accountPT.getAvatars().getFirst().getFileUrl());
+    UserVM resUserVM = new UserVM(Long.valueOf(accountPT.getId()), accountPT.getName(), accountPT.getUrl(), accountPT.getAvatars().get(0).getFileUrl()); // We use get(0) as an alternative to getFirst(). This allows the program to compile in more versions of Java
     return resUserVM;
     }
 

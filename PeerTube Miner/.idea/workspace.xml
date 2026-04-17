@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories">
+      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideominerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CaptionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/VideoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CaptionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/VideoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/TranslationPTtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,11 +48,17 @@
     &quot;accountId&quot;: &quot;3ad1d27d-8956-415b-a9f0-fbb0e2e63053&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="3CIaa9N6s5CM8toZgVCIdSodYah" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,16 +74,18 @@
     "JUnit.VideoServiceTest.getVideo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.PeerTube Miner.executor": "Run",
+    "Spring Boot.Unnamed.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.CaptionServiceTest.getCaptions">
+  <component name="RunManager" selected="Spring Boot.PeerTube Miner">
     <configuration name="CaptionServiceTest.getCaptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="PATTERN" value="aiss.peertubeminer.etl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,7 +101,7 @@
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="PATTERN" value="aiss.peertubeminer.etl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,7 +117,7 @@
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="PATTERN" value="aiss.peertubeminer.etl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,7 +133,7 @@
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="PATTERN" value="aiss.peertubeminer.etl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +149,7 @@
       <module name="peertubeminer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aiss.peertubeminer.service.*" />
+          <option name="PATTERN" value="aiss.peertubeminer.etl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,6 +161,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PeerTube Miner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="ms-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="peertubeminer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="aiss.peertubeminer.PeertubeminerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CaptionServiceTest.getCaptions" />
+      <item itemvalue="JUnit.CommentServiceTest.getComments" />
+      <item itemvalue="JUnit.VideoServiceTest.getChannelVideos" />
+      <item itemvalue="JUnit.VideoServiceTest.getCompleteVideoInfo" />
+      <item itemvalue="JUnit.VideoServiceTest.getVideo" />
+      <item itemvalue="Spring Boot.PeerTube Miner" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CaptionServiceTest.getCaptions" />
