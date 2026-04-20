@@ -3,6 +3,7 @@ package aiss.peertubeminer.service.peertube;
 import aiss.peertubeminer.model.peertube.Caption;
 import aiss.peertubeminer.model.peertube.CaptionData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,7 +14,8 @@ public class CaptionService {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String BASE_URL = "https://peertube.tv/api/v1/";
+    @Value("${peertubeminer.baseuri}")
+    private static String BASE_URL;
 
     // Get the captions of a video
     public List<Caption> getVideoCaptions(String id) {

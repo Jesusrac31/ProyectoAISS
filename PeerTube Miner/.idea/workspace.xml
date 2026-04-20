@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Change ports as demo video, improving controller and fixing minor errors">
+      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
