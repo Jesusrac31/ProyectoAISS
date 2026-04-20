@@ -2,7 +2,7 @@ package aiss.peertubeminer.controller;
 
 import aiss.peertubeminer.model.peertube.Channel;
 import aiss.peertubeminer.model.videominer.ChannelVM;
-import aiss.peertubeminer.service.ChannelService;
+import aiss.peertubeminer.service.peertube.ChannelService;
 import aiss.peertubeminer.etl.TranslationPTtoVMService;
 import aiss.peertubeminer.service.VideominerService;
 import org.springframework.beans.factory.annotation.Autowired;
