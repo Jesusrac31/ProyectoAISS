@@ -17,7 +17,7 @@ public class CommentService {
     RestTemplate restTemplate;
 
     @Value("${peertubeminer.baseuri}")
-    private static String BASE_URL;
+    private String BASE_URL;
 
     // Get the comments of a video
     public List<Comment> getVideoComments(String id, int maxComments) {

@@ -12,7 +12,7 @@ public class VideominerService {
     RestTemplate restTemplate;
 
     @Value("${videominer.uri}")
-    private static String BASE_URL;
+    private String BASE_URL;
 
     public ChannelVM postChannel(ChannelVM channel){
         String uri = BASE_URL;

@@ -15,11 +15,12 @@ public class CaptionService {
     RestTemplate restTemplate;
 
     @Value("${peertubeminer.baseuri}")
-    private static String BASE_URL;
+    private String BASE_URL;
 
     // Get the captions of a video
     public List<Caption> getVideoCaptions(String id) {
         String uri = BASE_URL + "videos/" + id + "/captions";
+        System.out.println(uri);
         CaptionData data = restTemplate.getForObject(uri, CaptionData.class);
         assert data != null;
         return data.getData();

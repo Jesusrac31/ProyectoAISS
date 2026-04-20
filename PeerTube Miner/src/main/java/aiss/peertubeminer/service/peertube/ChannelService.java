@@ -16,7 +16,7 @@ public class ChannelService {
     RestTemplate restTemplate;
 
     @Value("${peertubeminer.baseuri}")
-    private static String BASE_URL;
+    private String BASE_URL;
 
     @Autowired
     VideoService videoService;

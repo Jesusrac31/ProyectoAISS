@@ -23,7 +23,7 @@ public class VideoService {
     CaptionService captionService;
 
     @Value("${peertubeminer.baseuri}")
-    private static String BASE_URL;
+    private String BASE_URL;
 
     // Get the videos of a channel given the channelHandler
     public List<Video> getChannelVideos(String channelHandler, int maxVideos) {

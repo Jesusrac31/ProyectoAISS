@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Change ports as demo video, improving controller and fixing minor errors">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" afterDir="false" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Change Services and application.properties">
+      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -83,7 +79,7 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.PeerTube Miner">
+  <component name="RunManager" selected="JUnit.CaptionServiceTest.getCaptions">
     <configuration name="CaptionServiceTest.getCaptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />
       <extension name="coverage">
@@ -246,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776411783311</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change Services and application.properties">
+      <option name="closed" value="true" />
+      <created>1776694862042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776694862042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +273,7 @@
     <MESSAGE value="Add comments to services and change id property type" />
     <MESSAGE value="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories" />
     <MESSAGE value="Change ports as demo video, improving controller and fixing minor errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change ports as demo video, improving controller and fixing minor errors" />
+    <MESSAGE value="Change Services and application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Services and application.properties" />
   </component>
 </project>
