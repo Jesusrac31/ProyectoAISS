@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.repository;
 
-import aiss.dailymotionminer.model.videominer.Comment;
+import aiss.dailymotionminer.model.videominer.CommentVM;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,33 +9,33 @@ import java.util.UUID;
 
 @Repository
 public class CommentRepository {
-    List<Comment> comments = new ArrayList<>();
+    List<CommentVM> comments = new ArrayList<>();
 
     public CommentRepository() {
         // Mock data for testing
         comments.add(
-                new Comment(
+                new CommentVM(
                         "ForTests",
                         "Great video",
                         "2026-01-10T10:00:00Z"
                 )
         );
         comments.add(
-                new Comment(
+                new CommentVM(
                         UUID.randomUUID().toString(),
                         "Great video",
                         "2026-01-10T10:00:00Z"
                 )
         );
         comments.add(
-                new Comment(
+                new CommentVM(
                         UUID.randomUUID().toString(),
                         "Very useful",
                         "2026-01-11T10:00:00Z"
                 )
         );
         comments.add(
-                new Comment(
+                new CommentVM(
                         UUID.randomUUID().toString(),
                         "Thanks for sharing",
                         "2026-01-12T10:00:00Z"
@@ -45,12 +45,12 @@ public class CommentRepository {
 
     // Find all operation, you will be able to obtain all comments stored
     // For now, this operation returns the info in list comments
-    public List<Comment> findAll() {
+    public List<CommentVM> findAll() {
         return comments;
     }
 
     // Find one comment with some specific id
-    public Comment findOneById(String id) {
+    public CommentVM findOneById(String id) {
         return comments.stream()
                 .filter(comment -> comment.getId().equals(id))
                 .findFirst()
@@ -58,8 +58,8 @@ public class CommentRepository {
     }
 
     // Create some comment which is passed as a parameter
-    public Comment create(Comment comment) {
-        Comment newComment = new Comment(
+    public CommentVM create(CommentVM comment) {
+        CommentVM newComment = new CommentVM(
                 UUID.randomUUID().toString(),
                 comment.getText(),
                 comment.getCreatedOn()
@@ -69,8 +69,8 @@ public class CommentRepository {
     }
 
     // Updates some comment with some id
-    public void update(Comment updatedComment, String id) {
-        Comment existingComment = findOneById(id);
+    public void update(CommentVM updatedComment, String id) {
+        CommentVM existingComment = findOneById(id);
         int i = comments.indexOf(existingComment);
         updatedComment.setId(existingComment.getId());
         comments.set(i, updatedComment);

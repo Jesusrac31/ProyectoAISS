@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Change ports as demo video, improving controller and fixing minor errors">
+      <change afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelControllerOld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CaptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CaptionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CaptionServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +31,19 @@
     &quot;assignee&quot;: &quot;alegp06&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
-    "accountId": "30d1b6bf-5b86-4024-9498-b3ceec8713fb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
+    &quot;accountId&quot;: &quot;f5b4bad7-3524-4db6-a5d8-fd2316927c39&quot;
   }
-}]]></component>
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -58,25 +59,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.CaptionServiceTest.getCaptions.executor": "Run",
-    "JUnit.ChannelServiceTest.findChannel.executor": "Run",
-    "JUnit.ChannelServiceTest.getCompleteChannelInfo.executor": "Run",
-    "JUnit.CommentServiceTest.getComments.executor": "Run",
-    "JUnit.VideoServiceTest.getChannelVideos.executor": "Run",
-    "JUnit.VideoServiceTest.getCompleteVideoInfo.executor": "Run",
-    "JUnit.VideoServiceTest.getVideo.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.PeerTube Miner.executor": "Run",
-    "Spring Boot.Unnamed.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CaptionServiceTest.getCaptions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChannelServiceTest.findChannel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChannelServiceTest.getCompleteChannelInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommentServiceTest.getComments.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getChannelVideos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getCompleteVideoInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getVideo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PeerTube Miner.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.PeerTube Miner">
     <configuration name="CaptionServiceTest.getCaptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />

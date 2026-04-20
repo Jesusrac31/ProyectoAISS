@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.repository;
 
-import aiss.dailymotionminer.model.videominer.Channel;
+import aiss.dailymotionminer.model.videominer.ChannelVM;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import java.util.UUID;
 
 @Repository
 public class ChannelRepository {
-    List<Channel> channels = new ArrayList<>();
+    List<ChannelVM> channels = new ArrayList<>();
 
     public ChannelRepository() {
         // Mock data for testing
         channels.add(
-                new Channel(
+                new ChannelVM(
                         "ForTests",
                         "Tech Reviews",
                         "Technology channel",
@@ -22,7 +22,7 @@ public class ChannelRepository {
                 )
         );
         channels.add(
-                new Channel(
+                new ChannelVM(
                         UUID.randomUUID().toString(),
                         "Tech Reviews",
                         "Technology channel",
@@ -30,7 +30,7 @@ public class ChannelRepository {
                 )
         );
         channels.add(
-                new Channel(
+                new ChannelVM(
                         UUID.randomUUID().toString(),
                         "Daily News",
                         "News channel",
@@ -38,7 +38,7 @@ public class ChannelRepository {
                 )
         );
         channels.add(
-                new Channel(
+                new ChannelVM(
                         UUID.randomUUID().toString(),
                         "Music Lab",
                         "Music channel",
@@ -49,12 +49,12 @@ public class ChannelRepository {
 
     // Find all operation, you will be able to obtain all channels stored
     // For now, this operation returns the info in list channels
-    public List<Channel> findAll() {
+    public List<ChannelVM> findAll() {
         return channels;
     }
 
     // Find one channel with some specific id
-    public Channel findOneById(String id) {
+    public ChannelVM findOneById(String id) {
         return channels.stream()
                 .filter(channel -> channel.getId().equals(id))
                 .findFirst()
@@ -62,8 +62,8 @@ public class ChannelRepository {
     }
 
     // Create some channel which is passed as a parameter
-    public Channel create(Channel channel) {
-        Channel newChannel = new Channel(
+    public ChannelVM create(ChannelVM channel) {
+        ChannelVM newChannel = new ChannelVM(
                 UUID.randomUUID().toString(),
                 channel.getName(),
                 channel.getDescription(),
@@ -75,8 +75,8 @@ public class ChannelRepository {
     }
 
     // Updates some channel with some id
-    public void update(Channel updatedChannel, String id) {
-        Channel existingChannel = findOneById(id);
+    public void update(ChannelVM updatedChannel, String id) {
+        ChannelVM existingChannel = findOneById(id);
         int i = channels.indexOf(existingChannel);
         updatedChannel.setId(existingChannel.getId());
         channels.set(i, updatedChannel);

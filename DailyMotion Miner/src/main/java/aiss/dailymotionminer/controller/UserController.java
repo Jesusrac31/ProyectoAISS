@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.controller;
 
-import aiss.dailymotionminer.model.videominer.User;
+import aiss.dailymotionminer.model.videominer.UserVM;
 import aiss.dailymotionminer.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class UserController {
     // For some GET operation
     // If success, return 200 by default
     @GetMapping
-    public List<User> findAll(){
+    public List<UserVM> findAll(){
         return userRepository.findAll();
     }
 
     // For some GET operation with some ID as a path variable
     // If success, return 200 by default
     @GetMapping("/{id}")
-    public User findById(@PathVariable Long id){
+    public UserVM findById(@PathVariable Long id){
         return userRepository.findOneById(id);
     }
 
@@ -38,13 +38,13 @@ public class UserController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public User create(@Valid @RequestBody User user) { return userRepository.create(user); }
+    public UserVM create(@Valid @RequestBody UserVM user) { return userRepository.create(user); }
 
     // For some PUT operation with some ID as a path variable
     // If success, return 204 status
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@Valid @RequestBody User user, @PathVariable Long id) { userRepository.update(user, id); }
+    public void update(@Valid @RequestBody UserVM user, @PathVariable Long id) { userRepository.update(user, id); }
 
     // For some Delete operation with some ID as a path variable
     // If success, return 204 status

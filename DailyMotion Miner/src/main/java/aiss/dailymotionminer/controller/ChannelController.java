@@ -1,60 +1,44 @@
 package aiss.dailymotionminer.controller;
 
-import aiss.dailymotionminer.model.videominer.Channel;
-import aiss.dailymotionminer.repository.ChannelRepository;
-import jakarta.validation.Valid;
+import aiss.dailymotionminer.etl.TranslationDMtoVMService;
+import aiss.dailymotionminer.model.videominer.ChannelVM;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import aiss.dailymotionminer.model.dailymotion.Channel;
 
 @RestController
-@RequestMapping("/api/channels") // The path where you can access to this part of the API
+@RequestMapping("/dailymotion")
 public class ChannelController {
-    private final ChannelRepository channelRepository; // Storage of the info obtained
+    // (1!!!)
+    private final ChannelService channelService; // The name depends on the Services that will be created in the future
+    private final VideominerService videominerService; //This service will be created by Yahur
 
-    // Constructor of the controller, from one repository, it creates the controller in order to make possible the communication
+
+    // Constructor of the controller is created. Instantiates service classes which allow to communicate with the APIs
     @Autowired
-    public ChannelController(ChannelRepository channelRepository) {
-        this.channelRepository = channelRepository;
+    public ChannelController(ChannelService channelService, VideominerService videominerService){ // (1!!!)
+        this.channelService = channelService;
+        this.videominerService= videominerService;
     }
 
-    // For some GET operation
-    // If success, return 200 by default
-    @GetMapping
-    public List<Channel> findAll() {
-        return channelRepository.findAll();
+    // GET operation for the channel given its ID
+    // If success, returns 200 by default
+    @GetMapping("/{channelId}")
+    public ChannelVM getChannel(@PathVariable(value = "channelId") String id,
+                                @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
+                                @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
+        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
+        return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
     }
 
-    // For some GET operation with some ID as a path variable
-    // If success, return 200 by default
-    @GetMapping("/{id}")
-    public Channel findById(@PathVariable String id) {
-        return channelRepository.findOneById(id);
-    }
-
-    // For some POST operation
-    // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public Channel create(@Valid @RequestBody Channel channel) {
-        return channelRepository.create(channel);
-    }
-
-    // For some PUT operation with some ID as a path variable
-    // If success, return 204 status
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/{id}")
-    public void update(@Valid @RequestBody Channel channel, @PathVariable String id) {
-        channelRepository.update(channel, id);
-    }
-
-    // For some Delete operation with some ID as a path variable
-    // If success, return 204 status
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
-        channelRepository.delete(id);
+    @PostMapping("/{channelId}")
+    public ChannelVM postChannel(@PathVariable(value = "channelId") String channelId,
+                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
+                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
+        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments); // ATTENTION! The name of the classes/methods can change
+        ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
+        return videominerService.postChannel(channelVM); // ATTENTION! The name of the method can change
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
  */
 // This is the Channel class, it is used for obtaining information of channels that will be shared to video miner
 // Once you obtain the information from the API, a service will transform those models into these
-public class Channel {
+public class ChannelVM {
 
     // The five properties in the data model
     private String id;
@@ -18,7 +18,7 @@ public class Channel {
     private List<Video> videos;
 
     // Constructor
-    public Channel(String id, String name, String description, String createdTime) {
+    public ChannelVM(String id, String name, String description, String createdTime) {
         this.id = id;
         this.name = name;
         this.description = description;
