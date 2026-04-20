@@ -1,0 +1,2 @@
+- [ ] Make ids generate automatically
+- [ ] Validations
