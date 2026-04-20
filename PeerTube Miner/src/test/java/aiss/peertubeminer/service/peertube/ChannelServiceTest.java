@@ -24,7 +24,7 @@ class ChannelServiceTest {
     @Test
     @DisplayName("Get channel with complete information")
     void getCompleteChannelInfo() {
-        Channel channel = service.getCompleteChannelInfo("bloodaxegamingnor@peertube.linuxrocks.online",2,10 );
+        Channel channel = service.getCompleteChannelInfo("tv",2,10 );
         assertNotNull(channel);
         System.out.println("Total number of videos retrieved: " + channel.getVideos().size());
         System.out.println(channel);

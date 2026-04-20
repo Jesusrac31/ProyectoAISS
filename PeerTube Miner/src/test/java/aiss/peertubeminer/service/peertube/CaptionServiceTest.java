@@ -16,7 +16,7 @@ class CaptionServiceTest {
     @Test
     @DisplayName("Get video captions")
     void getCaptions() {
-        List<Caption> captions = service.getVideoCaptions("samGb77rmc7VZKtiMcfXnM");
+        List<Caption> captions = service.getVideoCaptions("21856");
         System.out.println(captions);
     }
 }
