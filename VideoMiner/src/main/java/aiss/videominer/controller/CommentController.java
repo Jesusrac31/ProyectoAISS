@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@Tag(name = "Comment", description = "Comment manegement API")
+@Tag(name = "Comment", description = "Comment management API")
 @RestController
 @RequestMapping("videominer/api/v1")
 public class CommentController {
@@ -35,7 +35,7 @@ public class CommentController {
     @Operation(
             summary = "Retrieve a list of comments",
             description = "Get a list of comments",
-            tags = { "comments", "get" }
+            tags = { "GET" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")})
@@ -49,7 +49,7 @@ public class CommentController {
     @Operation(
             summary = "Retrieve comment by id",
             description = "Get a comment by specifying its id",
-            tags = { "comments", "get" }
+            tags = { "GET" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")}),
@@ -71,7 +71,7 @@ public class CommentController {
     @Operation(
             summary = "Retrieve video comments",
             description = "Get the list of comments of a video by specifying its id",
-            tags = { "comments", "get" }
+            tags = { "GET" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")}),
@@ -93,7 +93,7 @@ public class CommentController {
     @Operation(
             summary = "Add comment to video",
             description = "Add a comment to a video by specifying its id",
-            tags = { "comments", "post" }
+            tags = { "POST" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "201", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")}),
@@ -118,7 +118,7 @@ public class CommentController {
     @Operation(
             summary = "Update comment",
             description = "Update a comment by specifying its id",
-            tags = { "comments", "put" }
+            tags = { "PUT" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "204", content = { @Content(schema = @Schema())}),
@@ -145,7 +145,7 @@ public class CommentController {
     @Operation(
             summary = "Delete comment",
             description = "Delete a comment by specifying its id",
-            tags = { "comments", "delete" }
+            tags = { "DELETE" }
     )
     @ApiResponses({
             @ApiResponse(responseCode = "204", content = { @Content(schema = @Schema())}),
