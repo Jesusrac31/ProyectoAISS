@@ -1,4 +1,4 @@
-package aiss.peertubeminer.service;
+package aiss.peertubeminer.service.peertube;
 
 import aiss.peertubeminer.model.peertube.Comment;
 import org.junit.jupiter.api.DisplayName;

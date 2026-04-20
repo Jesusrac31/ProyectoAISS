@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideominerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Change ports as demo video, improving controller and fixing minor errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CaptionController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/VideoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CaptionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/repository/VideoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/TranslationPTtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CaptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CaptionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CaptionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/ChannelServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/peertubeminer/service/VideoServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +37,12 @@
     &quot;assignee&quot;: &quot;alegp06&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
-    &quot;accountId&quot;: &quot;3ad1d27d-8956-415b-a9f0-fbb0e2e63053&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
+    "accountId": "30d1b6bf-5b86-4024-9498-b3ceec8713fb"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -74,8 +69,10 @@
     "JUnit.VideoServiceTest.getVideo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.PeerTube Miner.executor": "Run",
     "Spring Boot.Unnamed.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
@@ -89,8 +86,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.CaptionServiceTest" />
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service.peertube" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.peertube.CaptionServiceTest" />
       <option name="METHOD_NAME" value="getCaptions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -105,8 +102,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.CommentServiceTest" />
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service.peertube" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.peertube.CommentServiceTest" />
       <option name="METHOD_NAME" value="getComments" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -121,8 +118,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service.peertube" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.peertube.VideoServiceTest" />
       <option name="METHOD_NAME" value="getChannelVideos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -137,8 +134,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service.peertube" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.peertube.VideoServiceTest" />
       <option name="METHOD_NAME" value="getCompleteVideoInfo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -153,8 +150,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service" />
-      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.VideoServiceTest" />
+      <option name="PACKAGE_NAME" value="aiss.peertubeminer.service.peertube" />
+      <option name="MAIN_CLASS_NAME" value="aiss.peertubeminer.service.peertube.VideoServiceTest" />
       <option name="METHOD_NAME" value="getVideo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -235,8 +232,19 @@
       <option name="project" value="LOCAL" />
       <updated>1776109374101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change ports as demo video, improving controller and fixing minor errors">
+      <option name="closed" value="true" />
+      <created>1776411783311</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776411783311</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -254,6 +262,7 @@
     <MESSAGE value="Added @Bean in PeertubeminerApplication.java" />
     <MESSAGE value="Add comments to services and change id property type" />
     <MESSAGE value="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories" />
+    <MESSAGE value="Change ports as demo video, improving controller and fixing minor errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change ports as demo video, improving controller and fixing minor errors" />
   </component>
 </project>
