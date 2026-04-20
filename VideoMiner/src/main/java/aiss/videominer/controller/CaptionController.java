@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apipath")
+@RequestMapping("videominer/api/v1")
 public class CaptionController {
 
 //    It shall implement, at a minimum, several read operations to list all captions (DONE),
