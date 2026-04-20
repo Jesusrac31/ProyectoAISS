@@ -1,48 +1,45 @@
-package aiss.dailymotionminer.model.API;
+package aiss.dailymotionminer.model.dailymotion;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * @author Juan C. Alonso
- */
-@Entity
-@Table(name = "Caption")
-public class Caption {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Subtitle {
 
-    @Id
     @JsonProperty("id")
     private String id;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("url")
+    private String url;
 
     @JsonProperty("language")
     private String language;
 
-
+    @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    @JsonProperty("url")
+    public String getUrl() { return url; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @JsonProperty("url")
+    public void setUrl() { this.url = url; }
 
+    @JsonProperty("language")
     public String getLanguage() {
         return language;
     }
 
+    @JsonProperty("language")
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -51,7 +48,7 @@ public class Caption {
     public String toString() {
         return "Caption{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
                 ", language='" + language + '\'' +
                 '}';
     }

@@ -1,11 +1,11 @@
-
-package aiss.peertubeminer.model.peertube;
-
-import java.util.List;
+package aiss.dailymotionminer.model.dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotEmpty;
+
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Channel {
@@ -13,17 +13,18 @@ public class Channel {
     @JsonProperty("id")
     private String id;
     @JsonProperty("name")
+    @NotEmpty(message = "Channel name cannot be empty")
     private String name;
     @JsonProperty("description")
     private String description;
-    @JsonProperty("createdAt")
+
+    // Not included in response. If not found in the JSON, assigned as null
     private String createdAt;
 
-    // Create variable videos to store channel videos (Does not come in JSON response)
+    // Not included in response
     @JsonIgnore
     private List<Video> videos;
 
-    //Getters and Setters
     @JsonProperty("id")
     public String getId() {
         return id;
@@ -54,23 +55,19 @@ public class Channel {
         this.description = description;
     }
 
-    @JsonProperty("createdAt")
-    public String getCreatedAt() {
-        return createdAt;
-    }
+    @JsonIgnore
+    public String getCreatedAt() { return createdAt; }
 
-    @JsonProperty("createdAt")
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
+    @JsonIgnore
+    public void setCreatedAt( String createdAt) { this.createdAt = createdAt; }
 
-    // Getter for created variable 'videos'
+    // Getter for new variable
     @JsonIgnore
     public List<Video> getVideos() {
         return videos;
     }
 
-    // Setter for created variable 'videos'
+    // Setter for new variable
     @JsonIgnore
     public void setVideos(List<Video> videos) {
         this.videos = videos;
@@ -78,13 +75,12 @@ public class Channel {
 
     @Override
     public String toString() {
-        return "Channel {\n" +
-                "id=" + id + ",\n" +
-                "name=" + name + ",\n" +
-                "description=" + description + ",\n" +
-                "createdAt=" + createdAt + ",\n" +
-                "videos=" + videos + "\n" +
-                "}";
+        return "Channel{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", videos=" + videos +
+                ", createdAt=" + createdAt + '\'' +
+                '}';
     }
-
 }
