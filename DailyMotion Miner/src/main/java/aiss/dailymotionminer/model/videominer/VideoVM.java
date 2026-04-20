@@ -8,19 +8,19 @@ import java.util.List;
  */
 // This is the Video class, it is used for obtaining information of videos that will be shared to video miner
 // Once you obtain the information from the API, a service will transform those models into these
-public class Video {
+public class VideoVM {
 
     // The seven properties in the data model
     private String id;
     private String name;
     private String description;
     private String releaseTime;
-    private User author;
-    private List<Comment> comments;
-    private List<Caption> captions;
+    private UserVM author;
+    private List<CommentVM> comments;
+    private List<CaptionVM> captions;
 
     // Constructor
-    public Video(String id, String name, String description, String releaseTime) {
+    public VideoVM(String id, String name, String description, String releaseTime) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -63,27 +63,27 @@ public class Video {
         this.releaseTime = releaseTime;
     }
 
-    public User getAuthor() {
+    public UserVM getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(UserVM author) {
         this.author = author;
     }
     
-    public List<Comment> getComments() {
+    public List<CommentVM> getComments() {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(List<CommentVM> comments) {
         this.comments = comments;
     }
 
-    public List<Caption> getCaptions() {
+    public List<CaptionVM> getCaptions() {
         return captions;
     }
 
-    public void setCaptions(List<Caption> captions) {
+    public void setCaptions(List<CaptionVM> captions) {
         this.captions = captions;
     }
 

@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.controller;
 
-import aiss.dailymotionminer.model.videominer.Caption;
+import aiss.dailymotionminer.model.videominer.CaptionVM;
 import aiss.dailymotionminer.repository.CaptionRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class CaptionController {
     // For some GET operation
     // If success, return 200 by default
     @GetMapping
-    public List<Caption> findAll() {
+    public List<CaptionVM> findAll() {
         return captionRepository.findAll();
     }
 
     // For some GET operation with some ID as a path variable
     // If success, return 200 by default
     @GetMapping("/{id}")
-    public Caption findById(@PathVariable String id) {
+    public CaptionVM findById(@PathVariable String id) {
         return captionRepository.findOneById(id);
     }
 
@@ -38,7 +38,7 @@ public class CaptionController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public Caption create(@Valid @RequestBody Caption caption) {
+    public CaptionVM create(@Valid @RequestBody CaptionVM caption) {
         return captionRepository.create(caption);
     }
 
@@ -46,7 +46,7 @@ public class CaptionController {
     // If success, return 204 status
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@Valid @RequestBody Caption caption, @PathVariable String id) {
+    public void update(@Valid @RequestBody CaptionVM caption, @PathVariable String id) {
         captionRepository.update(caption, id);
     }
 

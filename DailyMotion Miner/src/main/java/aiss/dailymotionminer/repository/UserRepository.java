@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.repository;
 
-import aiss.dailymotionminer.model.videominer.User;
+import aiss.dailymotionminer.model.videominer.UserVM;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import java.util.UUID;
 
 @Repository
 public class UserRepository {
-    List<User> users = new ArrayList<>();
+    List<UserVM> users = new ArrayList<>();
 
     public UserRepository(){
         // Mock data for testing
         users.add( // Mock data have 3 users: User1, User2 and User 3
-                new User( // The creation of a user is composed by an ID, some name, user_link and picture_link
+                new UserVM( // The creation of a user is composed by an ID, some name, user_link and picture_link
                         1L,
                         "Test1",
                         "http://UserLink1.com",
@@ -23,7 +23,7 @@ public class UserRepository {
         );
         // Repeat for each user
         users.add(
-                new User(
+                new UserVM(
                         Math.abs(UUID.randomUUID().getMostSignificantBits()),
                         "Test2",
                         "http://UserLink2.com",
@@ -31,7 +31,7 @@ public class UserRepository {
                 )
         );
         users.add(
-                new User(
+                new UserVM(
                         Math.abs(UUID.randomUUID().getMostSignificantBits()),
                         "Test3",
                         "http://UserLink3.com",
@@ -42,10 +42,10 @@ public class UserRepository {
 
     // Find all operation, you will be able to obtain all users stored
     // For now, this operation returns the info in list users
-    public List<User> findAll() { return users; }
+    public List<UserVM> findAll() { return users; }
 
     // Find one user with some specific id
-    public User findOneById(Long id) {
+    public UserVM findOneById(Long id) {
         return users.stream() // Use streams for obtaining one user
                 .filter(user -> user.getId().equals(id)) // Filter to all users with some specific id
                 .findFirst() // Find the first user with such id
@@ -53,8 +53,8 @@ public class UserRepository {
     }
 
     // Create some user which is passed as a parameter
-    public User create(User user){
-        User newUser = new User(
+    public UserVM create(UserVM user){
+        UserVM newUser = new UserVM(
                 Math.abs(UUID.randomUUID().getMostSignificantBits()), // The UUID is a Long type
                 user.getName(),
                 user.getUser_link(),
@@ -65,8 +65,8 @@ public class UserRepository {
     }
 
     // Updates some user with some id
-    public void update(User updatedUser, Long id) {
-        User existingUser = findOneById(id);
+    public void update(UserVM updatedUser, Long id) {
+        UserVM existingUser = findOneById(id);
         int i = users.indexOf(existingUser);
         updatedUser.setId(existingUser.getId());
         users.set(i, updatedUser);

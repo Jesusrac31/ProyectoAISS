@@ -1,26 +1,25 @@
-package aiss.dailymotionminer.model.API;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
+package aiss.dailymotionminer.model.videominer;
 
 /**
  * @author Juan C. Alonso
  */
-@Entity
-@Table(name = "Comment")
-public class Comment {
+// This is the Comment class, it is used for obtaining information of comments that will be shared to video miner
+// Once you obtain the information from the API, a service will transform those models into these
+public class CommentVM {
 
-    @Id
-    @JsonProperty("id")
+    // The three properties in the data model
     private String id;
-
-    @JsonProperty("text")
-    @Column(columnDefinition="TEXT")
     private String text;
-
-    @JsonProperty("createdOn")
     private String createdOn;
 
+    // Constructor
+    public CommentVM(String id, String text, String createdOn) {
+        this.id = id;
+        this.text = text;
+        this.createdOn = createdOn;
+    }
+
+    // Setters and getters
     public String getId() {
         return id;
     }
@@ -46,6 +45,7 @@ public class Comment {
     }
 
 
+    // Way of representing the class as a string
     @Override
     public String toString() {
         return "Comment{" +

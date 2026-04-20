@@ -3,6 +3,7 @@ package aiss.peertubeminer.service.peertube;
 import aiss.peertubeminer.model.peertube.Comment;
 import aiss.peertubeminer.model.peertube.CommentData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +16,8 @@ public class CommentService {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String BASE_URL = "https://peertube.tv/api/v1/";
+    @Value("${peertubeminer.baseuri}")
+    private String BASE_URL;
 
     // Get the comments of a video
     public List<Comment> getVideoComments(String id, int maxComments) {

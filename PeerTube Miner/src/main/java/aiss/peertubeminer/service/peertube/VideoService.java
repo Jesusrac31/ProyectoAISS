@@ -5,6 +5,7 @@ import aiss.peertubeminer.model.peertube.Comment;
 import aiss.peertubeminer.model.peertube.Video;
 import aiss.peertubeminer.model.peertube.VideoData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -21,7 +22,8 @@ public class VideoService {
     @Autowired
     CaptionService captionService;
 
-    private static final String BASE_URL = "https://peertube.tv/api/v1/";
+    @Value("${peertubeminer.baseuri}")
+    private String BASE_URL;
 
     // Get the videos of a channel given the channelHandler
     public List<Video> getChannelVideos(String channelHandler, int maxVideos) {

@@ -1,82 +1,74 @@
-package aiss.dailymotionminer.model.API;
+package aiss.dailymotionminer.model.dailymotion;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Juan C. Alonso
- */
-@Entity
-@Table(name = "Channel")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Channel {
 
-    @Id
     @JsonProperty("id")
     private String id;
-
     @JsonProperty("name")
     @NotEmpty(message = "Channel name cannot be empty")
     private String name;
-
     @JsonProperty("description")
-    @Column(columnDefinition="TEXT")
     private String description;
 
-    @JsonProperty("createdTime")
-    @NotEmpty(message = "Channel creation time cannot be empty")
-    private String createdTime;
+    // Not included in response. If not found in the JSON, assigned as null
+    private String createdAt;
 
-    @JsonProperty("videos")
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "channelId")
-    @NotNull(message = "Channel videos cannot be null")
+    // Not included in response
+    @JsonIgnore
     private List<Video> videos;
 
-    public Channel() {
-        this.videos = new ArrayList<>();
-    }
-
+    @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
     }
 
+    @JsonProperty("name")
     public String getName() {
         return name;
     }
 
+    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @JsonProperty("description")
     public String getDescription() {
         return description;
     }
 
+    @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getCreatedTime() {
-        return createdTime;
-    }
+    @JsonIgnore
+    public String getCreatedAt() { return createdAt; }
 
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
-    }
+    @JsonIgnore
+    public void setCreatedAt( String createdAt) { this.createdAt = createdAt; }
 
+    // Getter for new variable
+    @JsonIgnore
     public List<Video> getVideos() {
         return videos;
     }
 
+    // Setter for new variable
+    @JsonIgnore
     public void setVideos(List<Video> videos) {
         this.videos = videos;
     }
@@ -87,8 +79,8 @@ public class Channel {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", createdTime='" + createdTime + '\'' +
                 ", videos=" + videos +
+                ", createdAt=" + createdAt + '\'' +
                 '}';
     }
 }

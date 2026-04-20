@@ -3,6 +3,7 @@ package aiss.peertubeminer.service.peertube;
 import aiss.peertubeminer.model.peertube.Channel;
 import aiss.peertubeminer.model.peertube.Video;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,7 +15,9 @@ public class ChannelService {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String BASE_URL = "https://peertube.tv/api/v1/";
+    @Value("${peertubeminer.baseuri}")
+    private String BASE_URL;
+
     @Autowired
     VideoService videoService;
     // Retrieves complete information of a channel,
