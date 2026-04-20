@@ -2,6 +2,7 @@ package aiss.dailymotionminer.controller;
 
 import aiss.dailymotionminer.etl.TranslationDMtoVMService;
 import aiss.dailymotionminer.model.videominer.ChannelVM;
+import aiss.dailymotionminer.service.VideominerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import aiss.dailymotionminer.model.dailymotion.Channel;
 public class ChannelController {
     // (1!!!)
     private final ChannelService channelService; // The name depends on the Services that will be created in the future
-    private final VideominerService videominerService; //This service will be created by Yahur
+    private final VideominerService videominerService;
 
 
     // Constructor of the controller is created. Instantiates service classes which allow to communicate with the APIs
@@ -39,6 +40,6 @@ public class ChannelController {
                                  @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
         Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments); // ATTENTION! The name of the classes/methods can change
         ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
-        return videominerService.postChannel(channelVM); // ATTENTION! The name of the method can change
+        return videominerService.postChannel(channelVM);
     }
 }
