@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.repository;
 
-import aiss.dailymotionminer.model.videominer.Video;
+import aiss.dailymotionminer.model.videominer.VideoVM;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import java.util.UUID;
 
 @Repository
 public class VideoRepository {
-    List<Video> videos = new ArrayList<>();
+    List<VideoVM> videos = new ArrayList<>();
 
     public VideoRepository() {
         // Mock data for testing
         videos.add(
-                new Video(
+                new VideoVM(
                         "ForTests",
                         "ForTesting",
                         "Basics of Spring Boot",
@@ -22,7 +22,7 @@ public class VideoRepository {
                 )
         );
         videos.add(
-                new Video(
+                new VideoVM(
                         UUID.randomUUID().toString(),
                         "Spring Boot Intro",
                         "Basics of Spring Boot",
@@ -30,7 +30,7 @@ public class VideoRepository {
                 )
         );
         videos.add(
-                new Video(
+                new VideoVM(
                         UUID.randomUUID().toString(),
                         "REST API Guide",
                         "How to build REST APIs",
@@ -38,7 +38,7 @@ public class VideoRepository {
                 )
         );
         videos.add(
-                new Video(
+                new VideoVM(
                         UUID.randomUUID().toString(),
                         "JPA Mapping",
                         "Entity relationships",
@@ -49,12 +49,12 @@ public class VideoRepository {
 
     // Find all operation, you will be able to obtain all videos stored
     // For now, this operation returns the info in list videos
-    public List<Video> findAll() {
+    public List<VideoVM> findAll() {
         return videos;
     }
 
     // Find one video with some specific id
-    public Video findOneById(String id) {
+    public VideoVM findOneById(String id) {
         return videos.stream()
                 .filter(video -> video.getId().equals(id))
                 .findFirst()
@@ -62,8 +62,8 @@ public class VideoRepository {
     }
 
     // Create some video which is passed as a parameter
-    public Video create(Video video) {
-        Video newVideo = new Video(
+    public VideoVM create(VideoVM video) {
+        VideoVM newVideo = new VideoVM(
                 UUID.randomUUID().toString(),
                 video.getName(),
                 video.getDescription(),
@@ -77,8 +77,8 @@ public class VideoRepository {
     }
 
     // Updates some video with some id
-    public void update(Video updatedVideo, String id) {
-        Video existingVideo = findOneById(id);
+    public void update(VideoVM updatedVideo, String id) {
+        VideoVM existingVideo = findOneById(id);
         int i = videos.indexOf(existingVideo);
         updatedVideo.setId(existingVideo.getId());
         videos.set(i, updatedVideo);

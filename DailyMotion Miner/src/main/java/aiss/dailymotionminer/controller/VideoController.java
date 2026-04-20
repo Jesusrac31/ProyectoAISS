@@ -1,6 +1,6 @@
 package aiss.dailymotionminer.controller;
 
-import aiss.dailymotionminer.model.videominer.Video;
+import aiss.dailymotionminer.model.videominer.VideoVM;
 import aiss.dailymotionminer.repository.VideoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class VideoController {
     // For some GET operation
     // If success, return 200 by default
     @GetMapping
-    public List<Video> findAll() {
+    public List<VideoVM> findAll() {
         return videoRepository.findAll();
     }
 
     // For some GET operation with some ID as a path variable
     // If success, return 200 by default
     @GetMapping("/{id}")
-    public Video findById(@PathVariable String id) {
+    public VideoVM findById(@PathVariable String id) {
         return videoRepository.findOneById(id);
     }
 
@@ -38,7 +38,7 @@ public class VideoController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public Video create(@Valid @RequestBody Video video) {
+    public VideoVM create(@Valid @RequestBody VideoVM video) {
         return videoRepository.create(video);
     }
 
@@ -46,7 +46,7 @@ public class VideoController {
     // If success, return 204 status
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@Valid @RequestBody Video video, @PathVariable String id) {
+    public void update(@Valid @RequestBody VideoVM video, @PathVariable String id) {
         videoRepository.update(video, id);
     }
 

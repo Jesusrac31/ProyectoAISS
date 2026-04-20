@@ -15,7 +15,7 @@ public class ChannelVM {
     private String name;
     private String description;
     private String createdTime;
-    private List<Video> videos;
+    private List<VideoVM> videos;
 
     // Constructor
     public ChannelVM(String id, String name, String description, String createdTime) {
@@ -59,11 +59,11 @@ public class ChannelVM {
         this.createdTime = createdTime;
     }
 
-    public List<Video> getVideos() {
+    public List<VideoVM> getVideos() {
         return videos;
     }
 
-    public void setVideos(List<Video> videos) {
+    public void setVideos(List<VideoVM> videos) {
         this.videos = videos;
     }
 
