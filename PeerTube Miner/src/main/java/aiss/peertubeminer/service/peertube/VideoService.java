@@ -3,9 +3,8 @@ package aiss.peertubeminer.service.peertube;
 import aiss.peertubeminer.model.peertube.Caption;
 import aiss.peertubeminer.model.peertube.Comment;
 import aiss.peertubeminer.model.peertube.Video;
-import aiss.peertubeminer.model.peertube.Video_Data;
+import aiss.peertubeminer.model.peertube.VideoData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -31,22 +30,31 @@ public class VideoService {
         // If maxVideos < 1 -> use 1 (minimum valid value)
         // Otherwise -> use maxVideos
         int count = maxVideos >= 100 ? 100 : Math.max(maxVideos, 1);
+        int start = 0;
+        boolean hasMore = true;
 
-        // Build initial request URI
-        String uri = BASE_URL + "video-channels/" + channelHandler + "/videos?count=" + count;
         // List that will store all retrieved videos
         List<Video> allVideos = new ArrayList<>();
 
-        // Continue requesting pages when there is a next page (uri != null)
+        // Continue requesting pages while there are remaining channel videos
         // and we have not reached the desired number of videos
-        while (uri != null && allVideos.size() < maxVideos) {
-            ResponseEntity<Video_Data> response = restTemplate.getForEntity(uri, Video_Data.class);
+        while (hasMore && allVideos.size() < maxVideos) {
+            // Build initial request URI
+            String uri = BASE_URL + "video-channels/" + channelHandler + "/videos?start=" + start + "&count=" + count;
+            ResponseEntity<VideoData> response = restTemplate.getForEntity(uri, VideoData.class);
 
             if (response.getBody() != null && response.getBody().getData() != null) {
                 allVideos.addAll(response.getBody().getData());
-            }
 
-            uri = getNextPageUrl(response.getHeaders());
+                int totalVideos = response.getBody().getTotal();
+                if (allVideos.size() >= totalVideos) {
+                    hasMore = false;
+                } else {
+                    start += count;
+                }
+            } else {
+                hasMore = false;
+            }
         }
 
         // If we have fetched more videos than requested, trim the list to required size
@@ -76,33 +84,5 @@ public class VideoService {
         video.setCaptions(videoCaptions);
 
         return video;
-    }
-
-    // Auxiliary function to obtain URL of next page of contents
-    public static String getNextPageUrl(HttpHeaders headers) {
-        String result = null;
-
-        // If there is no link header, return null
-        List<String> linkHeader = headers.get("Link");
-        if (linkHeader == null)
-            return null;
-
-        // If the header contains no links, return null
-        String links = linkHeader.get(0);
-        if (links == null || links.isEmpty())
-            return null;
-
-        // Return the next page URL or null if none.
-        for (String token : links.split(", ")) {
-            if (token.endsWith("rel=\"next\"")) {
-                // Found the next page. This should look something like
-                // <https://api.github.com/repos?page=3&per_page=100>; rel="next"
-                int idx = token.indexOf('>');
-                result = token.substring(1, idx);
-                break;
-            }
-        }
-
-        return result;
     }
 }

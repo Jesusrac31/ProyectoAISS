@@ -1,9 +1,8 @@
 package aiss.peertubeminer.service.peertube;
 
 import aiss.peertubeminer.model.peertube.Comment;
-import aiss.peertubeminer.model.peertube.Comment_Data;
+import aiss.peertubeminer.model.peertube.CommentData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -25,20 +24,31 @@ public class CommentService {
         // If maxComments < 1 -> use 1 (minimum valid value)
         // Otherwise -> use maxComments
         int count = maxComments >= 100 ? 100 : Math.max(maxComments, 1);
+        int start = 0;
+        boolean hasMore = true;
 
-        // Build initial request URI
-        String uri = BASE_URL + "videos/" + id + "/comment-threads?count=" + count;
         // List that will store all retrieved comments
         List<Comment> allComments = new ArrayList<>();
 
-        // Continue requesting pages when there is a next page (uri != null)
+        // Continue requesting pages while there are remaining video comments
         // and we have not reached the desired number of comments
-        while (uri != null && allComments.size()<maxComments) {
-            ResponseEntity<Comment_Data> response = restTemplate.getForEntity(uri, Comment_Data.class);
+        while (hasMore && allComments.size()<maxComments) {
+            // Build initial request URI
+            String uri = BASE_URL + "videos/" + id + "/comment-threads?start=" + start + "&count=" + count;
+            ResponseEntity<CommentData> response = restTemplate.getForEntity(uri, CommentData.class);
+
             if (response.getBody() != null && response.getBody().getData() != null) {
                 allComments.addAll(response.getBody().getData());
+
+                int totalComments = response.getBody().getTotal();
+                if (allComments.size() >= totalComments) {
+                    hasMore = false;
+                } else {
+                    start += count;
+                }
+            } else {
+                hasMore = false;
             }
-            uri = getNextPageUrl(response.getHeaders());
         }
 
         // If we have fetched more comments than requested, trim the list to required size
@@ -46,33 +56,5 @@ public class CommentService {
             allComments = allComments.subList(0, maxComments);
         }
         return allComments;
-    }
-
-    // Auxiliary function to obtain URL of next page of contents
-    public static String getNextPageUrl(HttpHeaders headers) {
-        String result = null;
-
-        // If there is no link header, return null
-        List<String> linkHeader = headers.get("Link");
-        if (linkHeader == null)
-            return null;
-
-        // If the header contains no links, return null
-        String links = linkHeader.get(0);
-        if (links == null || links.isEmpty())
-            return null;
-
-        // Return the next page URL or null if none.
-        for (String token : links.split(", ")) {
-            if (token.endsWith("rel=\"next\"")) {
-                // Found the next page. This should look something like
-                // <https://api.github.com/repos?page=3&per_page=100>; rel="next"
-                int idx = token.indexOf('>');
-                result = token.substring(1, idx);
-                break;
-            }
-        }
-
-        return result;
     }
 }

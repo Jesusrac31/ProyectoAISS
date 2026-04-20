@@ -16,7 +16,7 @@ class VideoServiceTest {
     @Test
     @DisplayName("Get all channel videos")
     void getChannelVideos() {
-        List<Video> videos = service.getChannelVideos("bloodaxegamingnor@peertube.linuxrocks.online", 1);
+        List<Video> videos = service.getChannelVideos("tv", 150);
         System.out.println("Number of videos: " + videos.size());
         System.out.println(videos);
     }

@@ -9,7 +9,7 @@ public class CaptionVM {
 
     // The three properties in the data model
     private String id;
-    private String link;    // This was name previously, Yahur changed it to link because in the document it's link, not name 
+    private String link;
     private String language;
 
     // Constructor

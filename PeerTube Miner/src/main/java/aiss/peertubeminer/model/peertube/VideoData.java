@@ -7,10 +7,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Video_Data {
+public class VideoData {
+    @JsonProperty("total")
+    private Integer total;
 
     @JsonProperty("data")
     private List<Video> data;
+
+    @JsonProperty("total")
+    public Integer getTotal() {
+        return total;
+    }
+
+    @JsonProperty("total")
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     @JsonProperty("data")
     public List<Video> getData() {
@@ -25,7 +37,11 @@ public class Video_Data {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Video_Data.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(VideoData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("total");
+        sb.append('=');
+        sb.append(((this.total == null)?"<null>":this.total));
+        sb.append(',');
         sb.append("data");
         sb.append('=');
         sb.append(((this.data == null)?"<null>":this.data));
