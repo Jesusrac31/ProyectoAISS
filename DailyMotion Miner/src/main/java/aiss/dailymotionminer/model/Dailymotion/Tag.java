@@ -5,17 +5,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
-/**
- * @author Juan C. Alonso
- */
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tag {
 
     @JsonIgnore
     private String id;
 
-    @JsonProperty("text")
-    private String text;
+    @JsonProperty("tags")
+    private List<String> tags;
 
     @JsonIgnore
     private String created_time;
@@ -31,13 +30,13 @@ public class Tag {
     }
 
     @JsonProperty("text")
-    public String getText() {
-        return text;
+    public List<String> getText() {
+        return tags;
     }
 
     @JsonProperty("text")
-    public void setText(String text) {
-        this.text = text;
+    public void setText(List<String> tags) {
+        this.tags = tags;
     }
 
     @JsonIgnore
@@ -55,7 +54,7 @@ public class Tag {
     public String toString() {
         return "Comment{" +
                 "id='" + id + '\'' +
-                ", text='" + text + '\'' +
+                ", text='" + tags + '\'' +
                 ", createdOn='" + created_time + '\'' +
                 '}';
     }
