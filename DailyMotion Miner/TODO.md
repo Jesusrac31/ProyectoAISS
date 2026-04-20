@@ -1,0 +1,2 @@
+- [ ] Remove all controllers except ChannelController
+- [ ] Remove all repositories

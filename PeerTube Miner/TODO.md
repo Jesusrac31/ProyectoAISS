@@ -1,1 +1,4 @@
-- [ ] Configurar el puerto 8082
+- [x] Set up port 8082
+- [ ] Set some prefix for all operations
+- [ ] Test for VideominerService
+- [x] Exceptions

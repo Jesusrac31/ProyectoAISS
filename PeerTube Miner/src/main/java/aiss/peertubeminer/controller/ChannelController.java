@@ -1,5 +1,6 @@
 package aiss.peertubeminer.controller;
 
+import aiss.peertubeminer.exception.ChannelNotFoundException;
 import aiss.peertubeminer.model.peertube.Channel;
 import aiss.peertubeminer.model.videominer.ChannelVM;
 import aiss.peertubeminer.service.peertube.ChannelService;
@@ -27,10 +28,16 @@ public class ChannelController {
     // If success, return 200 by default
     @GetMapping("/{id}")
     public ChannelVM getChannel(@PathVariable String id,
-                                @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
-                                @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) { // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
-        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
-        return TranslationPTtoVMService.channelTranslation(channelAPI);
+                                @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
+                                @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments)
+    throws ChannelNotFoundException {
+        try {
+            Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
+            return TranslationPTtoVMService.channelTranslation(channelAPI);
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
+
     }
 
     // For some POST operation, it gets the channel from service and post the channel to videominer
@@ -38,10 +45,16 @@ public class ChannelController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{id}")
     public ChannelVM postChannel(@PathVariable String id,
-                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
-                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) { // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
-        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
-        ChannelVM channelVM = TranslationPTtoVMService.channelTranslation(channelAPI);
-        return videominerService.postChannel(channelVM);
+                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
+                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments)
+    throws ChannelNotFoundException {
+        try {
+            Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
+            ChannelVM channelVM = TranslationPTtoVMService.channelTranslation(channelAPI);
+            return videominerService.postChannel(channelVM);
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
+
     }
 }
