@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.model.dailymotion;
+package aiss.dailymotionminer.model.Dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Video_List {
+public class VideoList {
 
     @JsonProperty("list")
     private List<Video> list;
@@ -20,7 +20,7 @@ public class Video_List {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Video_List.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(VideoList.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("list");
         sb.append('=');
         sb.append(((this.list == null)?"<null>":this.list));

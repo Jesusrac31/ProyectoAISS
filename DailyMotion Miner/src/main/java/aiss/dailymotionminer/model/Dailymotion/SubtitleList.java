@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.model.dailymotion;
+package aiss.dailymotionminer.model.Dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,10 +12,10 @@ public class SubtitleList {
     private List<Subtitle> list;
 
     @JsonProperty("data")
-    public List<Subtitle> getData() { return list; }
+    public List<Subtitle> getList() { return list; }
 
     @JsonProperty("data")
-    public void setData(List<Subtitle> data) { this.list = data; }
+    public void setList(List<Subtitle> data) { this.list = data; }
 
     @Override
     public String toString() {

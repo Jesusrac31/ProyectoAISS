@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.model.dailymotion;
+package aiss.dailymotionminer.model.Dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -27,7 +27,7 @@ public class Video {
     private String created_time;
 
     @JsonProperty("tags")
-    private List<Tag> tags;
+    private List<String> tags;
 
     @JsonIgnore
     private List<Subtitle> subtitles;
@@ -68,10 +68,10 @@ public class Video {
     public void setCreated_time(String created_time) { this.created_time = created_time; }
 
     @JsonProperty("tags")
-    public List<Tag> getTags() { return tags; }
+    public List<String> getTags() { return tags; }
 
     @JsonProperty("owner")
-    public void setTags(List<Tag> tags) { this.tags = tags; }
+    public void setTags(List<String> tags) { this.tags = tags; }
 
     @JsonIgnore
     public List<Subtitle> getSubtitles() { return subtitles; }

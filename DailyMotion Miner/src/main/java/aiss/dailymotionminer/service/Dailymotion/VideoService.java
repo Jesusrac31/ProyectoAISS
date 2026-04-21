@@ -1,7 +1,6 @@
-package aiss.dailymotionminer.service;
+package aiss.dailymotionminer.service.Dailymotion;
 
 import aiss.dailymotionminer.model.Dailymotion.Subtitle;
-import aiss.dailymotionminer.model.Dailymotion.Tag;
 import aiss.dailymotionminer.model.Dailymotion.Video;
 import aiss.dailymotionminer.model.Dailymotion.VideoList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class VideoService {
         // Keep in mind there's more than one page, so we will iterate until no more pages
         int pageCount = 1;
         while(allVideos.size()<maxVideos) {
-            String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" + String.valueOf(count) + "&page=" + String.valueOf(pageCount);
+            String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount;
             VideoList videoList = restTemplate.getForObject(uri, VideoList.class);
             if(videoList==null || videoList.getList() == null || videoList.getList().isEmpty()) {
                 return allVideos;
