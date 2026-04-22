@@ -7,13 +7,13 @@ package aiss.dailymotionminer.model.videominer;
 // Once you obtain the information from the API, a service will transform those models into these
 public class UserVM {
     // The four properties in the data model
-    private Long id;
+    private String id;
     private String name;
     private String user_link;
     private String picture_link;
 
     // Constructor
-    public UserVM(Long id, String name, String user_link, String picture_link) {
+    public UserVM(String id, String name, String user_link, String picture_link) {
         this.id = id;
         this.name = name;
         this.user_link = user_link;
@@ -21,11 +21,11 @@ public class UserVM {
     }
 
     // Setters and getters
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
