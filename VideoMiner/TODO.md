@@ -1,2 +1,4 @@
 - [ ] Make ids generate automatically
 - [ ] Validations
+- [x] Documentation of CaptionController
+- [x] Finish CaptionController
