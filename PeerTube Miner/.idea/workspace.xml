@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="TODO file for peertubeminer and bug fix global variables" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="TODO file for peertubeminer and bug fix global variables">
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/videominer/UserVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/model/videominer/UserVM.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
