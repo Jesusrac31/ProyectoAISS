@@ -2,3 +2,6 @@
 - [x] Validations
 - [x] Documentation of CaptionController
 - [x] Finish CaptionController
+- [ ] Make all controllers
+- [ ] Finish repositories
+- [ ] Make documentation for all controllers
