@@ -10,4 +10,8 @@ public class VideominerApplication {
 		SpringApplication.run(VideominerApplication.class, args);
 	}
 
+	@Bean
+	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.build();
+	}
 }

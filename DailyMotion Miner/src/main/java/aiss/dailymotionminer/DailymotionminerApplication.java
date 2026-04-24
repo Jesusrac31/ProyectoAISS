@@ -10,4 +10,9 @@ public class DailymotionminerApplication { // http://localhost:8082
 		SpringApplication.run(DailymotionminerApplication.class, args);
 	}
 
+	@Bean
+	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.build();
+	}
+
 }
