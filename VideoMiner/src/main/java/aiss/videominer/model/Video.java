@@ -4,30 +4,37 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Juan C. Alonso
  */
 @Entity
-@Table(name = "Video")
+@Table(name = "videos")//
 public class Video {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("name")
+    @Column(name = "name")//
     @NotEmpty(message = "Video name cannot be empty")
     private String name;
 
     @JsonProperty("description")
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition="TEXT", name = "description")//
+    @NotEmpty(message = "The description of the channel cannot be null")//
     private String description;
 
     @JsonProperty("releaseTime")
+    @Column(name = "releaseTime")//
     @NotEmpty(message = "Video release time cannot be empty")
+    @Past//
     private String releaseTime;
 
     @JsonProperty("user")
@@ -43,6 +50,21 @@ public class Video {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "videoId")
     private List<Caption> captions;
+
+    // Empty constructor required by Spring
+    public Video(){
+
+    }
+
+    //Default constructor for Video
+    public Video(String name, String description, String releaseTime, User user){
+        this.name = name;
+        this.description = description;
+        this.releaseTime = releaseTime;
+        this.author = user;
+        this.comments = new ArrayList<Comment>();
+        this.captions = new ArrayList<Caption>();
+    }
 
     public String getId() {
         return id;

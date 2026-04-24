@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.model.dailymotion;
+package aiss.dailymotionminer.model.Dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

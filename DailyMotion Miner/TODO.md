@@ -1,2 +1,5 @@
-- [ ] Remove all controllers except ChannelController
-- [ ] Remove all repositories
+- [x] Remove all controllers except ChannelController
+- [x] Remove all repositories
+- [x] Edit the names of methods of ChannelService in ChannelController
+- [ ] Edit the names of methods of TranslationService in ChannelController
+- [ ] Finish TranslationService

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="TODO file for peertubeminer and bug fix global variables" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="PeerTube: User id changed from Long to String following the project data model." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776696728801</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="PeerTube: User id changed from Long to String following the project data model.">
+      <option name="closed" value="true" />
+      <created>1776865485073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776865485073</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +285,7 @@
     <MESSAGE value="Change ports as demo video, improving controller and fixing minor errors" />
     <MESSAGE value="Change Services and application.properties" />
     <MESSAGE value="TODO file for peertubeminer and bug fix global variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO file for peertubeminer and bug fix global variables" />
+    <MESSAGE value="PeerTube: User id changed from Long to String following the project data model." />
+    <option name="LAST_COMMIT_MESSAGE" value="PeerTube: User id changed from Long to String following the project data model." />
   </component>
 </project>

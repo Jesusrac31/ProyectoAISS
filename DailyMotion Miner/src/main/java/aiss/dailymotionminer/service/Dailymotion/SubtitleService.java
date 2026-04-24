@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.service;
+package aiss.dailymotionminer.service.Dailymotion;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class SubtitleService {
 
     // Get subtitles (captions) of a video
     public List<Subtitle> getVideoSubtitles(String id) {
-        String uri = BASE_URL + id + "/Subtitles";
+        String uri = BASE_URL + "video/" + id + "/subtitles";
         SubtitleList list = restTemplate.getForObject(uri, SubtitleList.class);
         assert list != null;
         return list.getList();

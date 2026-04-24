@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.service;
+package aiss.dailymotionminer.service.Dailymotion;
 
 import aiss.dailymotionminer.model.Dailymotion.Video;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +17,14 @@ public class TagsService {
 
     // Get the tags (comments) of a video
     public List<String> getVideoTags(String id, int maxTags) {
-        // If maxTags > 150 (maximum size for tags) -> limit = 150 tags
-        // If maxTags <= 150 -> limit = maxTags
-        long count = maxTags > 150 ? 150 : Math.max(1, maxTags);
+        // Since tags is an array, no need to calculate the limit. It will simply be maxTags
         List<String> tags;
-        String uri = BASE_URL + id + "?fields=tags";
+        String uri = BASE_URL + "video/" + id + "?fields=tags";
         Video video = restTemplate.getForObject(uri, Video.class);
         if (video==null || video.getTags()==null || video.getTags().isEmpty()) {
             tags = new ArrayList<>();
         } else {
-            tags = video.getTags().stream().limit(count).toList();
+            tags = video.getTags().stream().limit(maxTags).toList();
         }
         return tags;
     }

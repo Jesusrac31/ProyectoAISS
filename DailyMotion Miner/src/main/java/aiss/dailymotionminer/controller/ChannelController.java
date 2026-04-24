@@ -2,11 +2,12 @@ package aiss.dailymotionminer.controller;
 
 import aiss.dailymotionminer.etl.TranslationDMtoVMService;
 import aiss.dailymotionminer.model.videominer.ChannelVM;
+import aiss.dailymotionminer.service.Dailymotion.ChannelService;
 import aiss.dailymotionminer.service.VideominerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import aiss.dailymotionminer.model.dailymotion.Channel;
+import aiss.dailymotionminer.model.Dailymotion.Channel;
 
 @RestController
 @RequestMapping("/dailymotion")
@@ -29,7 +30,7 @@ public class ChannelController {
     public ChannelVM getChannel(@PathVariable(value = "channelId") String id,
                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
-        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
+        Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
         return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
     }
 
@@ -38,7 +39,7 @@ public class ChannelController {
     public ChannelVM postChannel(@PathVariable(value = "channelId") String channelId,
                                  @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
                                  @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
-        Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments); // ATTENTION! The name of the classes/methods can change
+        Channel channelAPI = channelService.getCompleteChannel(channelId, maxVideos, maxComments); // ATTENTION! The name of the classes/methods can change
         ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
         return videominerService.postChannel(channelVM);
     }

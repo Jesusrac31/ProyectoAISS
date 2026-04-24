@@ -1,4 +1,4 @@
-package aiss.dailymotionminer.model.dailymotion;
+package aiss.dailymotionminer.model.Dailymotion;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -32,7 +32,7 @@ public class Subtitle {
     public String getUrl() { return url; }
 
     @JsonProperty("url")
-    public void setUrl() { this.url = url; }
+    public void setUrl(String url) { this.url = url; }
 
     @JsonProperty("language")
     public String getLanguage() {
