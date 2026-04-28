@@ -27,11 +27,12 @@ public class ChannelController {
     // GET operation for the channel given its ID
     // If success, returns 200 by default
     @GetMapping("/{channelId}")
-    public ChannelVM getChannel(@PathVariable(value = "channelId") String id,
-                                @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
-                                @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments){
+    public Channel getChannel(@PathVariable(value = "channelId") String id,
+                                @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
+                                @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxComments}") Integer maxComments){
         Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
-        return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
+        return channelAPI;
+        //return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
     }
 
     @ResponseStatus(HttpStatus.CREATED)

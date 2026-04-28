@@ -22,7 +22,7 @@ public class Channel {
     private String createdAt;
 
     // Not included in response
-    @JsonIgnore
+    @JsonProperty("videos")
     private List<Video> videos;
 
     @JsonProperty("id")
@@ -62,13 +62,13 @@ public class Channel {
     public void setCreatedAt( String createdAt) { this.createdAt = createdAt; }
 
     // Getter for new variable
-    @JsonIgnore
+    @JsonProperty("videos")
     public List<Video> getVideos() {
         return videos;
     }
 
     // Setter for new variable
-    @JsonIgnore
+    @JsonProperty("videos")
     public void setVideos(List<Video> videos) {
         this.videos = videos;
     }

@@ -31,7 +31,8 @@ public class VideoService {
         // Keep in mind there's more than one page, so we will iterate until no more pages
         int pageCount = 1;
         while(allVideos.size()<maxVideos) {
-            String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount;
+            String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount+
+                    "&fields=id,title,description,created_time,tags,owner.id,owner.username,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
             VideoList videoList = restTemplate.getForObject(uri, VideoList.class);
             if(videoList==null || videoList.getList() == null || videoList.getList().isEmpty()) {
                 return allVideos;
@@ -44,7 +45,8 @@ public class VideoService {
     }
 
     public Video getById(String id) {
-        String uri = BASE_URL + "video/" + id;
+        String uri = BASE_URL + "video/" + id +
+                "&fields=id,title,description,created_time,tags,owner.id,owner.username,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
         return restTemplate.getForObject(uri, Video.class);
     }
 

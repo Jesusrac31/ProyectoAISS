@@ -3,8 +3,6 @@ package aiss.dailymotionminer.model.Dailymotion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -70,7 +68,7 @@ public class Video {
     @JsonProperty("tags")
     public List<String> getTags() { return tags; }
 
-    @JsonProperty("owner")
+    @JsonProperty("tags")
     public void setTags(List<String> tags) { this.tags = tags; }
 
     @JsonIgnore

@@ -2,3 +2,4 @@
 - [ ] Set some prefix for all operations
 - [ ] Test for VideominerService
 - [x] Exceptions
+- [ ] Add exception when videominer server is down and communication is impossible
