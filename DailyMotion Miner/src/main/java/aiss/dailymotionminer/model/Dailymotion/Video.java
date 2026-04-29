@@ -19,7 +19,7 @@ public class Video {
     private String description;
 
     @JsonProperty("owner")
-    private Owner owner;
+    private String ownerId;
 
     @JsonProperty("created_time")
     private String created_time;
@@ -30,6 +30,9 @@ public class Video {
     @JsonIgnore
     private List<Subtitle> subtitles;
 
+    @JsonIgnore
+    private Owner owner;
+
 
     @JsonProperty("id")
     public String getId() {
@@ -39,6 +42,7 @@ public class Video {
     public void setId(String id) {
         this.id = id;
     }
+
     @JsonProperty("title")
     public String getTitle() {
         return title;
@@ -47,17 +51,16 @@ public class Video {
     public void setTitle(String title) {
         this.title = title;
     }
+
     @JsonProperty("description")
     public String getDescription() { return description; }
-
     @JsonProperty("description")
     public void setDescription(String description) { this.description = description; }
 
     @JsonProperty("owner")
-    public Owner getOwner() { return owner; }
-
+    public String getOwnerId() { return ownerId; }
     @JsonProperty("owner")
-    public void setOwner(Owner owner) { this.owner = owner; }
+    public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
 
     @JsonProperty("created_time")
     public String getCreated_time() { return created_time; }
@@ -77,6 +80,15 @@ public class Video {
     @JsonIgnore
     public void setSubtitles(List<Subtitle> subtitles) { this.subtitles = subtitles; }
 
+    @JsonIgnore
+    public Owner getOwner(){
+        return owner;
+    }
+    @JsonIgnore
+    public void setOwner(Owner owner){
+        this.owner=owner;
+    }
+
     @Override
     public String toString() {
         return "Video {\n" +
@@ -84,7 +96,7 @@ public class Video {
                 "    title='" + title + "',\n" +
                 "    description='" + description + "',\n" +
                 "    created_time='" + created_time + "',\n" +
-                "    owner=" + owner + ",\n" +
+                "    owner=" + ownerId + ",\n" +
                 "    tags=" + tags + ",\n" +
                 "    subtitles=" + subtitles + "\n" +
                 "}";

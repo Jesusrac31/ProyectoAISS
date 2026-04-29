@@ -19,12 +19,12 @@ public class ChannelService {
     @Autowired
     VideoService videoService;
     // Retrieves complete information of a channel given its identifier and a maximum number of videos and tags
-    public Channel getCompleteChannel(String channelHandler, int maxVideos, int maxTags) {
+    public Channel getCompleteChannel(String channelHandler, int maxVideos, int maxTags,int maxPages) {
         // Retrieve channel with basic info
         Channel channel = getById(channelHandler);
         List<Video> videos = new ArrayList<>();
         // Add all videos associated with this channel
-        for (Video v : videoService.getChannelVideos(channelHandler, maxVideos)){
+        for (Video v : videoService.getChannelVideos(channelHandler, maxVideos, maxPages)){
             videos.add(videoService.getCompleteVideoInfo(v, maxTags));
         }
         // Set videos of the channel object

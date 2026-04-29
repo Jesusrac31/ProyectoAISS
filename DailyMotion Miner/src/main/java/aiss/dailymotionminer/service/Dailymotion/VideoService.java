@@ -1,5 +1,6 @@
 package aiss.dailymotionminer.service.Dailymotion;
 
+import aiss.dailymotionminer.model.Dailymotion.Owner;
 import aiss.dailymotionminer.model.Dailymotion.Subtitle;
 import aiss.dailymotionminer.model.Dailymotion.Video;
 import aiss.dailymotionminer.model.Dailymotion.VideoList;
@@ -18,10 +19,12 @@ public class VideoService {
     TagsService tagsService;
     @Autowired
     SubtitleService subtitleService;
+    @Autowired
+    OwnerService ownerService;
 
     private static final String BASE_URL = "https://api.dailymotion.com/";
 
-    public List<Video> getChannelVideos(String channelHandler, int maxVideos) {
+    public List<Video> getChannelVideos(String channelHandler, int maxVideos, int maxPages) {
 
         // If maxVideos > 100 (API Limit) -> limit = 100
         // If maxVideos <= 100 -> limit = maxVideos
@@ -30,7 +33,7 @@ public class VideoService {
         // Build uri
         // Keep in mind there's more than one page, so we will iterate until no more pages
         int pageCount = 1;
-        while(allVideos.size()<maxVideos) {
+        while(allVideos.size()<maxVideos && pageCount<=maxPages) {
             String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount+
                     "&fields=id,title,description,created_time,tags,owner.id,owner.username,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
             VideoList videoList = restTemplate.getForObject(uri, VideoList.class);
@@ -52,12 +55,16 @@ public class VideoService {
 
     public Video getCompleteVideoInfo(Video video, int maxTags) {
         String id = video.getId();
+        String ownerId = video.getOwnerId();
 
         List<String> tags = tagsService.getVideoTags(id, maxTags);
         video.setTags(tags);
 
         List<Subtitle> subtitles = subtitleService.getVideoSubtitles(id);
         video.setSubtitles(subtitles);
+
+        Owner owner = ownerService.getOwner(ownerId);
+        video.setOwner(owner);
 
         return video;
     }

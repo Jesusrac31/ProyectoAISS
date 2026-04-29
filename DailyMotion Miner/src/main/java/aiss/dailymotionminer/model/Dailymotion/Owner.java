@@ -9,7 +9,7 @@ public class Owner {
     @JsonProperty("id")
     private String id;
 
-    @JsonProperty("name")
+    @JsonProperty("screenname")
     private String name;
 
     @JsonProperty("url")
@@ -28,13 +28,13 @@ public class Owner {
         this.id = id;
     }
 
-    @JsonProperty("name")
-    public String getName() {
+    @JsonProperty("screenname")
+    public String getScreenname() {
         return name;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
+    @JsonProperty("screenname")
+    public void setScreenname(String name) {
         this.name = name;
     }
 
@@ -61,7 +61,7 @@ public class Owner {
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", screenname='" + name + '\'' +
                 ", user_link='" + url + '\'' +
                 ", picture_link='" + avatar_720_url + '\'' +
                 '}';
