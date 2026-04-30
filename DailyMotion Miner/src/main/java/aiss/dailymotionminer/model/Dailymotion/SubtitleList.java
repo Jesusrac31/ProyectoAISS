@@ -8,13 +8,13 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubtitleList {
 
-    @JsonProperty("data")
+    @JsonProperty("list")
     private List<Subtitle> list;
 
-    @JsonProperty("data")
+    @JsonProperty("list")
     public List<Subtitle> getList() { return list; }
 
-    @JsonProperty("data")
+    @JsonProperty("list")
     public void setList(List<Subtitle> data) { this.list = data; }
 
     @Override

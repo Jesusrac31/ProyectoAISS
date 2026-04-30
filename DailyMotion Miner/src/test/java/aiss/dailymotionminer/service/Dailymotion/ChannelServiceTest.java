@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ChannelServiceTest {
     @Autowired
@@ -14,7 +13,7 @@ class ChannelServiceTest {
     @Test
     @DisplayName("Get channel")
     void getChannel(){
-        Channel channel = service.getCompleteChannel("shortfilms", 25, 5, 1);
+        Channel channel = service.getCompleteChannel("shortfilms", 25, 1, 5);
         System.out.println(channel);
     }
 

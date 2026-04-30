@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deploy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Target for Deployment in peertube">
       <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/SubtitleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/SubtitleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/ChannelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/SubtitleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/SubtitleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/ChannelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/ChannelServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/SubtitleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/SubtitleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/TagsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/TagsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/VideoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/test/java/aiss/dailymotionminer/service/Dailymotion/VideoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,28 +71,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.CaptionServiceTest.getCaptions.executor": "Run",
-    "JUnit.ChannelServiceTest.findChannel.executor": "Run",
-    "JUnit.ChannelServiceTest.getCompleteChannelInfo.executor": "Run",
-    "JUnit.CommentServiceTest.getComments.executor": "Run",
-    "JUnit.VideoServiceTest.getChannelVideos.executor": "Run",
-    "JUnit.VideoServiceTest.getCompleteVideoInfo.executor": "Run",
-    "JUnit.VideoServiceTest.getVideo.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.PeerTube Miner.executor": "Run",
-    "Spring Boot.Unnamed.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CaptionServiceTest.getCaptions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChannelServiceTest.findChannel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChannelServiceTest.getCompleteChannelInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommentServiceTest.getComments.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getChannelVideos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getCompleteVideoInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getVideo.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PeerTube Miner.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.PeerTube Miner">
     <configuration name="CaptionServiceTest.getCaptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="peertubeminer" />
@@ -308,7 +321,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776696728801</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Deployment">
+      <option name="closed" value="true" />
+      <created>1777372648874</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777372648874</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Target for Deployment in peertube">
+      <option name="closed" value="true" />
+      <created>1777372711338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777372711338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +362,8 @@
     <MESSAGE value="Change ports as demo video, improving controller and fixing minor errors" />
     <MESSAGE value="Change Services and application.properties" />
     <MESSAGE value="TODO file for peertubeminer and bug fix global variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO file for peertubeminer and bug fix global variables" />
+    <MESSAGE value="Deployment" />
+    <MESSAGE value="Target for Deployment in peertube" />
+    <option name="LAST_COMMIT_MESSAGE" value="Target for Deployment in peertube" />
   </component>
 </project>

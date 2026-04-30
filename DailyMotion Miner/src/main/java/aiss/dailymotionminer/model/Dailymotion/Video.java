@@ -3,6 +3,7 @@ package aiss.dailymotionminer.model.Dailymotion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import java.util.List;
 
@@ -18,8 +19,10 @@ public class Video {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("owner")
-    private String ownerId;
+    // DailyMotion no devuelve directamente owner, solo devuelve la id. Por lo que estamos pidiendo los parámetros y se devuelven como
+    // owner.{field}, Así que decimos que los que tienen el prefijo owner. son características del owner
+    @JsonUnwrapped(prefix = "owner.")
+    private Owner owner;
 
     @JsonProperty("created_time")
     private String created_time;
@@ -29,9 +32,6 @@ public class Video {
 
     @JsonIgnore
     private List<Subtitle> subtitles;
-
-    @JsonIgnore
-    private Owner owner;
 
 
     @JsonProperty("id")
@@ -57,10 +57,10 @@ public class Video {
     @JsonProperty("description")
     public void setDescription(String description) { this.description = description; }
 
-    @JsonProperty("owner")
-    public String getOwnerId() { return ownerId; }
-    @JsonProperty("owner")
-    public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
+    @JsonUnwrapped(prefix = "owner.")
+    public Owner getOwner() { return this.owner; }
+    @JsonUnwrapped(prefix = "owner.")
+    public void setOwner(Owner owner) { this.owner = owner; }
 
     @JsonProperty("created_time")
     public String getCreated_time() { return created_time; }
@@ -80,15 +80,6 @@ public class Video {
     @JsonIgnore
     public void setSubtitles(List<Subtitle> subtitles) { this.subtitles = subtitles; }
 
-    @JsonIgnore
-    public Owner getOwner(){
-        return owner;
-    }
-    @JsonIgnore
-    public void setOwner(Owner owner){
-        this.owner=owner;
-    }
-
     @Override
     public String toString() {
         return "Video {\n" +
@@ -96,7 +87,7 @@ public class Video {
                 "    title='" + title + "',\n" +
                 "    description='" + description + "',\n" +
                 "    created_time='" + created_time + "',\n" +
-                "    owner=" + ownerId + ",\n" +
+                "    owner=" + owner + ",\n" +
                 "    tags=" + tags + ",\n" +
                 "    subtitles=" + subtitles + "\n" +
                 "}";

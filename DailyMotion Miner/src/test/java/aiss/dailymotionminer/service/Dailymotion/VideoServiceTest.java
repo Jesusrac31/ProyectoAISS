@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class VideoServiceTest {
     @Autowired
@@ -16,7 +15,7 @@ class VideoServiceTest {
     @Test
     @DisplayName("Get channel videos")
     void getVideos(){
-        List<Video> videos = service.getChannelVideos("shortfilms", 25, 2);
+        List<Video> videos = service.getChannelVideos("tv", 25, 1, 2);
         System.out.println(videos);
     }
 }

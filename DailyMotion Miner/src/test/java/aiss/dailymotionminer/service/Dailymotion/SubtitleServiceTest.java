@@ -15,7 +15,7 @@ class SubtitleServiceTest {
     @Test
     @DisplayName("Get video subtitles")
     void getSubtitles(){
-        List<Subtitle> subtitles = service.getVideoSubtitles("xa74zzo");
+        List<Subtitle> subtitles = service.getVideoSubtitles("xa7kbou");
         System.out.println(subtitles);
     }
 }
