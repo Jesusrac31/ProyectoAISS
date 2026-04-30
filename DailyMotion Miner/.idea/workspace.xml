@@ -4,27 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Fix DailyMotion Channel route.">
+    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Update application.properties, finish dailymotion services, implemented maxPages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/SubtitleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/SubtitleList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/ChannelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/SubtitleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/SubtitleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/ChannelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/ChannelServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/SubtitleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/SubtitleServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/TagsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/TagsServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/VideoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aiss/dailymotionminer/service/Dailymotion/VideoServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -83,7 +80,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">
+  <component name="RunManager" selected="JUnit.VideoServiceTest.getVideos">
     <configuration name="ChannelServiceTest.getChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="videominer" />
       <extension name="coverage">
@@ -173,9 +170,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VideoServiceTest.getVideos" />
         <item itemvalue="JUnit.TagsServiceTest.getTags" />
         <item itemvalue="JUnit.ChannelServiceTest.getChannel" />
-        <item itemvalue="JUnit.VideoServiceTest.getVideos" />
         <item itemvalue="JUnit.OwnerServiceTest.getOwner" />
         <item itemvalue="JUnit.SubtitleServiceTest.getSubtitles" />
       </list>
@@ -205,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777363055491</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update application.properties, finish dailymotion services, implemented maxPages">
+      <option name="closed" value="true" />
+      <created>1777537581670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777537581670</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +230,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change port and imports bug fix" />
     <MESSAGE value="Fix DailyMotion Channel route." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix DailyMotion Channel route." />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPags" />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update application.properties, finish dailymotion services, implemented maxPages" />
   </component>
 </project>

@@ -56,20 +56,4 @@ public class VideoService {
                 "?fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
         return restTemplate.getForObject(uri, Video.class);
     }
-
-    /*public Video getCompleteVideoInfo(Video video, int maxTags) {
-        String id = video.getId();
-        Owner ownerId = video.getOwnerId();
-
-        List<String> tags = tagsService.getVideoTags(id, maxTags);
-        video.setTags(tags);
-
-        List<Subtitle> subtitles = subtitleService.getVideoSubtitles(id);
-        video.setSubtitles(subtitles);
-
-        Owner owner = ownerService.getOwner(ownerId);
-        video.setOwner(owner);
-
-        return video;
-    }*/
 }
