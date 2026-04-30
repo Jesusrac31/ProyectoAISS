@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Update application.properties, finish dailymotion services, implemented maxPages">
+    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Remove unneccessary code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.VideoServiceTest.getVideos">
+  <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">
     <configuration name="ChannelServiceTest.getChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="videominer" />
       <extension name="coverage">
@@ -210,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777537581670</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove unneccessary code">
+      <option name="closed" value="true" />
+      <created>1777539043536</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777539043536</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +238,7 @@
     <MESSAGE value="Fix DailyMotion Channel route." />
     <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPags" />
     <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update application.properties, finish dailymotion services, implemented maxPages" />
+    <MESSAGE value="Remove unneccessary code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unneccessary code" />
   </component>
 </project>

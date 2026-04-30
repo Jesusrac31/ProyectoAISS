@@ -32,7 +32,6 @@ public class ChannelController {
                               @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxTags}") Integer maxComments,
                               @RequestParam(name = "maxPages", defaultValue = "${dailymotionminer.maxPages}") Integer maxPages){
         Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
-        System.out.println(channelAPI);
         return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
     }
 

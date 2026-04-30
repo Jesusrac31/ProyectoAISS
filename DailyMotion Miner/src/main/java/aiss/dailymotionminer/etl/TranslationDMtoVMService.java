@@ -38,9 +38,9 @@ public class TranslationDMtoVMService{
 
         //Iterating over the comments of videoPT and adding the comments to resVideoVM one by one
         List<CommentVM> auxCommentList = new ArrayList<>();
-     //   for (Tag tag: videoDM.getTags()){
-     //       auxCommentList.add(commentTranslation(tag));
-        // }
+        for (String tag: videoDM.getTags()){
+            auxCommentList.add(commentTranslation(tag, videoDM.getCreated_time()));
+        }
         // Setting the resulting list of comments as comments of the resVideoVM
         resVideoVM.setComments(auxCommentList);
         // Iterating over subtitles of videos, translating from DM to VM model one by one, adding to an
@@ -64,9 +64,9 @@ public class TranslationDMtoVMService{
         return new CaptionVM(UUID.randomUUID().toString(), subtitleDM.getUrl(), subtitleDM.getLanguage());
     }
 
-    public static CommentVM commentTranslation(Tag tagDM) {
+    public static CommentVM commentTranslation(String tag, String createdOn) {
         // Right now, I put the tag as a comment
-        CommentVM resCommentVM = new CommentVM(tagDM.getId(), null, tagDM.getCreatedOn());
+        CommentVM resCommentVM = new CommentVM(null, tag, createdOn);
         return resCommentVM;
     }
 }

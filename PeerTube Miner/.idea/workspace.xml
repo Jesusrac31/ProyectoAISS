@@ -7,8 +7,6 @@
     <list default="true" id="b8a81ec8-254a-4503-8f4b-26bfc4c21b39" name="Changes" comment="Target for Deployment in peertube">
       <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/etl/TranslationDMtoVMService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/model/Dailymotion/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/service/Dailymotion/VideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
