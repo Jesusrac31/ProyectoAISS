@@ -80,8 +80,7 @@ public class CaptionController {
         if (!foundVideo.isPresent()) {
             throw new VideoNotFoundException();
         }
-        List<Caption> result = new ArrayList<Caption>(foundVideo.get().getCaptions());
-        return result;
+        return foundVideo.get().getCaptions();
     }
 
     // Endpoint to create a caption
