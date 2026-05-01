@@ -36,13 +36,13 @@ public class CaptionController {
     //GET http://localhost:8080/apipath/captions
     @Operation(summary = "Retrieve a list of captions",
             description = "Get a list of all the Captions in the database",
-            tags = {"get", "GET", "all", "captions"})
+            tags = { "GET" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
                     @Content(schema = @Schema(implementation = Caption.class), mediaType = "application/json")
             })
     })
-    @GetMapping
+    @GetMapping("/captions")
     public List<Caption> findAll(){
         return captionRepository.findAll();
     }
@@ -51,7 +51,7 @@ public class CaptionController {
     //GET http://localhost:8080/apipath/captions/{captionId}
     @Operation(summary = "Retrieve a caption by id",
     description = "Get a caption using its id",
-    tags = {"get", "GET", "one", "captions"})
+    tags = { "GET" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Caption.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
@@ -69,7 +69,7 @@ public class CaptionController {
     //GET http://localhost:8080/apipath/videos/{videoId}/captions
     @Operation(summary = "Retrieve all captions of a video using its id",
     description = "Get all the captions of a video by its id",
-    tags = {"get", "GET", "captions", "video"})
+    tags = { "GET" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Caption.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })

@@ -1,33 +1,32 @@
 package aiss.videominer.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 
 /**
  * @author Juan C. Alonso
  */
 @Entity
 @Table(name = "comments")
+@JsonPropertyOrder({ "id", "text", "createdOn" })
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.UUID) //
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("text")
-    @Column(columnDefinition="TEXT", name = "text")//
-    @NotNull(message = "Text of the comment cannot be null")//
+    @Column(columnDefinition="TEXT", name = "text")
     @NotEmpty(message = "Text of the message cannot be empty") // OR actually can?
     private String text;
 
     @JsonProperty("createdOn")
-    @Column(name = "createdOn")//
-    @NotNull(message = "The creation data of the comment cannot be null")//
-    @Past//
+    @Column(name = "createdOn")
+    @NotNull(message = "Comment creation date cannot be null")
     private String createdOn;
 
     // Empty constructor required by Spring

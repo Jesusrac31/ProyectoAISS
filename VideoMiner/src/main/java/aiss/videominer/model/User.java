@@ -1,32 +1,31 @@
 package aiss.videominer.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
 /**
  * @author Juan C. Alonso
  */
 @Entity
 @Table(name = "users")
+@JsonPropertyOrder({ "id", "name", "user_link", "picture_link" })
 public class User {
 
     @Id
     @JsonProperty("id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @JsonProperty("name")
-    @Column(name = "name")//
-    @NotNull(message = "The name of the user cannot be null")//
-    @NotEmpty(message = "The name of the user cannot be empty")//
+    @Column(name = "name")
+    @NotEmpty(message = "User name cannot be empty")
     private String name;
 
     @JsonProperty("user_link")
     @Column(name = "user_link")//
-    @NotNull(message = "The link of the user cannot be null")//
-    @NotEmpty(message = "The link of the user cannot be empty")//
+    @NotEmpty(message = "User link cannot be empty")//
     private String user_link;
 
     @JsonProperty("picture_link")
@@ -37,7 +36,6 @@ public class User {
 
     // Empty constructor required by Spring
     public User(){
-
     }
 
     // Default constructor for User

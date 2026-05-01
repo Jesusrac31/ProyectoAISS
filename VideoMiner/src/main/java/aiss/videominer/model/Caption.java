@@ -1,42 +1,40 @@
 package aiss.videominer.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
 /**
  * @author Juan C. Alonso
  */
 @Entity
 @Table(name = "captions")
+@JsonPropertyOrder({ "id", "link", "language" })
 public class Caption {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.UUID) //
     @JsonProperty("id")
     private String id;
 
-    @Column(name = "name")//
-    @NotNull(message = "Channel name cannot be null")//
-    @NotEmpty(message = "Caption name cannot be empty")//
-    @JsonProperty("name")
-    private String name;
+    @Column(name = "link")//
+    @NotEmpty(message = "Caption link cannot be empty")//
+    @JsonProperty("link")
+    private String link;
 
     @Column(name = "language")//
-    @NotNull(message = "Language cannot be null")//
-    @NotEmpty(message = "Language cannot be empty")//
+    @NotEmpty(message = "Caption language cannot be empty")//
     @JsonProperty("language")
     private String language;
 
     // Empty constructor required by Spring
     public Caption(){
-
     }
 
     //Default constructor for Caption
     public Caption(String name, String language){
-        this.name = name;
+        this.link = name;
         this.language = language;
     }
 
@@ -49,11 +47,11 @@ public class Caption {
     }
 
     public String getName() {
-        return name;
+        return link;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.link = name;
     }
 
     public String getLanguage() {
@@ -68,7 +66,7 @@ public class Caption {
     public String toString() {
         return "Caption{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + link + '\'' +
                 ", language='" + language + '\'' +
                 '}';
     }

@@ -5,36 +5,35 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 
 /**
  * @author Juan C. Alonso
  */
 @Entity
 @Table(name = "channels")
+@JsonPropertyOrder({ "id", "name", "description", "createdTime", "videos" })
 public class Channel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.UUID)
     @JsonProperty("id")
     private String id;
-    // private long id;
 
     @JsonProperty("name")
-    @Column(name = "name")//
+    @Column(name = "name")
     @NotEmpty(message = "Channel name cannot be empty")
     private String name;
 
     @JsonProperty("description")
-    @Column(columnDefinition="TEXT", name = "description")//
+    @Column(columnDefinition="TEXT", name = "description")
     private String description;
 
     @JsonProperty("createdTime")
-    @Column(name = "createdTime")//
-    @Past//
+    @Column(name = "createdTime")
     @NotEmpty(message = "Channel creation time cannot be empty")
     private String createdTime;
 
@@ -42,18 +41,16 @@ public class Channel {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "channelId")
     @NotNull(message = "Channel videos cannot be null")
-    private List<Video> videos;
+    private List<Video> videos = new ArrayList<>();
 
     //Default constructor for Channel
     public Channel(String name, String description, String createdTime){
-    this.name = name;
-    this.description = description;
-    this.createdTime = createdTime;
-    this.videos = new ArrayList<Video>();
+        this.name = name;
+        this.description = description;
+        this.createdTime = createdTime;
     }
 
     public Channel() {
-        this.videos = new ArrayList<>();
     }
 
     public String getId() {

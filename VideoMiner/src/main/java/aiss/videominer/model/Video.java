@@ -1,10 +1,9 @@
 package aiss.videominer.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +12,12 @@ import java.util.List;
  * @author Juan C. Alonso
  */
 @Entity
-@Table(name = "videos")//
+@Table(name = "videos")
+@JsonPropertyOrder({ "id", "name", "description", "releaseTime", "user", "captions", "comments" })
 public class Video {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.UUID) //
     @JsonProperty("id")
     private String id;
 
@@ -28,32 +28,30 @@ public class Video {
 
     @JsonProperty("description")
     @Column(columnDefinition="TEXT", name = "description")//
-    @NotEmpty(message = "The description of the channel cannot be null")//
+    @NotEmpty(message = "Video description cannot be empty")//
     private String description;
 
     @JsonProperty("releaseTime")
     @Column(name = "releaseTime")//
     @NotEmpty(message = "Video release time cannot be empty")
-    @Past//
     private String releaseTime;
 
     @JsonProperty("user")
     @OneToOne(cascade = CascadeType.ALL)
-    private User author;
+    private User user;
 
     @JsonProperty("comments")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "videoId")
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
 
     @JsonProperty("captions")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "videoId")
-    private List<Caption> captions;
+    private List<Caption> captions = new ArrayList<>();
 
     // Empty constructor required by Spring
     public Video(){
-
     }
 
     //Default constructor for Video
@@ -61,9 +59,7 @@ public class Video {
         this.name = name;
         this.description = description;
         this.releaseTime = releaseTime;
-        this.author = user;
-        this.comments = new ArrayList<Comment>();
-        this.captions = new ArrayList<Caption>();
+        this.user = user;
     }
 
     public String getId() {
@@ -98,12 +94,12 @@ public class Video {
         this.releaseTime = releaseTime;
     }
 
-    public User getAuthor() {
-        return author;
+    public User getUser() {
+        return user;
     }
 
-    public void setAuthor(User author) {
-        this.author = author;
+    public void setUser(User author) {
+        this.user = author;
     }
     
     public List<Comment> getComments() {
@@ -129,7 +125,7 @@ public class Video {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", releaseTime='" + releaseTime + '\'' +
-                ", author=" + author +
+                ", author=" + user +
                 ", comments=" + comments +
                 ", captions=" + captions +
                 '}';
