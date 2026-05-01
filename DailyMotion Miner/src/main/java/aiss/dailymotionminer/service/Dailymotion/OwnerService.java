@@ -12,7 +12,7 @@ public class OwnerService {
 
     private static final String BASE_URL = "https://api.dailymotion.com/";
     public Owner getOwner(String id){
-        String uri = BASE_URL + "user/" + id + "?fields=id,screenname,url,avatar_720_url";
-        return restTemplate.getForObject(uri, Owner.class);
+        String uri = BASE_URL + "user/" + id + "?fields=id,screenname,url,avatar_720_url"; // Build uri to retrieve all info of an user
+        return restTemplate.getForObject(uri, Owner.class); // Get user
     }
 }

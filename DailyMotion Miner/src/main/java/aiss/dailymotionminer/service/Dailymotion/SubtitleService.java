@@ -19,8 +19,8 @@ public class SubtitleService {
     public List<Subtitle> getVideoSubtitles(String id) {
         String uri = BASE_URL + "video/" + id + "/subtitles" +
                 "?fields=id,url,language"; // Fields needed in a subtitle
-        SubtitleList list = restTemplate.getForObject(uri, SubtitleList.class);
-        assert list != null;
+        SubtitleList list = restTemplate.getForObject(uri, SubtitleList.class); // Get subtitles
+        assert list != null; // Make sure list is not null (can be empty)
         return list.getList();
     }
 }

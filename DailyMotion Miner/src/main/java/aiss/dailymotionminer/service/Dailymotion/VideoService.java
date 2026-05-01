@@ -25,18 +25,18 @@ public class VideoService {
         long count =maxVideos > 100 ? 100 : Math.max(1, maxVideos);
         List<Video> allVideos = new ArrayList<>();
         // Build uri
-        // Keep in mind there's more than one page, so we will iterate until no more pages
-        int pageCount = 1;
-        while(allVideos.size()<maxVideos && pageCount<=maxPages) {
+        // Keep in mind there's more than one page, so we will iterate until no more pages, limit of pages reached or limit of videos reached
+        int pageCount = 1; // Start at the first page
+        while(allVideos.size()<maxVideos && pageCount<=maxPages) { // As long as max page or max videos not reached stay in loop
             String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount+
                     "&fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
             VideoList videoList = restTemplate.getForObject(uri, VideoList.class);
             if(videoList==null || videoList.getList() == null || videoList.getList().isEmpty()) {
-                return allVideos;
+                return allVideos; // If something went wrong or channel has no videos return empty list
             } else {
-                allVideos.addAll(videoList.getList());
+                allVideos.addAll(videoList.getList()); // Otherwise, add all videos from that page to the list
             }
-            pageCount++;
+            pageCount++; // Increment page number
         }
 
         // Obten los subtitulos de todos los videos

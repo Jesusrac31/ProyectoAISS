@@ -24,7 +24,7 @@ public class ChannelService {
     }
     // Retrieves a channel by its identifier
     public Channel getById(String channelHandler) {
-        String uri = BASE_URL + "/channel/" + channelHandler;
-        return restTemplate.getForObject(uri, Channel.class);
+        String uri = BASE_URL + "/channel/" + channelHandler; // Build uri
+        return restTemplate.getForObject(uri, Channel.class); // Get object
     }
 }

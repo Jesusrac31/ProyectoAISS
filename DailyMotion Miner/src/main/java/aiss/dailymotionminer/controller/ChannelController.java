@@ -1,5 +1,6 @@
 package aiss.dailymotionminer.controller;
 
+import aiss.dailymotionminer.exception.ChannelNotFoundException;
 import aiss.dailymotionminer.etl.TranslationDMtoVMService;
 import aiss.dailymotionminer.model.videominer.ChannelVM;
 import aiss.dailymotionminer.service.Dailymotion.ChannelService;
@@ -27,22 +28,33 @@ public class ChannelController {
     // GET operation for the channel given its ID
     // If success, returns 200 by default
     @GetMapping("/{channelId}")
-    public ChannelVM getChannel(@PathVariable(value = "channelId") String id,
-                              @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
-                              @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxTags}") Integer maxComments,
-                              @RequestParam(name = "maxPages", defaultValue = "${dailymotionminer.maxPages}") Integer maxPages){
-        Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
-        return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
+    public Channel getChannel(@PathVariable(value = "channelId") String id,
+                                @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
+                                @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxComments}") Integer maxComments)
+    throws ChannelNotFoundException{
+        try{
+            Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
+            return channelAPI;
+            //return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
+
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{channelId}")
-    public ChannelVM postChannel(@PathVariable(value = "channelId") String id,
-                                 @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
-                                 @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxTags}") Integer maxComments,
-                                 @RequestParam(name = "maxPages", defaultValue = "${dailymotionminer.maxPages}") Integer maxPages){
-        Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages); // ATTENTION! The name of the classes/methods can change
-        ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
-        return videominerService.postChannel(channelVM);
+    public ChannelVM postChannel(@PathVariable(value = "channelId") String channelId,
+                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos,
+                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments)
+    throws ChannelNotFoundException{
+        try{
+            Channel channelAPI = channelService.getCompleteChannel(channelId, maxVideos, maxComments); // ATTENTION! The name of the classes/methods can change
+            ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
+            return videominerService.postChannel(channelVM);
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
+
     }
 }
