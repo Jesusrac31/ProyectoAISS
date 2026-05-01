@@ -1,11 +1,8 @@
 package aiss.videominer.controller;
 
 
-import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Channel;
-import aiss.videominer.model.Video;
 import aiss.videominer.repository.ChannelRepository;
-import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,7 +55,7 @@ public class ChannelController {
     public void update(@Valid @RequestBody Channel updatedChannel, @PathVariable String id) throws Exception {
         Optional<Channel> channelData = channelRepository.findById(id);
 
-        if (channelData.isPresent()) {
+        if (channelData.isEmpty()) {
             throw new Exception();
         }
         Channel channel1 = channelData.get();
