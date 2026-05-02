@@ -1,4 +1,7 @@
-:{$PORT} {
+{
+    admin off
+}
+:{$PORT:10000} {
     # www.baseurl.com/api/v1/dailymotion -> localhost:8081
     handle_path /api/v1/dailymotion* {
         reverse_proxy localhost:8081
@@ -9,7 +12,7 @@
         reverse_proxy localhost:8082
     }
 
-    # www.baseurl.com/api/v1/app3 -> localhost:8083. New deployment for videominer as 8080 will be used
+    # www.baseurl.com/api/v1/videominer -> localhost:8083.
     handle_path /api/v1/videominer* {
         reverse_proxy localhost:8083
     }
