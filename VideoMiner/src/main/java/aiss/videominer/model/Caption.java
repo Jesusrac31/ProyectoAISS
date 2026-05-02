@@ -14,7 +14,7 @@ import jakarta.validation.constraints.NotEmpty;
 public class Caption {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID) //
+//    @GeneratedValue(strategy = GenerationType.UUID) While creating the channel, the IDs are passed by the User, not generated automatically
     @JsonProperty("id")
     private String id;
 

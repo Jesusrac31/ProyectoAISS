@@ -5,101 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Remove unneccessary code">
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/shelf/Uncommitted_changes_before_Update_at_29_04_2026_12_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/shelf/Uncommitted_changes_before_Update_at_29_04_2026_12_38__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/Deploy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/TODO.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/PeertubeminerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Avatar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Caption.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/CaptionData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/CommentData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Language.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Video.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/VideoData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/CaptionVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/ChannelVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/CommentVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/UserVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/VideoVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/VideominerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/PeertubeminerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/CaptionServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/ChannelServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/CommentServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/VideoServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/PeertubeminerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/controller/ChannelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/etl/TranslationPTtoVMService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Avatar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/CaptionData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/CommentData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Language.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Video.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/VideoData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/VideominerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/peertubeminer-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/peertubeminer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/2026-04-28T12-24-51_159.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.PeertubeminerApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.CaptionServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.ChannelServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.CommentServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.VideoServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.PeertubeminerApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.CaptionServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.ChannelServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.CommentServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.VideoServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/PeertubeminerApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/CaptionServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/ChannelServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/CommentServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/VideoServiceTest.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/integration.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PeerTubeMiner/.idea/PeerTubeMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Video.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,12 +51,12 @@
     &quot;assignee&quot;: &quot;Jesusrac31&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
-    &quot;accountId&quot;: &quot;3ad1d27d-8956-415b-a9f0-fbb0e2e63053&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
+    "accountId": "f5b4bad7-3524-4db6-a5d8-fd2316927c39"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -163,12 +92,13 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/DailyMotion Miner",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">

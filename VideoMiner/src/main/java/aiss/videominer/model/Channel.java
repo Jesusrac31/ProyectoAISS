@@ -19,7 +19,7 @@ import jakarta.validation.constraints.NotNull;
 public class Channel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @GeneratedValue(strategy = GenerationType.AUTO)   // It was decided not to implement auto-generation of ID since the ID passed by the User must be taken
     @JsonProperty("id")
     private String id;
 

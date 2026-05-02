@@ -17,7 +17,7 @@ import java.util.List;
 public class Video {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID) //
+//    @GeneratedValue(strategy = GenerationType.AUTO)  The IDs of the video objects are provided by the user
     @JsonProperty("id")
     private String id;
 
