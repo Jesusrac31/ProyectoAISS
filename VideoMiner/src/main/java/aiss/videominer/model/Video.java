@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Juan C. Alonso
@@ -15,6 +16,13 @@ import java.util.List;
 @Table(name = "videos")
 @JsonPropertyOrder({ "id", "name", "description", "releaseTime", "user", "captions", "comments" })
 public class Video {
+
+    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Video object if the ID was not specified by the User.
+    public void generateIdIfNotSpecified(){
+        if (this.id.isEmpty()) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)  The IDs of the video objects are provided by the user

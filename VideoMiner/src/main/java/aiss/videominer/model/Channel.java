@@ -2,6 +2,7 @@ package aiss.videominer.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -17,6 +18,13 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "channels")
 @JsonPropertyOrder({ "id", "name", "description", "createdTime", "videos" })
 public class Channel {
+
+    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Channel object if the ID was not specified by the User.
+    public void generateIdIfNotSpecified(){
+        if (this.id.isEmpty()) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)   // It was decided not to implement auto-generation of ID since the ID passed by the User must be taken

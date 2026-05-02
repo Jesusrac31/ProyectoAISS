@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.util.UUID;
+
 /**
  * @author Juan C. Alonso
  */
@@ -12,6 +14,13 @@ import jakarta.validation.constraints.NotEmpty;
 @Table(name = "captions")
 @JsonPropertyOrder({ "id", "link", "language" })
 public class Caption {
+
+    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Caption object if the ID was not specified by the User.
+    public void generateIdIfNotSpecified(){
+        if (this.id.isEmpty()) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.UUID) While creating the channel, the IDs are passed by the User, not generated automatically
