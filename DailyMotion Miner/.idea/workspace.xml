@@ -4,39 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f249ed80-2d0b-4459-8883-594b74abf1e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_10_44__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Remove unneccessary code">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_10_44__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/VideominerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/service/VideominerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/Deploy.md" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/Deploy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/dailymotionminer/exception/ChannelNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/exception/ChannelNotFoundException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/controller/ChannelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTube Miner/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/exception/ChannelNotFoundException.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Jesusrac31"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Jesusrac31&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
-    "accountId": "cffa076b-6c13-415a-9be1-41c972dc1273"
+    "accountId": "3ad1d27d-8956-415b-a9f0-fbb0e2e63053"
   }
 }]]></component>
   <component name="MavenImportPreferences">
@@ -46,35 +49,138 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
-  <component name="ProjectId" id="3DA7Gke0ETfrOR6ffXJSeXIPKnc" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3CIFynWQLiHpZjxFodu5LrtF6e9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ChannelServiceTest.getChannel.executor": "Run",
+    "JUnit.OwnerServiceTest.getOwner.executor": "Run",
+    "JUnit.SubtitleServiceTest.getSubtitles.executor": "Run",
+    "JUnit.TagsServiceTest.getTags.executor": "Run",
+    "JUnit.VideoServiceTest.getVideos.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.DailyMotion Miner.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.DailymotionminerApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/DailyMotion Miner",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="DailyMotion Miner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">
+    <configuration name="ChannelServiceTest.getChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.ChannelServiceTest" />
+      <option name="METHOD_NAME" value="getChannel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest.getOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="getOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubtitleServiceTest.getSubtitles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.SubtitleServiceTest" />
+      <option name="METHOD_NAME" value="getSubtitles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TagsServiceTest.getTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.TagsServiceTest" />
+      <option name="METHOD_NAME" value="getTags" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoServiceTest.getVideos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.VideoServiceTest" />
+      <option name="METHOD_NAME" value="getVideos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DailymotionminerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="videominer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="aiss.dailymotionminer.DailymotionminerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VideoServiceTest.getVideos" />
+        <item itemvalue="JUnit.TagsServiceTest.getTags" />
+        <item itemvalue="JUnit.ChannelServiceTest.getChannel" />
+        <item itemvalue="JUnit.OwnerServiceTest.getOwner" />
+        <item itemvalue="JUnit.SubtitleServiceTest.getSubtitles" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -85,12 +191,67 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f249ed80-2d0b-4459-8883-594b74abf1e0" name="Changes" comment="" />
-      <created>1777712926385</created>
+      <changelist id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="" />
+      <created>1776065435005</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1777712926385</updated>
+      <updated>1776065435005</updated>
     </task>
+    <task id="LOCAL-00001" summary="Change port and imports bug fix">
+      <option name="closed" value="true" />
+      <created>1776069501420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776069501420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix DailyMotion Channel route.">
+      <option name="closed" value="true" />
+      <created>1777363055491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777363055491</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update application.properties, finish dailymotion services, implemented maxPages">
+      <option name="closed" value="true" />
+      <created>1777537581670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777537581670</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove unneccessary code">
+      <option name="closed" value="true" />
+      <created>1777539043536</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777539043536</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change port and imports bug fix" />
+    <MESSAGE value="Fix DailyMotion Channel route." />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPags" />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPages" />
+    <MESSAGE value="Remove unneccessary code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unneccessary code" />
   </component>
 </project>
