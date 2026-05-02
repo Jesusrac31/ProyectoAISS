@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26998709-9ed1-4e86-9006-d8d370fcc12d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_10_44__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DailyMotion Miner/src/main/java/aiss/dailymotionminer/exception/ChannelNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="26998709-9ed1-4e86-9006-d8d370fcc12d" name="Changes" comment="DailyMotion bug fixing and improvement for videominer models">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aiss/peertubeminer/exception/ChannelNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/controller/ChannelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/exception/ChannelNotFoundException.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +23,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "alegp06"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alegp06&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
-    "accountId": "3ad1d27d-8956-415b-a9f0-fbb0e2e63053"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
+    &quot;accountId&quot;: &quot;3ad1d27d-8956-415b-a9f0-fbb0e2e63053&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="3DACCFI5dBGiqKnq7LaP62L78KF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,12 +51,23 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.PeerTube Miner.executor": "Run",
     "Spring Boot.PeertubeminerApplication.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/PeerTube Miner"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="PeerTube Miner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="peertubeminer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="aiss.peertubeminer.PeertubeminerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,6 +83,87 @@
       <option name="presentableId" value="Default" />
       <updated>1777715357827</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added PeerTube models and services">
+      <option name="closed" value="true" />
+      <created>1776075938425</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776075938426</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added @Bean in PeertubeminerApplication.java">
+      <option name="closed" value="true" />
+      <created>1776076337108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776076337108</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add comments to services and change id property type">
+      <option name="closed" value="true" />
+      <created>1776107412626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776107412626</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories">
+      <option name="closed" value="true" />
+      <created>1776109374101</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776109374101</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change ports as demo video, improving controller and fixing minor errors">
+      <option name="closed" value="true" />
+      <created>1776411783311</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776411783311</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Change Services and application.properties">
+      <option name="closed" value="true" />
+      <created>1776694862042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776694862042</updated>
+    </task>
+    <task id="LOCAL-00007" summary="TODO file for peertubeminer and bug fix global variables">
+      <option name="closed" value="true" />
+      <created>1776696728801</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776696728801</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added PeerTube models and services" />
+    <MESSAGE value="Added @Bean in PeertubeminerApplication.java" />
+    <MESSAGE value="Add comments to services and change id property type" />
+    <MESSAGE value="Adjust getCompleteVideoInfo() parameters and fix imports in controllers and repositories" />
+    <MESSAGE value="Change ports as demo video, improving controller and fixing minor errors" />
+    <MESSAGE value="Change Services and application.properties" />
+    <MESSAGE value="TODO file for peertubeminer and bug fix global variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO file for peertubeminer and bug fix global variables" />
   </component>
 </project>
