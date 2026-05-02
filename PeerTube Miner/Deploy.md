@@ -9,3 +9,4 @@
    ENTRYPOINT ["java", "-jar", "/{name of your app}.jar"]
 7. Remove folder target in gitignore (or comment)
 8. Upload your project to GitHub
+9. Enjoy!

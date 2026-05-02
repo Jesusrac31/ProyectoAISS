@@ -34,7 +34,7 @@ public class Channel {
 
     @JsonProperty("createdTime")
     @Column(name = "createdTime")
-    @NotEmpty(message = "Channel creation time cannot be empty")
+    //@NotEmpty(message = "Channel creation time cannot be empty")
     private String createdTime;
 
     @JsonProperty("videos")

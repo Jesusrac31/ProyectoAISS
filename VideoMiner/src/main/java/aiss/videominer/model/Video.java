@@ -28,7 +28,7 @@ public class Video {
 
     @JsonProperty("description")
     @Column(columnDefinition="TEXT", name = "description")//
-    @NotEmpty(message = "Video description cannot be empty")//
+    //@NotEmpty(message = "Video description cannot be empty")//
     private String description;
 
     @JsonProperty("releaseTime")

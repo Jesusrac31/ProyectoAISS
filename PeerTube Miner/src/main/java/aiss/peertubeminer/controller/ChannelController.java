@@ -48,6 +48,7 @@ public class ChannelController {
                                  @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
                                  @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments)
     throws ChannelNotFoundException {
+        System.out.println(id);
         try {
             Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
             ChannelVM channelVM = TranslationPTtoVMService.channelTranslation(channelAPI);
