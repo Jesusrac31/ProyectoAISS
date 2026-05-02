@@ -1,24 +1,23 @@
 FROM amazoncorretto:17-alpine-jdk
 
-# Instalamos bash (para el script) y caddy (el proxy) en Alpine
+# Instalamos bash y caddy
 RUN apk add --no-cache bash caddy
 
 WORKDIR /app
 
-# Copiamos tus 3 aplicaciones desde la carpeta target (ajusta los nombres si varían)
-COPY target/peertubeminer-0.0.1-SNAPSHOT.jar /app/peertube.jar
-COPY target/videominer-0.0.1-SNAPSHOT.jar /app/videominer.jar
-# COPY target/tu-tercera-app.jar /app/app3.jar
+# Copiamos los 3 JARs desde tu carpeta local 'dist' al contenedor
+COPY dist/dailymotionminer-0.0.1-SNAPSHOT.jar /app/dailymotion.jar
+COPY dist/peertubeminer-0.0.1-SNAPSHOT.jar /app/peertube.jar
+COPY dist/videominer-0.0.1-SNAPSHOT.jar /app/videominer.jar
 
-# Copiamos los archivos de configuración que crearemos ahora
+# Copiamos la configuración del proxy y el script de arranque
 COPY Caddyfile /app/Caddyfile
 COPY start.sh /app/start.sh
 
-# Damos permisos al script
+# Permisos de ejecución
 RUN chmod +x /app/start.sh
 
-# Render usa por defecto el puerto 10000 para Docker
+# Render usa el puerto 10000 por defecto
 EXPOSE 10000
 
-# El punto de entrada ahora es nuestro script, no un solo JAR
 ENTRYPOINT ["/app/start.sh"]

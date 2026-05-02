@@ -1,14 +1,21 @@
 :{$PORT} {
-    handle_path /api/v1/peertube* {
+    # www.baseurl.com/api/v1/dailymotion -> localhost:8081
+    handle_path /api/v1/dailymotion* {
         reverse_proxy localhost:8081
     }
 
-    handle_path /api/v1/videominer* {
+    # www.baseurl.com/api/v1/peertube -> localhost:8082
+    handle_path /api/v1/peertube* {
         reverse_proxy localhost:8082
     }
-    
-    # Si quieres una respuesta por defecto en la raíz
+
+    # www.baseurl.com/api/v1/app3 -> localhost:8083. New deployment for videominer as 8080 will be used
+    handle_path /api/v1/videominer* {
+        reverse_proxy localhost:8083
+    }
+
+    # Respuesta por defecto para evitar errores 404 en la raíz
     handle / {
-        respond "API Gateway Activo" 200
+        respond "API Gateway Multi-Servicio Activo" 200
     }
 }

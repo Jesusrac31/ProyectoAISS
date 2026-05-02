@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>aiss.videominer</groupId>
-	<artifactId>videominer</artifactId>
+	<artifactId>dailymotionminer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>videominer</name>
 	<description>VideoMiner project</description>

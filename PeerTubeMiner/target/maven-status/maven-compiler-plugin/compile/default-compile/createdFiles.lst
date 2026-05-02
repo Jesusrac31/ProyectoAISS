@@ -1,4 +1,5 @@
 aiss\peertubeminer\model\peertube\Avatar.class
+aiss\peertubeminer\exception\GlobalExceptionHandler.class
 aiss\peertubeminer\service\peertube\CaptionService.class
 aiss\peertubeminer\model\peertube\VideoData.class
 aiss\peertubeminer\model\peertube\CaptionData.class
@@ -17,7 +18,6 @@ aiss\peertubeminer\PeertubeminerApplication.class
 aiss\peertubeminer\service\peertube\VideoService.class
 aiss\peertubeminer\service\VideominerService.class
 aiss\peertubeminer\model\peertube\Account.class
-aiss\peertubeminer\exception\ChannelNotFoundException.class
 aiss\peertubeminer\model\peertube\Comment.class
 aiss\peertubeminer\controller\ChannelController.class
 aiss\peertubeminer\model\peertube\Channel.class
