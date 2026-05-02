@@ -1,0 +1,84 @@
+<changelist name="Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]" date="1777736679486" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 02/05/2026 17:44 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Language.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Language.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Language.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/service/peertube/VideoService.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/service/peertube/VideoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/VideoService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Caption.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Caption.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Caption.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/service/VideominerService.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/service/VideominerService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/VideominerService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/VideoVM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/CaptionService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Account.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Account.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Account.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/ChannelVM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Comment.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Comment.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Comment.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Channel.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Channel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Channel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Video.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/peertube/Video.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/Video.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/CommentVM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/videominer/UserVM.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/videominer/UserVM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/UserVM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/CaptionVM.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/ChannelService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/aiss/peertubeminer/service/peertube/CommentService.class" />
+    <option name="AFTER_PATH" value="target/classes/aiss/peertubeminer/service/peertube/CommentService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2026_17_44_[Changes]/CommentService.class" />
+  </binary>
+</changelist>
