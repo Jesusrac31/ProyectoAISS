@@ -1,6 +1,7 @@
 package aiss.videominer.controller;
 
 
+import aiss.videominer.exception.ChannelAlreadyExistsException;
 import aiss.videominer.exception.ChannelNotFoundException;
 import aiss.videominer.model.Channel;
 import aiss.videominer.repository.ChannelRepository;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -79,7 +81,12 @@ public class ChannelController {
     })
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/channels")
-    public Channel create(@Valid @RequestBody Channel channel) {
+    public Channel create(@Valid @RequestBody Channel channel) throws ChannelAlreadyExistsException {
+
+        if (channelRepository.findById(channel.getId()).isPresent()){
+            throw new ChannelAlreadyExistsException();
+        }
+
         return channelRepository.save(channel);
     }
 

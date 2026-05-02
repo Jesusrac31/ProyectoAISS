@@ -1,6 +1,8 @@
 package aiss.videominer.controller;
 
+import aiss.videominer.exception.CaptionAlreadyExistsException;
 import aiss.videominer.exception.CaptionNotFoundException;
+import aiss.videominer.exception.ChannelAlreadyExistsException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Caption;
 import aiss.videominer.model.Video;
@@ -98,11 +100,14 @@ public class CaptionController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/videos/{videoId}/captions")
     public Caption create(@Parameter(description = "id of the video where the caption will be posted") @PathVariable(value = "videoId") String videoId,
-                          @Valid @RequestBody Caption caption) throws VideoNotFoundException {
+                          @Valid @RequestBody Caption caption) throws VideoNotFoundException, CaptionAlreadyExistsException {
         Optional<Video> video = videoRepository.findById(videoId);
 
         if (!video.isPresent()) {
             throw new VideoNotFoundException();
+        }
+        if (captionRepository.findById(caption.getId()).isPresent()){
+            throw new CaptionAlreadyExistsException();
         }
 
         video.get().getCaptions().add(caption);

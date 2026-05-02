@@ -2,6 +2,8 @@ package aiss.videominer.controller;
 
 
 import aiss.videominer.exception.ChannelNotFoundException;
+import aiss.videominer.exception.CommentAlreadyExistsException;
+import aiss.videominer.exception.VideoAlreadyExistsException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Channel;
 import aiss.videominer.model.Video;
@@ -109,11 +111,14 @@ public class VideoController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/channels/{channelId}/videos")
     public Video create(@Parameter(description = "id of the channel where the video will be posted") @PathVariable(value = "channelId") String channelId,
-                        @Valid @RequestBody Video video) throws ChannelNotFoundException {
+                        @Valid @RequestBody Video video) throws ChannelNotFoundException, VideoAlreadyExistsException {
         Optional<Channel> channel = channelRepository.findById(channelId);
 
         if (!channel.isPresent()) {
             throw new ChannelNotFoundException();
+        }
+        if (videoRepository.findById(video.getId()).isPresent()){
+            throw new VideoAlreadyExistsException();
         }
 
         channel.get().getVideos().add(video);

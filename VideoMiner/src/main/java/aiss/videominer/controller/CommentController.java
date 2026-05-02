@@ -1,5 +1,7 @@
 package aiss.videominer.controller;
 
+import aiss.videominer.exception.CaptionAlreadyExistsException;
+import aiss.videominer.exception.CommentAlreadyExistsException;
 import aiss.videominer.exception.CommentNotFoundException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Comment;
@@ -103,11 +105,14 @@ public class CommentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/videos/{videoId}/comments")
     public Comment create(@Parameter(description = "id of the video where the comment will be posted") @PathVariable(value = "videoId") String videoId,
-                          @Valid @RequestBody Comment comment) throws VideoNotFoundException {
+                          @Valid @RequestBody Comment comment) throws VideoNotFoundException, CommentAlreadyExistsException {
         Optional<Video> video = videoRepository.findById(videoId);
 
         if (!video.isPresent()) {
             throw new VideoNotFoundException();
+        }
+        if (commentRepository.findById(comment.getId()).isPresent()){
+            throw new CommentAlreadyExistsException();
         }
 
         video.get().getComments().add(comment);
