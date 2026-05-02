@@ -1,0 +1,6 @@
+- [x] Remove all controllers except ChannelController
+- [x] Remove all repositories
+- [x] Edit the names of methods of ChannelService in ChannelController
+- [ ] Edit the names of methods of TranslationService in ChannelController
+- [ ] Finish TranslationService
+- [ ] Add exception when videominer server is down and communication is impossible

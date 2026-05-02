@@ -1,0 +1,31 @@
+Index: src/main/java/aiss/peertubeminer/repository/ChannelRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package aiss.peertubeminer.repository;\r\n\r\nimport aiss.peertubeminer.model.videominer.ChannelVM;\r\nimport org.springframework.stereotype.Repository;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.UUID;\r\n\r\n@Repository\r\npublic class ChannelRepository {\r\n    List<ChannelVM> channels = new ArrayList<>();\r\n\r\n    public ChannelRepository() {\r\n        // Mock data for testing\r\n        channels.add(\r\n                new ChannelVM(\r\n                        \"ForTests\",\r\n                        \"Tech Reviews\",\r\n                        \"Technology channel\",\r\n                        \"2026-01-01T10:00:00Z\"\r\n                )\r\n        );\r\n        channels.add(\r\n                new ChannelVM(\r\n                        UUID.randomUUID().toString(),\r\n                        \"Tech Reviews\",\r\n                        \"Technology channel\",\r\n                        \"2026-01-01T10:00:00Z\"\r\n                )\r\n        );\r\n        channels.add(\r\n                new ChannelVM(\r\n                        UUID.randomUUID().toString(),\r\n                        \"Daily News\",\r\n                        \"News channel\",\r\n                        \"2026-01-02T10:00:00Z\"\r\n                )\r\n        );\r\n        channels.add(\r\n                new ChannelVM(\r\n                        UUID.randomUUID().toString(),\r\n                        \"Music Lab\",\r\n                        \"Music channel\",\r\n                        \"2026-01-03T10:00:00Z\"\r\n                )\r\n        );\r\n    }\r\n\r\n    // Find all operation, you will be able to obtain all channels stored\r\n    // For now, this operation returns the info in list channels\r\n    public List<ChannelVM> findAll() {\r\n        return channels;\r\n    }\r\n\r\n    // Find one channel with some specific id\r\n    public ChannelVM findOneById(String id) {\r\n        return channels.stream()\r\n                .filter(channel -> channel.getId().equals(id))\r\n                .findFirst()\r\n                .orElse(null);\r\n    }\r\n\r\n    // Create some channel which is passed as a parameter\r\n    public ChannelVM create(ChannelVM channel) {\r\n        ChannelVM newChannel = new ChannelVM(\r\n                UUID.randomUUID().toString(),\r\n                channel.getName(),\r\n                channel.getDescription(),\r\n                channel.getCreatedTime()\r\n        );\r\n        newChannel.setVideos(channel.getVideos());\r\n        channels.add(newChannel);\r\n        return newChannel; // Returns the created channel\r\n    }\r\n\r\n    // Updates some channel with some id\r\n    public void update(ChannelVM updatedChannel, String id) {\r\n        ChannelVM existingChannel = findOneById(id);\r\n        int i = channels.indexOf(existingChannel);\r\n        updatedChannel.setId(existingChannel.getId());\r\n        channels.set(i, updatedChannel);\r\n    }\r\n\r\n    // Remove some channel with some id\r\n    public void delete(String id) {\r\n        channels.removeIf(channel -> channel.getId().equals(id));\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java b/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java
+--- a/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java	(revision 34439dfad8820410ae6ac7e5697bc691b528723b)
++++ b/src/main/java/aiss/peertubeminer/repository/ChannelRepository.java	(date 1776339975520)
+@@ -1,6 +1,9 @@
+ package aiss.peertubeminer.repository;
+ 
++import aiss.peertubeminer.model.peertube.Video;
+ import aiss.peertubeminer.model.videominer.ChannelVM;
++import aiss.peertubeminer.model.videominer.VideoVM;
++import aiss.peertubeminer.service.ChannelService;
+ import org.springframework.stereotype.Repository;
+ 
+ import java.util.ArrayList;
+@@ -86,4 +89,12 @@
+     public void delete(String id) {
+         channels.removeIf(channel -> channel.getId().equals(id));
+     }
++
++    // Get info from channel
++    public List<VideoVM> getFromChannel(String id, Integer maxVideos, Integer maxPages){
++        List<Video> answer = ChannelService.getCompleteChannelInfo(); // Respuesta del servicio
++
++        List<VideoVM> videosFromChannel; // Lista de videos con el modelo de peerTube
++        return videosFromChannel;
++    }
+ }

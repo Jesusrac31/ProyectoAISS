@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Remove unneccessary code">
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/shelf/Uncommitted_changes_before_Update_at_29_04_2026_12_38_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/shelf/Uncommitted_changes_before_Update_at_29_04_2026_12_38__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/Deploy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/TODO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/PeertubeminerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/controller/ChannelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/etl/TranslationPTtoVMService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Avatar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Caption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/CaptionData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Channel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/CommentData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Language.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/Video.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/peertube/VideoData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/CaptionVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/ChannelVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/CommentVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/UserVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/model/videominer/VideoVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/VideominerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/CaptionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/ChannelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/java/aiss/peertubeminer/service/peertube/VideoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/PeertubeminerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/CaptionServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/ChannelServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/CommentServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/src/test/java/aiss/peertubeminer/service/peertube/VideoServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/PeertubeminerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/controller/ChannelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/etl/TranslationPTtoVMService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Avatar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/CaptionData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/CommentData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Language.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/Video.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/peertube/VideoData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/VideominerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/peertubeminer-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/peertubeminer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/2026-04-28T12-24-51_159.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.PeertubeminerApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.CaptionServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.ChannelServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.CommentServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/TEST-aiss.peertubeminer.service.peertube.VideoServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.PeertubeminerApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.CaptionServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.ChannelServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.CommentServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/surefire-reports/aiss.peertubeminer.service.peertube.VideoServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/PeertubeminerApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/CaptionServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/ChannelServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/CommentServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PeerTube Miner/target/test-classes/aiss/peertubeminer/service/peertube/VideoServiceTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Jesusrac31&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
+    &quot;accountId&quot;: &quot;3ad1d27d-8956-415b-a9f0-fbb0e2e63053&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3CIFynWQLiHpZjxFodu5LrtF6e9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ChannelServiceTest.getChannel.executor": "Run",
+    "JUnit.OwnerServiceTest.getOwner.executor": "Run",
+    "JUnit.SubtitleServiceTest.getSubtitles.executor": "Run",
+    "JUnit.TagsServiceTest.getTags.executor": "Run",
+    "JUnit.VideoServiceTest.getVideos.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.DailymotionminerApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/DailyMotion Miner",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">
+    <configuration name="ChannelServiceTest.getChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.ChannelServiceTest" />
+      <option name="METHOD_NAME" value="getChannel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest.getOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="getOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubtitleServiceTest.getSubtitles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.SubtitleServiceTest" />
+      <option name="METHOD_NAME" value="getSubtitles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TagsServiceTest.getTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.TagsServiceTest" />
+      <option name="METHOD_NAME" value="getTags" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoServiceTest.getVideos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="videominer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aiss.dailymotionminer.service.Dailymotion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aiss.dailymotionminer.service.Dailymotion" />
+      <option name="MAIN_CLASS_NAME" value="aiss.dailymotionminer.service.Dailymotion.VideoServiceTest" />
+      <option name="METHOD_NAME" value="getVideos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DailymotionminerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="videominer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="aiss.dailymotionminer.DailymotionminerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ChannelServiceTest.getChannel" />
+      <item itemvalue="JUnit.OwnerServiceTest.getOwner" />
+      <item itemvalue="JUnit.SubtitleServiceTest.getSubtitles" />
+      <item itemvalue="JUnit.TagsServiceTest.getTags" />
+      <item itemvalue="JUnit.VideoServiceTest.getVideos" />
+      <item itemvalue="Spring Boot.DailymotionminerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VideoServiceTest.getVideos" />
+        <item itemvalue="JUnit.TagsServiceTest.getTags" />
+        <item itemvalue="JUnit.ChannelServiceTest.getChannel" />
+        <item itemvalue="JUnit.OwnerServiceTest.getOwner" />
+        <item itemvalue="JUnit.SubtitleServiceTest.getSubtitles" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="" />
+      <created>1776065435005</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776065435005</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Change port and imports bug fix">
+      <option name="closed" value="true" />
+      <created>1776069501420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776069501420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix DailyMotion Channel route.">
+      <option name="closed" value="true" />
+      <created>1777363055491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777363055491</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update application.properties, finish dailymotion services, implemented maxPages">
+      <option name="closed" value="true" />
+      <created>1777537581670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777537581670</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove unneccessary code">
+      <option name="closed" value="true" />
+      <created>1777539043536</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777539043536</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change port and imports bug fix" />
+    <MESSAGE value="Fix DailyMotion Channel route." />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPags" />
+    <MESSAGE value="Update application.properties, finish dailymotion services, implemented maxPages" />
+    <MESSAGE value="Remove unneccessary code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unneccessary code" />
+  </component>
+</project>

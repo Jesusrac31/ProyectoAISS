@@ -1,0 +1,14 @@
+:{$PORT} {
+    handle_path /api/v1/peertube* {
+        reverse_proxy localhost:8081
+    }
+
+    handle_path /api/v1/videominer* {
+        reverse_proxy localhost:8082
+    }
+    
+    # Si quieres una respuesta por defecto en la raíz
+    handle / {
+        respond "API Gateway Activo" 200
+    }
+}
