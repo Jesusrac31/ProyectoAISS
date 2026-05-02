@@ -11,3 +11,5 @@ FROM amazoncorretto:17-alpine-jdk
 COPY dist/AppName-0.0.1-SNAPSHOT.jar /app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar", "--server.port=8080"]
+4. Then go to render and create your services. In case of peertube miner and dailymotion miner you must add the enviroment variable.
+5. Deploy your project from the last commit

@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26998709-9ed1-4e86-9006-d8d370fcc12d" name="Changes" comment="DailyMotion bug fixing and improvement for videominer models">
-      <change afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/exception/CaptionAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/exception/ChannelAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/exception/CommentAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/exception/VideoAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/integration.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/PeerTubeMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DailyMotionMiner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotionMiner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/ChannelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Caption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Caption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Channel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Channel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/peertube/Video.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +51,12 @@
     &quot;assignee&quot;: &quot;alegp06&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
-    &quot;accountId&quot;: &quot;f5b4bad7-3524-4db6-a5d8-fd2316927c39&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
+    "accountId": "f5b4bad7-3524-4db6-a5d8-fd2316927c39"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8

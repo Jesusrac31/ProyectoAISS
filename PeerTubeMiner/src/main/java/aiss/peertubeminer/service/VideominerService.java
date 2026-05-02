@@ -16,6 +16,7 @@ public class VideominerService {
 
     public ChannelVM postChannel(ChannelVM channel){
         String uri = BASE_URL;
+        System.out.println(BASE_URL);
         return restTemplate.postForObject(uri, channel, ChannelVM.class);
     }
 }
