@@ -13,12 +13,22 @@
     }
 
     # 2. Documentation
+    handle /swagger-ui* {
+        reverse_proxy {$URI_VIDEOMINER} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
     handle /v3/api-docs* {
         reverse_proxy {$URI_VIDEOMINER} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
     }
     handle /webjars* {
+        reverse_proxy {$URI_VIDEOMINER} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
+    handle /swagger-resources* {
         reverse_proxy {$URI_VIDEOMINER} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
