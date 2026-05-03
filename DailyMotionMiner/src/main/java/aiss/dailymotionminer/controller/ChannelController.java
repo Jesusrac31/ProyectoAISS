@@ -54,12 +54,12 @@ public class ChannelController {
     }
 
     @Operation(
-            summary = "Retrieve one channel",
+            summary = "Send one channel to videominer",
             description = "Send one channel from DailyMotion to videominer",
             tags = { "POST" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "201", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "400", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })

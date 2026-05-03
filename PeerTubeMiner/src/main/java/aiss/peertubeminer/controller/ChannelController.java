@@ -10,10 +10,12 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Channel", description = "Channel managing in PeerTube")
 @RestController
 @RequestMapping("/peertube") // The path where you can access to this part of the API
 public class ChannelController {
@@ -32,7 +34,7 @@ public class ChannelController {
     // If success, return 200 by default
     @Operation(
             summary = "Retrieve one channel",
-            description = "Get one channel from DailyMotion",
+            description = "Get one channel from Peertube",
             tags = { "GET" }
     )
     @ApiResponses({
@@ -54,12 +56,12 @@ public class ChannelController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{id}")
     @Operation(
-            summary = "Retrieve one channel",
-            description = "Send one channel from DailyMotion to videominer",
+            summary = "Send one channel to videominer",
+            description = "Send one channel from Peertube to videominer",
             tags = { "POST" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "201", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "400", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })
