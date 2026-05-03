@@ -6,21 +6,21 @@
 :{$PORT:10000} {
 
     # 1. Routes for Videominer
-    handle_path /videominer* {
+    handle /videominer* {
         reverse_proxy {$URI_VIDEOMINER} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
     }
 
     # 2. Routes for Peertube
-    handle_path /peertube* {
+    handle /peertube* {
         reverse_proxy {$URI_PEERTUBE} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
     }
 
     # 3. Routes for Dailymotion
-    handle_path /dailymotion* {
+    handle /dailymotion* {
         reverse_proxy {$URI_DAILYMOTION} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
