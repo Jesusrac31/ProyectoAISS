@@ -108,17 +108,14 @@ public class CaptionController {
             throw new CaptionAlreadyExistsException();
         }
 
-        // Save caption in caption Repository
-        Caption createdCaption = captionRepository.save(caption);
-
-        // Associate caption to the video
+        // Get the actual video object
         Video _video = videoData.get();
-        List<Caption> captions = _video.getCaptions(); // Get list of captions
-        captions.add(createdCaption); // Insert the new caption
-        _video.setCaptions(captions); // Refresh the list of captions
-        videoRepository.save(_video); // Update video data
+        // Insert the new caption in video's captions list
+        _video.getCaptions().add(caption);
+        // Save the video (Hibernate automatically saves the caption and links the foreign key)
+        videoRepository.save(_video);
 
-        return createdCaption;
+        return caption;
     }
 
     // Endpoint to update a caption by its id

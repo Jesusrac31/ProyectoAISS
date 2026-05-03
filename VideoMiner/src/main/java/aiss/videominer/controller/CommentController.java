@@ -3,7 +3,6 @@ package aiss.videominer.controller;
 import aiss.videominer.exception.CommentAlreadyExistsException;
 import aiss.videominer.exception.CommentNotFoundException;
 import aiss.videominer.exception.VideoNotFoundException;
-import aiss.videominer.model.Caption;
 import aiss.videominer.model.Comment;
 import aiss.videominer.model.Video;
 import aiss.videominer.repository.CommentRepository;
@@ -115,17 +114,14 @@ public class CommentController {
             throw new CommentAlreadyExistsException();
         }
 
-        // Save comment in comment Repository
-        Comment createdComment = commentRepository.save(comment);
-
-        // Associate comment to the video
+        // Get the actual video object
         Video _video = videoData.get();
-        List<Comment> comments = _video.getComments(); // Get list of comments
-        comments.add(createdComment); // Insert the new comment
-        _video.setComments(comments); // Refresh the list of comments
-        videoRepository.save(_video); // Update video data
+        // Insert the new comment in video's comments list
+        _video.getComments().add(comment);
+        // Save the video (Hibernate automatically saves the comment and links the foreign key)
+        videoRepository.save(_video);
 
-        return createdComment;
+        return comment;
     }
 
     // PUT http://localhost:8080/videominer/api/v1/comments/{commentId}
