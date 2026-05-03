@@ -18,7 +18,7 @@ public class Comment {
 
     @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Comment object if the ID was not specified by the User.
     public void generateIdIfNotSpecified(){
-        if (this.id.isEmpty()) {
+        if (this.id == null || this.id.isEmpty()) {
             this.id = UUID.randomUUID().toString();
         }
     }

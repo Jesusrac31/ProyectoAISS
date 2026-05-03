@@ -7,7 +7,10 @@
     <list default="true" id="26998709-9ed1-4e86-9006-d8d370fcc12d" name="Changes" comment="DailyMotion bug fixing and improvement for videominer models">
       <change beforePath="$PROJECT_DIR$/../DailyMotionMiner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DailyMotionMiner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
