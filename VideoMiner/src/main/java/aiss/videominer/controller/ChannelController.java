@@ -14,8 +14,11 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,7 +43,34 @@ public class ChannelController {
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Channel.class), mediaType = "application/json")})
     })
     @GetMapping("/channels")
-    public List<Channel> findAll() { return channelRepository.findAll();}
+    public List<Channel> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                 @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                 @Parameter(description = "Filter by exact channel name") @RequestParam(required = false) String name,
+                                 @Parameter(description = "Filter by partial channel description") @RequestParam(required = false) String description,
+                                 @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdTime,
+                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Channel> pageChannels;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all channels will be retrieved
+        pageChannels = channelRepository.findByFilters(name, description, createdTime, paging);
+
+        return pageChannels.getContent();
+     }
 
 
     //Endpoint to find the channel by the id if it is in the database
@@ -59,7 +89,7 @@ public class ChannelController {
             throws ChannelNotFoundException {
         Optional<Channel> channel = channelRepository.findById(id);
 
-        if (!channel.isPresent()) {
+        if (channel.isEmpty()) {
             throw new ChannelNotFoundException();
         }
 
@@ -108,7 +138,7 @@ public class ChannelController {
             throws ChannelNotFoundException {
         Optional<Channel> channelData = channelRepository.findById(id);
 
-        if (!channelData.isPresent()) {
+        if (channelData.isEmpty()) {
             throw new ChannelNotFoundException();
         }
 

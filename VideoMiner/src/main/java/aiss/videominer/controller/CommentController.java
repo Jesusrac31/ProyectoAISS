@@ -16,6 +16,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,8 +46,32 @@ public class CommentController {
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")})
     })
     @GetMapping("/comments")
-    public List<Comment> getAllComments() {
-        return commentRepository.findAll();
+    public List<Comment> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                @Parameter(description = "Filter by partial comment text") @RequestParam(required = false) String text,
+                                @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdOn,
+                                @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+            Pageable paging;
+            // Configure sorting and pagination
+            if (order != null) {
+                if (order.startsWith("-")) {
+                    // If order starts with "-", sort in descending order
+                    paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+                } else {
+                    // If not, sort in ascending order
+                    paging = PageRequest.of(page, size, Sort.by(order).ascending());
+                }
+            } else {
+                // If order parameter is not given, just apply pagination
+                paging = PageRequest.of(page, size);
+            }
+
+            Page<Comment> pageComments;
+            // Data retrieval
+            // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+            pageComments = commentRepository.findByFilters(text, createdOn, paging);
+
+            return pageComments.getContent();
     }
 
     // GET http://localhost:8080/videominer/api/v1/comments/{commentId}
@@ -79,7 +107,12 @@ public class CommentController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/videos/{videoId}/comments")
-    public List<Comment> getAllCommentsByVideoId(@Parameter(description = "id of the video whose comments are retrieved") @PathVariable(value = "videoId") String videoId)
+    public List<Comment> getAllCommentsByVideoId(@Parameter(description = "id of the video whose comments are retrieved") @PathVariable(value = "videoId") String videoId,
+                                                 @Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                                 @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                                 @Parameter(description = "Filter by partial comment text") @RequestParam(required = false) String text,
+                                                 @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdOn,
+                                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
             throws VideoNotFoundException {
         Optional<Video> video = videoRepository.findById(videoId);
 
@@ -87,7 +120,27 @@ public class CommentController {
             throw new VideoNotFoundException();
         }
 
-        return video.get().getComments();
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Comment> pageComments;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+        pageComments = commentRepository.findByVideoIdAndFilters(videoId, text, createdOn, paging);
+
+        return pageComments.getContent();
     }
 
     // POST http://localhost:8080/videominer/api/v1/videos/{videoId}/comments

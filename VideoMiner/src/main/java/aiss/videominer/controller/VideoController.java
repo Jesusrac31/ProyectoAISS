@@ -2,7 +2,6 @@ package aiss.videominer.controller;
 
 
 import aiss.videominer.exception.ChannelNotFoundException;
-import aiss.videominer.exception.CommentAlreadyExistsException;
 import aiss.videominer.exception.VideoAlreadyExistsException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Channel;
@@ -18,6 +17,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,7 +50,35 @@ public class VideoController {
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Video.class), mediaType = "application/json")})
     })
     @GetMapping("/videos")
-    public List<Video> findAll() { return videoRepository.findAll();}
+    public List<Video> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                               @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                               @Parameter(description = "Filter by exact video name") @RequestParam(required = false) String name,
+                               @Parameter(description = "Filter by partial video description") @RequestParam(required = false) String description,
+                               @Parameter(description = "Filter by exact release time") @RequestParam(required = false) String releaseTime,
+                               @Parameter(description = "Filter by exact username") @RequestParam(required = false) String username,
+                               @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Video> pageVideos;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+        pageVideos = videoRepository.findByFilters(name, description, releaseTime, username, paging);
+
+        return pageVideos.getContent();
+    }
 
     //Endpoint to find the video by the id if it is in the database
     //GET http://localhost:8080/videominer/api/v1/videos/{videoId}
@@ -85,7 +116,14 @@ public class VideoController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/channels/{channelId}/videos")
-    public List<Video> getAllVideosByChannelId(@Parameter(description = "id of the channel whose videos are retrieved") @PathVariable(value = "channelId") String channelId)
+    public List<Video> getAllVideosByChannelId(@Parameter(description = "id of the channel whose videos are retrieved") @PathVariable(value = "channelId") String channelId,
+                                               @Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                               @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                               @Parameter(description = "Filter by exact channel name") @RequestParam(required = false) String name,
+                                               @Parameter(description = "Filter by partial channel description") @RequestParam(required = false) String description,
+                                               @Parameter(description = "Filter by exact release time") @RequestParam(required = false) String releaseTime,
+                                               @Parameter(description = "Filter by exact username") @RequestParam(required = false) String username,
+                                               @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
             throws ChannelNotFoundException {
         Optional<Channel> channelData = channelRepository.findById(channelId);
 
@@ -93,7 +131,26 @@ public class VideoController {
             throw new ChannelNotFoundException();
         }
 
-        return channelData.get().getVideos();
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Video> pageVideos;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+        pageVideos = videoRepository.findByChannelIdAndFilters(channelId, name, description, releaseTime, username, paging);
+        return pageVideos.getContent();
     }
 
     // Endpoint to create a video

@@ -16,6 +16,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,8 +47,33 @@ public class CaptionController {
             })
     })
     @GetMapping("/captions")
-    public List<Caption> findAll(){
-        return captionRepository.findAll();
+    public List<Caption> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                 @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                 @Parameter(description = "Filter by exact caption link") @RequestParam(required = false) String link,
+                                 @Parameter(description = "Filter by exact caption language") @RequestParam(required = false) String language,
+                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Caption> pageCaptions;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+        pageCaptions = captionRepository.findByFilters(link, language, paging);
+
+        return pageCaptions.getContent();
     }
 
     //Endpoint to find the caption by the id if it is in the database
@@ -75,12 +104,39 @@ public class CaptionController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/videos/{videoId}/captions")
-    public List<Caption> getAllCaptionsByVideoId(@Parameter(description = "id of the video whose captions will be retrieved") @PathVariable(value="videoId") String videoId) throws VideoNotFoundException {
+    public List<Caption> getAllCaptionsByVideoId(@Parameter(description = "id of the video whose captions will be retrieved") @PathVariable(value="videoId") String videoId,
+                                                 @Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
+                                                 @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
+                                                 @Parameter(description = "Filter by exact caption link") @RequestParam(required = false) String link,
+                                                 @Parameter(description = "Filter by exact caption language") @RequestParam(required = false) String language,
+                                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
+            throws VideoNotFoundException {
         Optional<Video> foundVideo = videoRepository.findById(videoId);
         if (foundVideo.isEmpty()) {
             throw new VideoNotFoundException();
         }
-        return foundVideo.get().getCaptions();
+
+        Pageable paging;
+        // Configure sorting and pagination
+        if (order != null) {
+            if (order.startsWith("-")) {
+                // If order starts with "-", sort in descending order
+                paging = PageRequest.of(page, size, Sort.by(order.substring(1)).descending());
+            } else {
+                // If not, sort in ascending order
+                paging = PageRequest.of(page, size, Sort.by(order).ascending());
+            }
+        } else {
+            // If order parameter is not given, just apply pagination
+            paging = PageRequest.of(page, size);
+        }
+
+        Page<Caption> pageCaptions;
+        // Data retrieval
+        // If any filter has been specified, our dynamic query will apply them, otherwise all videos will be retrieved
+        pageCaptions = captionRepository.findByVideoIdAndFilters(videoId, link, language, paging);
+
+        return pageCaptions.getContent();
     }
 
     // Endpoint to create a caption
