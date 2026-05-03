@@ -2,7 +2,6 @@ package aiss.videominer.controller;
 
 import aiss.videominer.exception.CaptionAlreadyExistsException;
 import aiss.videominer.exception.CaptionNotFoundException;
-import aiss.videominer.exception.ChannelAlreadyExistsException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Caption;
 import aiss.videominer.model.Video;
@@ -20,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,7 +59,7 @@ public class CaptionController {
     @GetMapping("/captions/{captionId}")
     public Caption findOne(@Parameter(description = "id of the caption to be searched")@PathVariable(value = "captionId") String id) throws CaptionNotFoundException {
         Optional<Caption> caption = captionRepository.findById(id);
-        if (!caption.isPresent()){
+        if (caption.isEmpty()){
             throw new CaptionNotFoundException();
         }
         return caption.get();
@@ -79,7 +77,7 @@ public class CaptionController {
     @GetMapping("/videos/{videoId}/captions")
     public List<Caption> getAllCaptionsByVideoId(@Parameter(description = "id of the video whose captions will be retrieved") @PathVariable(value="videoId") String videoId) throws VideoNotFoundException {
         Optional<Video> foundVideo = videoRepository.findById(videoId);
-        if (!foundVideo.isPresent()) {
+        if (foundVideo.isEmpty()) {
             throw new VideoNotFoundException();
         }
         return foundVideo.get().getCaptions();
@@ -101,17 +99,26 @@ public class CaptionController {
     @PostMapping("/videos/{videoId}/captions")
     public Caption create(@Parameter(description = "id of the video where the caption will be posted") @PathVariable(value = "videoId") String videoId,
                           @Valid @RequestBody Caption caption) throws VideoNotFoundException, CaptionAlreadyExistsException {
-        Optional<Video> video = videoRepository.findById(videoId);
+        Optional<Video> videoData = videoRepository.findById(videoId);
 
-        if (!video.isPresent()) {
+        if (videoData.isEmpty()) {
             throw new VideoNotFoundException();
         }
         if (captionRepository.findById(caption.getId()).isPresent()){
             throw new CaptionAlreadyExistsException();
         }
 
-        video.get().getCaptions().add(caption);
-        return captionRepository.save(caption);
+        // Save caption in caption Repository
+        Caption createdCaption = captionRepository.save(caption);
+
+        // Associate caption to the video
+        Video _video = videoData.get();
+        List<Caption> captions = _video.getCaptions(); // Get list of captions
+        captions.add(createdCaption); // Insert the new caption
+        _video.setCaptions(captions); // Refresh the list of captions
+        videoRepository.save(_video); // Update video data
+
+        return createdCaption;
     }
 
     // Endpoint to update a caption by its id
@@ -132,7 +139,7 @@ public class CaptionController {
                        @Valid @RequestBody Caption caption) throws CaptionNotFoundException {
         Optional<Caption> captionData = captionRepository.findById(captionId);
 
-        if (!captionData.isPresent()) {
+        if (captionData.isEmpty()) {
             throw new CaptionNotFoundException();
         }
 

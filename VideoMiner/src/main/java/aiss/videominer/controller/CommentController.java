@@ -1,9 +1,9 @@
 package aiss.videominer.controller;
 
-import aiss.videominer.exception.CaptionAlreadyExistsException;
 import aiss.videominer.exception.CommentAlreadyExistsException;
 import aiss.videominer.exception.CommentNotFoundException;
 import aiss.videominer.exception.VideoNotFoundException;
+import aiss.videominer.model.Caption;
 import aiss.videominer.model.Comment;
 import aiss.videominer.model.Video;
 import aiss.videominer.repository.CommentRepository;
@@ -62,7 +62,7 @@ public class CommentController {
     throws CommentNotFoundException {
         Optional<Comment> comment = commentRepository.findById(commentId);
 
-        if (!comment.isPresent()) {
+        if (comment.isEmpty()) {
             throw new CommentNotFoundException();
         }
 
@@ -84,7 +84,7 @@ public class CommentController {
             throws VideoNotFoundException {
         Optional<Video> video = videoRepository.findById(videoId);
 
-        if (!video.isPresent()) {
+        if (video.isEmpty()) {
             throw new VideoNotFoundException();
         }
 
@@ -106,17 +106,26 @@ public class CommentController {
     @PostMapping("/videos/{videoId}/comments")
     public Comment create(@Parameter(description = "id of the video where the comment will be posted") @PathVariable(value = "videoId") String videoId,
                           @Valid @RequestBody Comment comment) throws VideoNotFoundException, CommentAlreadyExistsException {
-        Optional<Video> video = videoRepository.findById(videoId);
+        Optional<Video> videoData = videoRepository.findById(videoId);
 
-        if (!video.isPresent()) {
+        if (videoData.isEmpty()) {
             throw new VideoNotFoundException();
         }
         if (commentRepository.findById(comment.getId()).isPresent()){
             throw new CommentAlreadyExistsException();
         }
 
-        video.get().getComments().add(comment);
-        return commentRepository.save(comment);
+        // Save comment in comment Repository
+        Comment createdComment = commentRepository.save(comment);
+
+        // Associate comment to the video
+        Video _video = videoData.get();
+        List<Comment> comments = _video.getComments(); // Get list of comments
+        comments.add(createdComment); // Insert the new comment
+        _video.setComments(comments); // Refresh the list of comments
+        videoRepository.save(_video); // Update video data
+
+        return createdComment;
     }
 
     // PUT http://localhost:8080/videominer/api/v1/comments/{commentId}
@@ -136,7 +145,7 @@ public class CommentController {
                           @Valid @RequestBody Comment comment) throws CommentNotFoundException {
         Optional<Comment> commentData = commentRepository.findById(commentId);
 
-        if (!commentData.isPresent()) {
+        if (commentData.isEmpty()) {
             throw new CommentNotFoundException();
         }
 
