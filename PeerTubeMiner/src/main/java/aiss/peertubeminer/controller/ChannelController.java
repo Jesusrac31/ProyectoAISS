@@ -5,6 +5,11 @@ import aiss.peertubeminer.model.videominer.ChannelVM;
 import aiss.peertubeminer.service.peertube.ChannelService;
 import aiss.peertubeminer.etl.TranslationPTtoVMService;
 import aiss.peertubeminer.service.VideominerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +30,17 @@ public class ChannelController {
 
     // For some GET operation with some ID as a path variable, it gets the channel and returns directly
     // If success, return 200 by default
+    @Operation(
+            summary = "Retrieve one channel",
+            description = "Get one channel from DailyMotion",
+            tags = { "GET" }
+    )
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "400", content = { @Content(schema = @Schema()) }),
+            @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
+            @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })
+    })
     @GetMapping("/{id}")
     public ChannelVM getChannel(@PathVariable String id,
                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
@@ -37,6 +53,17 @@ public class ChannelController {
     // If success, return 201 status
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{id}")
+    @Operation(
+            summary = "Retrieve one channel",
+            description = "Send one channel from DailyMotion to videominer",
+            tags = { "POST" }
+    )
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = ChannelVM.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "400", content = { @Content(schema = @Schema()) }),
+            @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
+            @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })
+    })
     public ChannelVM postChannel(@PathVariable String id,
                                  @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
                                  @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
