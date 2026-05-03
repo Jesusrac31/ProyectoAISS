@@ -14,6 +14,7 @@ public class VideominerService {
     @Value("${videominer.uri}")
     private String BASE_URL;
 
+    // Method that POST a channel with its information
     public ChannelVM postChannel(ChannelVM channel){
         String uri = BASE_URL;
         return restTemplate.postForObject(uri, channel, ChannelVM.class);

@@ -15,12 +15,13 @@ public class TagsService {
 
     private static final String BASE_URL = "https://api.dailymotion.com/";
 
-    // Get the tags (comments) of a video
+    // Method to GET the tags (comments) of a video
     public List<String> getVideoTags(String id, int maxTags) {
         // Since tags is an array, no need to calculate the limit. It will simply be maxTags
         List<String> tags;
         String uri = BASE_URL + "video/" + id + "?fields=tags"; // Build uri
         Video video = restTemplate.getForObject(uri, Video.class); // Get video
+
         if (video==null || video.getTags()==null || video.getTags().isEmpty()) {
             tags = new ArrayList<>(); // If something went wrong, tags will be empty
         } else {

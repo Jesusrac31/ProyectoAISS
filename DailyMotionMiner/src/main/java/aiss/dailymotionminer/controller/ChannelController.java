@@ -53,6 +53,8 @@ public class ChannelController {
             return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
     }
 
+    // POST operation for the channel given its ID TO VideoMiner
+    // If success, returns 201 by default
     @Operation(
             summary = "Send one channel to videominer",
             description = "Send one channel from DailyMotion to videominer",

@@ -18,6 +18,7 @@ public class VideoService {
 
     private static final String BASE_URL = "https://api.dailymotion.com/";
 
+    // Method to GET the videos from a Channel
     public List<Video> getChannelVideos(String channelHandler, int maxVideos, int maxTags, int maxPages) {
 
         // If maxVideos > 100 (API Limit) -> limit = 100
@@ -51,6 +52,7 @@ public class VideoService {
         return allVideos.stream().limit(maxVideos).toList();
     }
 
+    // Method to GET a video with an ID
     public Video getById(String id) {
         String uri = BASE_URL + "video/" + id +
                 "?fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
