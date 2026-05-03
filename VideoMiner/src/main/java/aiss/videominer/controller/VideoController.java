@@ -2,6 +2,7 @@ package aiss.videominer.controller;
 
 
 import aiss.videominer.exception.ChannelNotFoundException;
+import aiss.videominer.exception.CommentAlreadyExistsException;
 import aiss.videominer.exception.VideoAlreadyExistsException;
 import aiss.videominer.exception.VideoNotFoundException;
 import aiss.videominer.model.Channel;
@@ -120,14 +121,17 @@ public class VideoController {
             throw new VideoAlreadyExistsException();
         }
 
-        // Get the actual channel object
-        Channel _channel = channelData.get();
-        // Insert the new video in channel's list
-        _channel.getVideos().add(video);
-        // Save the channel (Hibernate automatically saves the video and links the foreign key)
-        channelRepository.save(_channel);
+        // Save video in video Repository
+        Video createdVideo = videoRepository.save(video);
 
-        return video;
+        // Associate video to the channel
+        Channel _channel = channelData.get();
+        List<Video> videos = _channel.getVideos(); // Get list of videos
+        videos.add(createdVideo); // Insert the new video
+        _channel.setVideos(videos); // Refresh the list of videos
+        channelRepository.save(_channel); // Update channel data
+
+        return createdVideo;
     }
 
     // Endpoint to update a video

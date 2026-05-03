@@ -42,8 +42,8 @@ public class Caption {
     }
 
     //Default constructor for Caption
-    public Caption(String name, String language){
-        this.link = name;
+    public Caption(String link, String language){
+        this.link = link;
         this.language = language;
     }
 
@@ -55,11 +55,11 @@ public class Caption {
         this.id = id;
     }
 
-    public String getName() {
+    public String getLink() {
         return link;
     }
 
-    public void setName(String name) {
+    public void setLink(String name) {
         this.link = name;
     }
 

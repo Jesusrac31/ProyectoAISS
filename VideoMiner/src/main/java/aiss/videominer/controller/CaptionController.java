@@ -142,7 +142,7 @@ public class CaptionController {
 
         Caption _caption = captionData.get();
         _caption.setLanguage(caption.getLanguage());
-        _caption.setName(caption.getName());
+        _caption.setLink(caption.getLink());
         captionRepository.save(_caption);
     }
 

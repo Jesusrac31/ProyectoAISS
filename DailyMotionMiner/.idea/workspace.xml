@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8aeb3987-4b61-4f29-bfd0-c84b33fc4d74" name="Changes" comment="Remove unneccessary code">
-      <change afterPath="$PROJECT_DIR$/../.idea/integration.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PeerTubeMiner/.idea/PeerTubeMiner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Caption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Channel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Language.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/peertube/Video.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CaptionVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/ChannelVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/CommentVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/UserVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/model/videominer/VideoVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CaptionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/ChannelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PeerTubeMiner/target/classes/aiss/peertubeminer/service/peertube/VideoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/CaptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/controller/VideoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Caption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoMiner/src/main/java/aiss/videominer/model/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +32,12 @@
     &quot;assignee&quot;: &quot;Jesusrac31&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jesusrac31/ProyectoAISS.git",
-    "accountId": "f5b4bad7-3524-4db6-a5d8-fd2316927c39"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jesusrac31/ProyectoAISS.git&quot;,
+    &quot;accountId&quot;: &quot;f5b4bad7-3524-4db6-a5d8-fd2316927c39&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -76,31 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ChannelServiceTest.getChannel.executor": "Run",
-    "JUnit.OwnerServiceTest.getOwner.executor": "Run",
-    "JUnit.SubtitleServiceTest.getSubtitles.executor": "Run",
-    "JUnit.TagsServiceTest.getTags.executor": "Run",
-    "JUnit.VideoServiceTest.getVideos.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.DailymotionminerApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/DailyMotion Miner",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ChannelServiceTest.getChannel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OwnerServiceTest.getOwner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubtitleServiceTest.getSubtitles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TagsServiceTest.getTags.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VideoServiceTest.getVideos.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DailymotionminerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Equipo/Documents/Ingenieria Informatica - Ingenieria de Software/2º/AISS/ProyectoAISS/DailyMotion Miner&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.DailymotionminerApplication">
     <configuration name="ChannelServiceTest.getChannel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="videominer" />
@@ -183,7 +164,7 @@
       </method>
     </configuration>
     <configuration name="DailymotionminerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="videominer" />
+      <module name="dailymotionminer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="aiss.dailymotionminer.DailymotionminerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
