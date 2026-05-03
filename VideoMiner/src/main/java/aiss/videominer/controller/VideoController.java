@@ -66,7 +66,7 @@ public class VideoController {
             throws VideoNotFoundException {
         Optional<Video> video = videoRepository.findById(id);
 
-        if (!video.isPresent()) {
+        if (video.isEmpty()) {
             throw new VideoNotFoundException();
         }
 
@@ -89,7 +89,7 @@ public class VideoController {
             throws ChannelNotFoundException {
         Optional<Channel> channelData = channelRepository.findById(channelId);
 
-        if (!channelData.isPresent()) {
+        if (channelData.isEmpty()) {
             throw new ChannelNotFoundException();
         }
 
@@ -112,17 +112,26 @@ public class VideoController {
     @PostMapping("/channels/{channelId}/videos")
     public Video create(@Parameter(description = "id of the channel where the video will be posted") @PathVariable(value = "channelId") String channelId,
                         @Valid @RequestBody Video video) throws ChannelNotFoundException, VideoAlreadyExistsException {
-        Optional<Channel> channel = channelRepository.findById(channelId);
+        Optional<Channel> channelData = channelRepository.findById(channelId);
 
-        if (!channel.isPresent()) {
+        if (channelData.isEmpty()) {
             throw new ChannelNotFoundException();
         }
         if (videoRepository.findById(video.getId()).isPresent()){
             throw new VideoAlreadyExistsException();
         }
 
-        channel.get().getVideos().add(video);
-        return videoRepository.save(video);
+        // Save video in video Repository
+        Video createdVideo = videoRepository.save(video);
+
+        // Associate video to the channel
+        Channel _channel = channelData.get();
+        List<Video> videos = _channel.getVideos(); // Get list of videos
+        videos.add(createdVideo); // Insert the new video
+        _channel.setVideos(videos); // Refresh the list of videos
+        channelRepository.save(_channel); // Update channel data
+
+        return createdVideo;
     }
 
     // Endpoint to update a video
@@ -143,7 +152,7 @@ public class VideoController {
                        @Valid @RequestBody Video updatedVideo) throws VideoNotFoundException {
         Optional<Video> videoData = videoRepository.findById(id);
 
-        if (!videoData.isPresent()) {
+        if (videoData.isEmpty()) {
             throw new VideoNotFoundException();
         }
         Video video1 = videoData.get();
