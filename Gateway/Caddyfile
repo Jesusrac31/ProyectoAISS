@@ -12,14 +12,36 @@
         }
     }
 
-    # 2. Routes for Peertube
+    # 2. Documentation
+    handle /v3/api-docs* {
+        reverse_proxy {$URI_VIDEOMINER} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
+    handle /webjars* {
+        reverse_proxy {$URI_VIDEOMINER} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
+    handle_path /docs/peertube* {
+        reverse_proxy {$URI_PEERTUBE} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
+    handle_path /docs/dailymotion* {
+        reverse_proxy {$URI_DAILYMOTION} {
+            header_up X-Gateway-Secret {$GATEWAY_SECRET}
+        }
+    }
+
+    # 3. Routes for Peertube
     handle /peertube* {
         reverse_proxy {$URI_PEERTUBE} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
         }
     }
 
-    # 3. Routes for Dailymotion
+    # 4. Routes for Dailymotion
     handle /dailymotion* {
         reverse_proxy {$URI_DAILYMOTION} {
             header_up X-Gateway-Secret {$GATEWAY_SECRET}
