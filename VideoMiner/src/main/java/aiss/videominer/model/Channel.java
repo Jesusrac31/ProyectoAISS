@@ -19,17 +19,10 @@ import jakarta.validation.constraints.NotNull;
 @JsonPropertyOrder({ "id", "name", "description", "createdTime", "videos" })
 public class Channel {
 
-    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Channel object if the ID was not specified by the User.
-    public void generateIdIfNotSpecified(){
-        if (this.id == null || this.id.isEmpty()) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
-
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)   // It was decided not to implement auto-generation of ID since the ID passed by the User must be taken
     @JsonProperty("id")
-    private String id;
+    // If id is given in JSON body use the provided value, else generate a random UUID
+    private String id = UUID.randomUUID().toString();
 
     @JsonProperty("name")
     @Column(name = "name")

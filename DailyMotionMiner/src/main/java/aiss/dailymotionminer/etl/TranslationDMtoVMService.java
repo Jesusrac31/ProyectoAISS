@@ -34,7 +34,7 @@ public class TranslationDMtoVMService{
         VideoVM resVideoVM = new VideoVM(videoDM.getId(), videoDM.getTitle(), videoDM.getDescription(), videoDM.getCreated_time());
 
         //Setting the author of resVideoVM
-        resVideoVM.setAuthor(userTranslation(videoDM.getOwner()));
+        resVideoVM.setUser(userTranslation(videoDM.getOwner()));
 
         //Iterating over the comments of videoPT and adding the comments to resVideoVM one by one
         List<CommentVM> auxCommentList = new ArrayList<>();

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.util.UUID;
+
 /**
  * @author Juan C. Alonso
  */
@@ -15,8 +17,8 @@ public class User {
 
     @Id
     @JsonProperty("id")
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    // If id is given in JSON body use the provided value, else generate a random UUID
+    private String id = UUID.randomUUID().toString();
 
     @JsonProperty("name")
     @Column(name = "name")

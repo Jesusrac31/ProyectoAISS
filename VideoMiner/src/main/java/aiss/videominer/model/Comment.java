@@ -16,17 +16,10 @@ import java.util.UUID;
 @JsonPropertyOrder({ "id", "text", "createdOn" })
 public class Comment {
 
-    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Comment object if the ID was not specified by the User.
-    public void generateIdIfNotSpecified(){
-        if (this.id == null || this.id.isEmpty()) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
-
     @Id
-//    @GeneratedValue(strategy = GenerationType.UUID) While creating the channel, the IDs are passed by the User, not generated automatically
     @JsonProperty("id")
-    private String id;
+    // If id is given in JSON body use the provided value, else generate a random UUID
+    private String id = UUID.randomUUID().toString();
 
     @JsonProperty("text")
     @Column(columnDefinition="TEXT", name = "text")

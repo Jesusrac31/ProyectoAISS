@@ -10,6 +10,7 @@ import aiss.videominer.repository.ChannelRepository;
 import aiss.videominer.repository.VideoRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -47,7 +48,7 @@ public class VideoController {
             tags = { "GET" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Video.class), mediaType = "application/json")})
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Video.class)), mediaType = "application/json")})
     })
     @GetMapping("/videos")
     public List<Video> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
@@ -56,7 +57,7 @@ public class VideoController {
                                @Parameter(description = "Filter by partial video description") @RequestParam(required = false) String description,
                                @Parameter(description = "Filter by exact release time") @RequestParam(required = false) String releaseTime,
                                @Parameter(description = "Filter by exact username") @RequestParam(required = false) String username,
-                               @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+                               @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'name', 'description', or 'releaseTime'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order) {
         Pageable paging;
         // Configure sorting and pagination
         if (order != null) {
@@ -112,7 +113,7 @@ public class VideoController {
             tags = { "GET" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Video.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Video.class)), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/channels/{channelId}/videos")
@@ -123,7 +124,7 @@ public class VideoController {
                                                @Parameter(description = "Filter by partial channel description") @RequestParam(required = false) String description,
                                                @Parameter(description = "Filter by exact release time") @RequestParam(required = false) String releaseTime,
                                                @Parameter(description = "Filter by exact username") @RequestParam(required = false) String username,
-                                               @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
+                                               @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'name', 'description', or 'releaseTime'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order)
             throws ChannelNotFoundException {
         Optional<Channel> channelData = channelRepository.findById(channelId);
 

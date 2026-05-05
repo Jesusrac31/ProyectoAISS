@@ -17,17 +17,10 @@ import java.util.UUID;
 @JsonPropertyOrder({ "id", "name", "description", "releaseTime", "user", "captions", "comments" })
 public class Video {
 
-    @PrePersist // Annotation which allows to execute code when the entity is saved for the first time. In this case we create a random ID for the Video object if the ID was not specified by the User.
-    public void generateIdIfNotSpecified(){
-        if (this.id == null || this.id.isEmpty()) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
-
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)  The IDs of the video objects are provided by the user
     @JsonProperty("id")
-    private String id;
+    // If id is given in JSON body use the provided value, else generate a random UUID
+    private String id = UUID.randomUUID().toString();
 
     @JsonProperty("name")
     @Column(name = "name")//
@@ -45,7 +38,7 @@ public class Video {
     private String releaseTime;
 
     @JsonProperty("user")
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
     @JsonProperty("comments")

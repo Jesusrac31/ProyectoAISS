@@ -7,6 +7,7 @@ import aiss.videominer.model.Channel;
 import aiss.videominer.repository.ChannelRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -40,7 +41,7 @@ public class ChannelController {
             tags = { "GET" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Channel.class), mediaType = "application/json")})
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Channel.class)), mediaType = "application/json")})
     })
     @GetMapping("/channels")
     public List<Channel> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
@@ -48,7 +49,7 @@ public class ChannelController {
                                  @Parameter(description = "Filter by exact channel name") @RequestParam(required = false) String name,
                                  @Parameter(description = "Filter by partial channel description") @RequestParam(required = false) String description,
                                  @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdTime,
-                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+                                 @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'name', 'description', or 'createdTime'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order) {
         Pageable paging;
         // Configure sorting and pagination
         if (order != null) {

@@ -40,7 +40,7 @@ public class TranslationPTtoVMService{
     VideoVM resVideoVM = new VideoVM(videoPT.getId(), videoPT.getName(), videoPT.getDescription(), videoPT.getPublishedAt());
     // Translating Account (PT) to User (VM)
     //Setting the author of resVideoVM
-    resVideoVM.setAuthor(userTranslation(videoPT.getAccount()));
+    resVideoVM.setUser(userTranslation(videoPT.getAccount()));
     //Iterating over the comments of videoPT and adding the comments to resVideoVM one by one
     List<CommentVM> auxCommentList = new ArrayList<CommentVM>();
     for (Comment cm: videoPT.getComments()){

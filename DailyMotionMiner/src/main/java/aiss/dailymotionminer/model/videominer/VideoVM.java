@@ -15,7 +15,7 @@ public class VideoVM {
     private String name;
     private String description;
     private String releaseTime;
-    private UserVM author;
+    private UserVM user;
     private List<CommentVM> comments;
     private List<CaptionVM> captions;
 
@@ -25,7 +25,7 @@ public class VideoVM {
         this.name = name;
         this.description = description;
         this.releaseTime = releaseTime;
-        this.author = null;
+        this.user = null;
         this.comments = new ArrayList<>();
         this.captions = new ArrayList<>();
     }
@@ -63,12 +63,12 @@ public class VideoVM {
         this.releaseTime = releaseTime;
     }
 
-    public UserVM getAuthor() {
-        return author;
+    public UserVM getUser() {
+        return user;
     }
 
-    public void setAuthor(UserVM author) {
-        this.author = author;
+    public void setUser(UserVM author) {
+        this.user = author;
     }
     
     public List<CommentVM> getComments() {
@@ -95,7 +95,7 @@ public class VideoVM {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", releaseTime='" + releaseTime + '\'' +
-                ", author=" + author +
+                ", author=" + user +
                 ", comments=" + comments +
                 ", captions=" + captions +
                 '}';

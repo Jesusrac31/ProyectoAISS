@@ -9,6 +9,7 @@ import aiss.videominer.repository.CaptionRepository;
 import aiss.videominer.repository.VideoRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -43,7 +44,7 @@ public class CaptionController {
             tags = { "GET" })
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
-                    @Content(schema = @Schema(implementation = Caption.class), mediaType = "application/json")
+                    @Content(array = @ArraySchema(schema = @Schema(implementation = Caption.class)), mediaType = "application/json")
             })
     })
     @GetMapping("/captions")
@@ -51,7 +52,7 @@ public class CaptionController {
                                  @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
                                  @Parameter(description = "Filter by exact caption link") @RequestParam(required = false) String link,
                                  @Parameter(description = "Filter by exact caption language") @RequestParam(required = false) String language,
-                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+                                 @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'link', or 'language'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order) {
 
         Pageable paging;
         // Configure sorting and pagination
@@ -100,7 +101,7 @@ public class CaptionController {
     description = "Get all the captions of a video by its id",
     tags = { "GET" })
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Caption.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Caption.class)), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/videos/{videoId}/captions")
@@ -109,7 +110,7 @@ public class CaptionController {
                                                  @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
                                                  @Parameter(description = "Filter by exact caption link") @RequestParam(required = false) String link,
                                                  @Parameter(description = "Filter by exact caption language") @RequestParam(required = false) String language,
-                                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
+                                                 @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'link', or 'language'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order)
             throws VideoNotFoundException {
         Optional<Video> foundVideo = videoRepository.findById(videoId);
         if (foundVideo.isEmpty()) {

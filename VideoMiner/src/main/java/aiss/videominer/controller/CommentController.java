@@ -9,6 +9,7 @@ import aiss.videominer.repository.CommentRepository;
 import aiss.videominer.repository.VideoRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -43,14 +44,14 @@ public class CommentController {
             tags = { "GET" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")})
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Comment.class)), mediaType = "application/json")})
     })
     @GetMapping("/comments")
     public List<Comment> findAll(@Parameter(description = "Page number to retrieve") @RequestParam(defaultValue = "0") int page,
                                 @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
                                 @Parameter(description = "Filter by partial comment text") @RequestParam(required = false) String text,
                                 @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdOn,
-                                @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order) {
+                                @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'text', or 'createdOn'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order) {
             Pageable paging;
             // Configure sorting and pagination
             if (order != null) {
@@ -103,7 +104,7 @@ public class CommentController {
             tags = { "GET" }
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = Comment.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "200", content = { @Content(array = @ArraySchema(schema = @Schema(implementation = Comment.class)), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/videos/{videoId}/comments")
@@ -112,7 +113,7 @@ public class CommentController {
                                                  @Parameter(description = "Number of elements per page") @RequestParam(defaultValue = "10") int size,
                                                  @Parameter(description = "Filter by partial comment text") @RequestParam(required = false) String text,
                                                  @Parameter(description = "Filter by exact creation time") @RequestParam(required = false) String createdOn,
-                                                 @Parameter(description = "Sorting criteria. Use \"-\" for descending order") @RequestParam(required = false) String order)
+                                                 @Parameter(description = "Sorting criteria. Choose a single field: 'id', 'text', or 'createdOn'. Use a '-' prefix for descending order (e.g., '-id').") @RequestParam(required = false) String order)
             throws VideoNotFoundException {
         Optional<Video> video = videoRepository.findById(videoId);
 
