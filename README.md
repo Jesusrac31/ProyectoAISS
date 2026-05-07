@@ -68,6 +68,8 @@ We had to change some of the tests and add new tests for Postman. Here are some 
 - We added the tests for CRUD operations. There were only tests for getters.
 - We added some test that are supposed to return errors in order to see whether our Global Exception Handler works.
 
+Remember that tests only works if the database is cleared, otherwise it is possible to receive some unexpected 409 status codes.
+
 ## Additional Notes
 
 - The project follows a modular architecture with one Spring Boot application per miner.
