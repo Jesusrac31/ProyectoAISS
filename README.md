@@ -57,6 +57,17 @@ The deployment flow is summarized as follows:
 5. Configure the required environment variables for PeerTube Miner and DailyMotion Miner.
 6. Deploy the latest commit.
 
+## Postman tests
+
+We had to change some of the tests and add new tests for Postman. Here are some of these changes:
+
+- We added enviroments that must be used in order to select whether you are testing your local version, the one deployed or using the gateway.
+- The data model used the name "link" for caption name. However, tests uses "name" instead in the creation. We updated that name.
+- In the tests, the one named "Get all captions" expected to get 8 captions while just 7 are posted. We changed that number.
+- We added all tests related to import channels from PeerTube and DailyMotion.
+- We added the tests for CRUD operations. There were only tests for getters.
+- We added some test that are supposed to return errors in order to see whether our Global Exception Handler works.
+
 ## Additional Notes
 
 - The project follows a modular architecture with one Spring Boot application per miner.
