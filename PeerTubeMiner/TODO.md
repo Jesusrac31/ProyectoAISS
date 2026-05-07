@@ -1,5 +1,4 @@
 - [x] Set up port 8082
-- [ ] Set some prefix for all operations
-- [ ] Test for VideominerService
+- [x] Test for VideominerService
 - [x] Exceptions
-- [ ] Add exception when videominer server is down and communication is impossible
+- [x] Add exception when videominer server is down and communication is impossible
