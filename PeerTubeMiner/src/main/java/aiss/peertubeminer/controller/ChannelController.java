@@ -6,6 +6,7 @@ import aiss.peertubeminer.service.peertube.ChannelService;
 import aiss.peertubeminer.etl.TranslationPTtoVMService;
 import aiss.peertubeminer.service.VideominerService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -45,8 +46,8 @@ public class ChannelController {
     })
     @GetMapping("/{id}")
     public ChannelVM getChannel(@PathVariable String id,
-                                @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
-                                @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
+                                @Parameter(description = "Maximum number of videos to be retrieved") @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
+                                @Parameter(description = "Maximum number of comments per video to be retrieved") @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
             Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
             return TranslationPTtoVMService.channelTranslation(channelAPI);
     }
@@ -67,8 +68,8 @@ public class ChannelController {
             @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })
     })
     public ChannelVM postChannel(@PathVariable String id,
-                                 @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
-                                 @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
+                                 @Parameter(description = "Maximum number of videos to be retrieved") @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
+                                 @Parameter(description = "Maximum number of comments per video to be retrieved") @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
             Channel channelAPI = channelService.getCompleteChannelInfo(id, maxVideos, maxComments);
             ChannelVM channelVM = TranslationPTtoVMService.channelTranslation(channelAPI);
             return videominerService.postChannel(channelVM);

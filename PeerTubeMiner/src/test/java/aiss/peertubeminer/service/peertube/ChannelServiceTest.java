@@ -16,7 +16,7 @@ class ChannelServiceTest {
     @Test
     @DisplayName("Get a channel by channelHandler")
     void findChannel() {
-        Channel channel = service.getById("bloodaxegamingnor@peertube.linuxrocks.online");
+        Channel channel = service.getById("tv");
         assertNotNull(channel);
         System.out.println(channel);
     }

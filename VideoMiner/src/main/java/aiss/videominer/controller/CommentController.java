@@ -37,6 +37,7 @@ public class CommentController {
     @Autowired
     VideoRepository videoRepository;
 
+    //Endpoint to find all the comments inside the database
     // GET http://localhost:8080/videominer/api/v1/comments
     @Operation(
             summary = "Retrieve a list of comments",
@@ -75,6 +76,7 @@ public class CommentController {
             return pageComments.getContent();
     }
 
+    //Endpoint to find the comment by the id if it is in the database
     // GET http://localhost:8080/videominer/api/v1/comments/{commentId}
     @Operation(
             summary = "Retrieve comment by id",
@@ -97,6 +99,7 @@ public class CommentController {
         return comment.get();
     }
 
+    //Endpoint to find all the comments of a video by its ID
     // GET http://localhost:8080/videominer/api/v1/videos/{videoId}/comments
     @Operation(
             summary = "Retrieve video comments",
@@ -144,6 +147,7 @@ public class CommentController {
         return pageComments.getContent();
     }
 
+    // Endpoint to create a comment
     // POST http://localhost:8080/videominer/api/v1/videos/{videoId}/comments
     @Operation(
             summary = "Add comment to video",
@@ -178,6 +182,7 @@ public class CommentController {
         return comment;
     }
 
+    // Endpoint to update a comment by its id
     // PUT http://localhost:8080/videominer/api/v1/comments/{commentId}
     @Operation(
             summary = "Update comment",
@@ -205,6 +210,7 @@ public class CommentController {
         commentRepository.save(_comment);
     }
 
+    // Endpoint to delete a comment by its id
     // DELETE http://localhost:8080/videominer/api/v1/comments/{commentId}
     @Operation(
             summary = "Delete comment",
