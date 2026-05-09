@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "de95d013-18ba-46cf-88f0-7c09af29c750",
-    "name": "PeerTube and DailyMotion",
+    "_postman_id": "b22b1bc0-d2d6-4c32-8778-c0f47f292f62",
+    "name": "Proyecto AISS",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "51958246",
-    "_collection_link": "https://go.postman.co/collection/51958246-de95d013-18ba-46cf-88f0-7c09af29c750?source=collection_link"
+    "_exporter_id": "52464896",
+    "_collection_link": "https://go.postman.co/collection/52464896-b22b1bc0-d2d6-4c32-8778-c0f47f292f62?source=collection_link"
   },
   "item": [
     {
@@ -62,7 +62,7 @@
               "variable": [
                 {
                   "key": "channelHandle",
-                  "value": "s3nnet@tube.tchncs.de"
+                  "value": "transport_evolved_take_2@peertube.tv"
                 }
               ]
             }
@@ -94,12 +94,11 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const start = Date.now()\r",
-                  "const delay = 5;\r",
+                  "console.log(\"Waiting 5 seconds for avoiding error 429...\");\r",
                   "\r",
-                  "while (Date.now() - start < delay){\r",
-                  "    console.log(\"Waiting for 5 seconds before sending the request...\");\r",
-                  "}"
+                  "pm.sendRequest(\"https://postman-echo.com/delay/5\", function (err, response) {\r",
+                  "    console.log(\"Sending Request\");\r",
+                  "});"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -122,7 +121,7 @@
               "variable": [
                 {
                   "key": "channelHandle",
-                  "value": "s3nnet@tube.tchncs.de"
+                  "value": "transport_evolved_take_2@peertube.tv"
                 }
               ]
             }
@@ -177,12 +176,11 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const start = Date.now()\r",
-                  "const delay = 5;\r",
+                  "console.log(\"Waiting 5 seconds for avoiding error 429...\");\r",
                   "\r",
-                  "while (Date.now() - start < delay){\r",
-                  "    console.log(\"Waiting for 5 seconds before sending the request...\");\r",
-                  "}"
+                  "pm.sendRequest(\"https://postman-echo.com/delay/5\", function (err, response) {\r",
+                  "    console.log(\"Sending Request\");\r",
+                  "});"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -215,7 +213,7 @@
               "variable": [
                 {
                   "key": "channelHandle",
-                  "value": "s3nnet@tube.tchncs.de"
+                  "value": "transport_evolved_take_2@peertube.tv"
                 }
               ]
             }
@@ -250,12 +248,12 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const start = Date.now()\r",
-                  "const delay = 5;\r",
+                  "console.log(\"Waiting 10 seconds for avoiding error 429...\");\r",
                   "\r",
-                  "while (Date.now() - start < delay){\r",
-                  "    console.log(\"Waiting for 5 seconds before sending the request...\");\r",
-                  "}"
+                  "// Every 10 seconds the API rate limit is reset\r",
+                  "pm.sendRequest(\"https://postman-echo.com/delay/10\", function (err, response) {\r",
+                  "    console.log(\"Sending Request\");\r",
+                  "});"
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -305,12 +303,7 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const start = Date.now()\r",
-                  "const delay = 5;\r",
-                  "\r",
-                  "while (Date.now() - start < delay){\r",
-                  "    console.log(\"Waiting for 5 seconds before sending the request...\");\r",
-                  "}"
+                  ""
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -360,12 +353,7 @@
               "listen": "prerequest",
               "script": {
                 "exec": [
-                  "const start = Date.now()\r",
-                  "const delay = 5;\r",
-                  "\r",
-                  "while (Date.now() - start < delay){\r",
-                  "    console.log(\"Waiting for 5 seconds before sending the request...\");\r",
-                  "}"
+                  ""
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -781,138 +769,6 @@
           "response": []
         },
         {
-          "name": "GET by DailyMotion",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "var jsonData = pm.response.json();\r",
-                  "\r",
-                  "\r",
-                  "pm.test(\"The id property is present\", () => { pm.expect(jsonData).to.have.property(\"id\"); })\r",
-                  "\r",
-                  "pm.test(\"The videos array is not empty\", () => { pm.expect(jsonData.videos).to.have.length.above(0); })\r",
-                  "\r",
-                  "\r",
-                  "pm.test(\"The id property is animals\", () => { pm.expect(jsonData.id).to.eql(\"animals\"); })\r",
-                  "\r",
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{DAILYMOTIONMINER-URI}}/dailymotion/:channelId",
-              "host": [
-                "{{DAILYMOTIONMINER-URI}}"
-              ],
-              "path": [
-                "dailymotion",
-                ":channelId"
-              ],
-              "variable": [
-                {
-                  "key": "channelId",
-                  "value": "animals"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "GET by DailyMotion With Params",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "var jsonData = pm.response.json();\r",
-                  "var maxVideosParam = pm.request.url.query.get(\"maxVideos\");\r",
-                  "var maxCommentsParam = pm.request.url.query.get(\"maxComments\");\r",
-                  "var maxPagesParam = pm.request.url.query.get(\"maxPages\");\r",
-                  "var expectedAmountVideos = parseInt(maxVideosParam);\r",
-                  "var expectedAmountComments = parseInt(maxCommentsParam);\r",
-                  "var expectedAmountPages = parseInt(maxPagesParam);\r",
-                  "\r",
-                  "pm.test(\"The amount of videos must be at most the maxVideos parameter\", () => { pm.expect(jsonData.videos.length).to.be.at.most(expectedAmountVideos); })\r",
-                  "\r",
-                  "\r",
-                  "    pm.test(\"All videos have valid comment counts\", function () {\r",
-                  "    for (var i = 0; i < jsonData.videos.length; i++) {\r",
-                  "        if (jsonData.videos[i].comments) {\r",
-                  "            if (jsonData.videos[i].comments.length > expectedAmountComments) {\r",
-                  "                pm.expect.fail(\"The amount of comments in video \" + i + \" is greater than the maxComments parameter\");\r",
-                  "            }\r",
-                  "        }\r",
-                  "    }\r",
-                  "});\r",
-                  "\r",
-                  "\r",
-                  "\r",
-                  "//pm.test(\"The amount of comments must be at most the maxComments parameter\", () => { pm.expect(totalCommentsCounter).to.be.at.most(expectedAmountComments); })\r",
-                  "\r",
-                  "var pagesCounter = Math.ceil((jsonData.videos.length/(expectedAmountVideos > 100 ? 100 : Math.max(1, expectedAmountVideos))));\r",
-                  "pm.test(\"The amount of pages must be at most the maxPages parameter\", () => { pm.expect(pagesCounter).to.be.at.most(expectedAmountPages); })"
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{DAILYMOTIONMINER-URI}}/dailymotion/:channelHandle?maxVideos=100&maxComments=1&maxPages=1",
-              "host": [
-                "{{DAILYMOTIONMINER-URI}}"
-              ],
-              "path": [
-                "dailymotion",
-                ":channelHandle"
-              ],
-              "query": [
-                {
-                  "key": "maxVideos",
-                  "value": "100"
-                },
-                {
-                  "key": "maxComments",
-                  "value": "1"
-                },
-                {
-                  "key": "maxPages",
-                  "value": "1"
-                }
-              ],
-              "variable": [
-                {
-                  "key": "channelHandle",
-                  "value": "animals"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
           "name": "Deletion of channel PeerTube",
           "event": [
             {
@@ -1172,6 +1028,138 @@
     {
       "name": "DailyMotion tests",
       "item": [
+        {
+          "name": "GET by DailyMotion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "var jsonData = pm.response.json();\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"The id property is present\", () => { pm.expect(jsonData).to.have.property(\"id\"); })\r",
+                  "\r",
+                  "pm.test(\"The videos array is not empty\", () => { pm.expect(jsonData.videos).to.have.length.above(0); })\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"The id property is animals\", () => { pm.expect(jsonData.id).to.eql(\"animals\"); })\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DAILYMOTIONMINER-URI}}/dailymotion/:channelId",
+              "host": [
+                "{{DAILYMOTIONMINER-URI}}"
+              ],
+              "path": [
+                "dailymotion",
+                ":channelId"
+              ],
+              "variable": [
+                {
+                  "key": "channelId",
+                  "value": "animals"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET by DailyMotion With Params",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "var jsonData = pm.response.json();\r",
+                  "var maxVideosParam = pm.request.url.query.get(\"maxVideos\");\r",
+                  "var maxCommentsParam = pm.request.url.query.get(\"maxComments\");\r",
+                  "var maxPagesParam = pm.request.url.query.get(\"maxPages\");\r",
+                  "var expectedAmountVideos = parseInt(maxVideosParam);\r",
+                  "var expectedAmountComments = parseInt(maxCommentsParam);\r",
+                  "var expectedAmountPages = parseInt(maxPagesParam);\r",
+                  "\r",
+                  "pm.test(\"The amount of videos must be at most the maxVideos parameter\", () => { pm.expect(jsonData.videos.length).to.be.at.most(expectedAmountVideos); })\r",
+                  "\r",
+                  "\r",
+                  "    pm.test(\"All videos have valid comment counts\", function () {\r",
+                  "    for (var i = 0; i < jsonData.videos.length; i++) {\r",
+                  "        if (jsonData.videos[i].comments) {\r",
+                  "            if (jsonData.videos[i].comments.length > expectedAmountComments) {\r",
+                  "                pm.expect.fail(\"The amount of comments in video \" + i + \" is greater than the maxComments parameter\");\r",
+                  "            }\r",
+                  "        }\r",
+                  "    }\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  "//pm.test(\"The amount of comments must be at most the maxComments parameter\", () => { pm.expect(totalCommentsCounter).to.be.at.most(expectedAmountComments); })\r",
+                  "\r",
+                  "var pagesCounter = Math.ceil((jsonData.videos.length/(expectedAmountVideos > 100 ? 100 : Math.max(1, expectedAmountVideos))));\r",
+                  "pm.test(\"The amount of pages must be at most the maxPages parameter\", () => { pm.expect(pagesCounter).to.be.at.most(expectedAmountPages); })"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DAILYMOTIONMINER-URI}}/dailymotion/:channelHandle?maxVideos=100&maxComments=1&maxPages=1",
+              "host": [
+                "{{DAILYMOTIONMINER-URI}}"
+              ],
+              "path": [
+                "dailymotion",
+                ":channelHandle"
+              ],
+              "query": [
+                {
+                  "key": "maxVideos",
+                  "value": "100"
+                },
+                {
+                  "key": "maxComments",
+                  "value": "1"
+                },
+                {
+                  "key": "maxPages",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "channelHandle",
+                  "value": "animals"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
         {
           "name": "POST from DailyMotion",
           "event": [

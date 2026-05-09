@@ -59,6 +59,14 @@ The deployment flow is summarized as follows:
 
 ## Postman tests
 
+For testing, you must dowload the test and the enviroments from the [Postman](Postman) folder. Each enviroment test the proyect in some different deployment:
+
+| Enviroment | Function |
+| --- | --- |
+| LocalAISSProject | Test the project deployed in your PC using different ports. |
+| CloudAISSProject | Test the project deployed in the cloud, using for each project its URI. |
+| GatewayAISSProject | Test the project deployed in the cloud, using the gateway for accessing each project. |
+
 We had to change some of the tests and add new tests for Postman. Here are some of these changes:
 
 - We added enviroments that must be used in order to select whether you are testing your local version, the one deployed or using the gateway.
