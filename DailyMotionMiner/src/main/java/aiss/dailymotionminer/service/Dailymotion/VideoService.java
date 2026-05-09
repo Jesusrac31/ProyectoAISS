@@ -30,7 +30,7 @@ public class VideoService {
         int pageCount = 1; // Start at the first page
         while(allVideos.size()<maxVideos && pageCount<=maxPages) { // As long as max page or max videos not reached stay in loop
             String uri = BASE_URL + "/videos?channel=" + channelHandler + "&limit=" +count+ "&page="+pageCount+
-                    "&fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
+                    "&fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url&localization=es_ES"; // Los campos que necesitamos de cada video
             VideoList videoList = restTemplate.getForObject(uri, VideoList.class);
             if(videoList==null || videoList.getList() == null || videoList.getList().isEmpty()) {
                 return allVideos; // If something went wrong or channel has no videos return empty list
@@ -40,10 +40,10 @@ public class VideoService {
             pageCount++; // Increment page number
         }
 
-        // Obten los subtitulos de todos los videos
+        // Get all videos subtitles
         allVideos.forEach(video -> video.setSubtitles(subtitleService.getVideoSubtitles(video.getId())));
 
-        // Limita las tags de todos los videos
+        // Limit the tag number of each video
         allVideos.forEach(video -> {
             List<String> tags = video.getTags();
             if (tags != null && tags.size() > maxTags) video.setTags(tags.subList(0, maxTags));
@@ -55,7 +55,7 @@ public class VideoService {
     // Method to GET a video with an ID
     public Video getById(String id) {
         String uri = BASE_URL + "video/" + id +
-                "?fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url"; // Los campos que necesitamos de cada video
+                "?fields=id,title,description,created_time,tags,owner.id,owner.screenname,owner.url,owner.avatar_720_url&localization=es_ES"; // Fields related to videominer
         return restTemplate.getForObject(uri, Video.class);
     }
 }

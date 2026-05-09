@@ -24,7 +24,7 @@ public class ChannelService {
     }
     // Retrieves a channel by its identifier
     public Channel getById(String channelHandler) {
-        String uri = BASE_URL + "/channel/" + channelHandler; // Build uri
+        String uri = BASE_URL + "/channel/" + channelHandler + "?localization=es_ES"; // Build uri, localization will make the results locally and in the cloud consistents
         return restTemplate.getForObject(uri, Channel.class); // Get object
     }
 }
