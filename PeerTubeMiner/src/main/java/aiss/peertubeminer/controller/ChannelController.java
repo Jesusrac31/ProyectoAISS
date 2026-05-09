@@ -54,8 +54,6 @@ public class ChannelController {
 
     // For some POST operation, it gets the channel from service and post the channel to videominer
     // If success, return 201 status
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/{id}")
     @Operation(
             summary = "Send one channel to videominer",
             description = "Send one channel from Peertube to videominer",
@@ -67,6 +65,8 @@ public class ChannelController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "503", content = { @Content(schema = @Schema()) })
     })
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/{id}")
     public ChannelVM postChannel(@PathVariable String id,
                                  @Parameter(description = "Maximum number of videos to be retrieved") @RequestParam(name = "maxVideos", defaultValue = "${peertubeminer.maxVideos}") Integer maxVideos, // RequestParam indica que es un parámetro que se pasa como query, sus valores por defecto se ponen en defaultValue
                                  @Parameter(description = "Maximum number of comments per video to be retrieved") @RequestParam(name = "maxComments", defaultValue = "${peertubeminer.maxComments}") Integer maxComments) {
