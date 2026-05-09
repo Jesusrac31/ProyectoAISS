@@ -19,7 +19,7 @@ public class TranslationDMtoVMService{
     public static ChannelVM channelTranslation(Channel channelDM){
         // Creation of Channel for VM
         ChannelVM resChannelVM = new ChannelVM(channelDM.getId(), channelDM.getName(), channelDM.getDescription(), channelDM.getCreatedAt());
-        // Iterating over videos of PT, translating them to videos of VM and saving them into an auxiliary list of videos.
+        // Iterating over videos of DM, translating them to videos of VM and saving them into an auxiliary list of videos.
         List<VideoVM> auxVideoList = new ArrayList<>();
         for (Video vd: channelDM.getVideos()){
             auxVideoList.add(videoTranslation(vd));
@@ -29,14 +29,14 @@ public class TranslationDMtoVMService{
         return resChannelVM;
     }
 
-    public static VideoVM videoTranslation(Video videoDM){  // Translation from PT to VM model of Video
+    public static VideoVM videoTranslation(Video videoDM){  // Translation from DM to VM model of Video
         // Creation of Video model for VideoMiner
         VideoVM resVideoVM = new VideoVM(videoDM.getId(), videoDM.getTitle(), videoDM.getDescription(), videoDM.getCreated_time());
 
         //Setting the author of resVideoVM
         resVideoVM.setUser(userTranslation(videoDM.getOwner()));
 
-        //Iterating over the comments of videoPT and adding the comments to resVideoVM one by one
+        //Iterating over the comments of videoDM and adding the comments to resVideoVM one by one
         List<CommentVM> auxCommentList = new ArrayList<>();
         for (String tag: videoDM.getTags()){
             auxCommentList.add(commentTranslation(tag, videoDM.getCreated_time()));
@@ -59,7 +59,7 @@ public class TranslationDMtoVMService{
     }
 
     public static CaptionVM captionTranslation(Subtitle subtitleDM){  //Caption translation
-        // ATTENTION: captions returned by the PeerTube API do not contain an ID, so for the VideoMiner model of captions
+        // Captions returned by the Daylimotion API do not contain an ID, so for the VideoMiner model of captions
         // a random ID is set
         return new CaptionVM(UUID.randomUUID().toString(), subtitleDM.getUrl(), subtitleDM.getLanguage());
     }

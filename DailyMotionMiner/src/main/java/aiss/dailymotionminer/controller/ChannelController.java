@@ -20,14 +20,13 @@ import aiss.dailymotionminer.model.Dailymotion.Channel;
 @RestController
 @RequestMapping("/dailymotion")
 public class ChannelController {
-    // (1!!!)
-    private final ChannelService channelService; // The name depends on the Services that will be created in the future
+    private final ChannelService channelService;
     private final VideominerService videominerService;
 
 
     // Constructor of the controller is created. Instantiates service classes which allow to communicate with the APIs
     @Autowired
-    public ChannelController(ChannelService channelService, VideominerService videominerService){ // (1!!!)
+    public ChannelController(ChannelService channelService, VideominerService videominerService){
         this.channelService = channelService;
         this.videominerService= videominerService;
     }
@@ -50,8 +49,8 @@ public class ChannelController {
                                 @Parameter(description = "Maximum number of videos to be retrieved") @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
                                 @Parameter(description = "Maximum number of comments per video to be retrieved") @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxTags}") Integer maxComments,
                                 @Parameter(description = "Maximum number of pages to be retrieved") @RequestParam(name = "maxPages", defaultValue = "${dailymotionminer.maxPages}") Integer maxPages) {
-            Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages); // ATTENTION! This function, service, and everything related to this line must be changed since the necessary classes are still not created
-            return TranslationDMtoVMService.channelTranslation(channelAPI); // ATTENTION! The method name is unknown and probably must be changed
+            Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages);
+            return TranslationDMtoVMService.channelTranslation(channelAPI);
     }
 
     // POST operation for the channel given its ID TO VideoMiner
@@ -73,7 +72,7 @@ public class ChannelController {
                                  @Parameter(description = "Maximum number of videos to be retrieved") @RequestParam(name = "maxVideos", defaultValue = "${dailymotionminer.maxVideos}") Integer maxVideos,
                                  @Parameter(description = "Maximum number of comments per video to be retrieved") @RequestParam(name = "maxComments", defaultValue = "${dailymotionminer.maxTags}") Integer maxComments,
                                  @Parameter(description = "Maximum number of pages to be retrieved") @RequestParam(name = "maxPages", defaultValue = "${dailymotionminer.maxPages}") Integer maxPages) {
-            Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages); // ATTENTION! The name of the classes/methods can change
+            Channel channelAPI = channelService.getCompleteChannel(id, maxVideos, maxComments, maxPages);
             ChannelVM channelVM = TranslationDMtoVMService.channelTranslation(channelAPI);
             return videominerService.postChannel(channelVM);
     }
