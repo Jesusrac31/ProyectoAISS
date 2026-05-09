@@ -45,7 +45,7 @@ public class Caption {
     }
 
     public void setId(String id) {
-        this.id = id;
+        if (id != null && !id.isEmpty() && !id.equalsIgnoreCase("null"))  this.id = id;
     }
 
     public String getLink() {
