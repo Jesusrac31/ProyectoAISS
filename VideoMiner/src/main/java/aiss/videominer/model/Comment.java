@@ -23,7 +23,7 @@ public class Comment {
 
     @JsonProperty("text")
     @Column(columnDefinition="TEXT", name = "text")
-    @NotEmpty(message = "Text of the message cannot be empty") // OR actually can?
+    @NotEmpty(message = "Text of the message cannot be empty")
     private String text;
 
     @JsonProperty("createdOn")

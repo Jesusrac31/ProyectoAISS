@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler {   // Exception handler. Allows to show messages in case the validation gives an error.
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody

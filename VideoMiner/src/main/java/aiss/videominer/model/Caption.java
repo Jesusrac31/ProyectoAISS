@@ -20,13 +20,13 @@ public class Caption {
     // If id is given in JSON body use the provided value, else generate a random UUID
     private String id = UUID.randomUUID().toString();
 
-    @Column(name = "link")//
-    @NotEmpty(message = "Caption link cannot be empty")//
+    @Column(name = "link")
+    @NotEmpty(message = "Caption link cannot be empty")
     @JsonProperty("link")
     private String link;
 
-    @Column(name = "language")//
-    @NotEmpty(message = "Caption language cannot be empty")//
+    @Column(name = "language")
+    @NotEmpty(message = "Caption language cannot be empty")
     @JsonProperty("language")
     private String language;
 

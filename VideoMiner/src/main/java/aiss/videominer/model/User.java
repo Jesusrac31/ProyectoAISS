@@ -26,14 +26,12 @@ public class User {
     private String name;
 
     @JsonProperty("user_link")
-    @Column(name = "user_link")//
+    @Column(name = "user_link")
     @NotEmpty(message = "User link cannot be empty")//
     private String user_link;
 
     @JsonProperty("picture_link")
-    @Column(name = "picture_link")//
-//    @NotNull(message = "The picture link of the user cannot be null")
-//    @NotEmpty(message = "The picture of the user cannot be empty")
+    @Column(name = "picture_link")
     private String picture_link;
 
     // Empty constructor required by Spring

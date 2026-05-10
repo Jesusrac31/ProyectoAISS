@@ -23,17 +23,16 @@ public class Video {
     private String id = UUID.randomUUID().toString();
 
     @JsonProperty("name")
-    @Column(name = "name")//
+    @Column(name = "name")
     @NotEmpty(message = "Video name cannot be empty")
     private String name;
 
     @JsonProperty("description")
-    @Column(columnDefinition="TEXT", name = "description")//
-    //@NotEmpty(message = "Video description cannot be empty")//
+    @Column(columnDefinition="TEXT", name = "description")
     private String description;
 
     @JsonProperty("releaseTime")
-    @Column(name = "releaseTime")//
+    @Column(name = "releaseTime")
     @NotEmpty(message = "Video release time cannot be empty")
     private String releaseTime;
 
