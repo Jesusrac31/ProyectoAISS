@@ -22,9 +22,9 @@ Swagger UI path: `/swagger-ui/index.html`
 
 | Service | URL |
 | --- | --- |
-| Video Miner | https://videominer.onrender.com |
-| DailyMotion Miner | https://dailymotion-miner.onrender.com |
-| PeerTube Miner | https://peertube-miner.onrender.com |
+| Video Miner | https://videominer-cdfi.onrender.com |
+| DailyMotion Miner | https://dailymotionminer-j78v.onrender.com |
+| PeerTube Miner | https://peertubeminer-1r1n.onrender.com |
 
 ### Local endpoints
 
@@ -38,7 +38,7 @@ Swagger UI path: `/swagger-ui/index.html`
 
 The gateway provides a single public access point for the whole system:
 
-- https://proyectointegracion-hbtv.onrender.com
+- https://proyectoaiss-042e.onrender.com
 
 ## Deployment Platform
 
