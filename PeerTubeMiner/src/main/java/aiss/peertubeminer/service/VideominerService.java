@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class VideominerService {
+public class VideominerService {    //Videominer Service provides communication with hte VideoMiner Application
     @Autowired
     RestTemplate restTemplate;
 
